@@ -8,6 +8,6 @@ namespace Monopoly_Game
 {
     class Board
     {
-        LinkedList<Space> spaces;
+        public LinkedList<Space> spaces;
     }
 }

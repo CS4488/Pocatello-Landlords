@@ -8,6 +8,13 @@ namespace Monopoly_Game
 {
     class Player
     {
-        int playerID;
+        public int playerID;
+        public bool eliminated = false;
+        public Player()
+        { }
+        public Player(int inputID)
+        {
+            playerID = inputID;
+        }
     }
 }

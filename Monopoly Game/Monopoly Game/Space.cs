@@ -8,5 +8,14 @@ namespace Monopoly_Game
 {
     class Space
     {
+        string spaceName;
+        public Space()
+        {
+            spaceName = " ";
+        }
+        public Space(string inputName)
+        {
+            spaceName = inputName;
+        }
     }
 }
