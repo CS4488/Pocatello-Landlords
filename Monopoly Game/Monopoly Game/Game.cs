@@ -39,16 +39,11 @@ namespace Monopoly_Game
         {
             while (!gameOver)
             {
-                takeTurn();
+                currentPlayer.takeTurn();
                 makeNextPlayersTurn();
                 if (currentPlayer.playerID == lastPlayerID)
                     gameOver = true; //effectively if there are no other players then end game.
             }
-        }
-        public void takeTurn()
-        {
-            moveToSpace();
-            interactWithSpace();
         }
         private void makeNextPlayersTurn()
         {

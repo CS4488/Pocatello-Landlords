@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CompPlayer.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="TicTacToe.cs" />

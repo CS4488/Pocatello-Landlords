@@ -16,5 +16,10 @@ namespace Monopoly_Game
         {
             playerID = inputID;
         }
+        public void takeTurn()
+        {
+            moveToSpace();
+            interactWithSpace();
+        }
     }
 }
