@@ -16,44 +16,66 @@ namespace Monopoly_Game
      * 
      * 
      */
-    class Game
+    static class Game
     {
-        Board board;            
-        List<Player> players;
-        int lastPlayerID = -1;
-        Player currentPlayer;
-        private bool gameOver;
-        public Game()
+        static Board board;
+        static List<Player> players = new List<Player>();
+        static int lastPlayerID = -1;
+        static Player currentPlayer;
+        static private bool gameOver;
+
+        internal static List<Player> Players { get => players; set => players = value; }
+        internal static Player CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
+
+        //public Game()
+        //{
+        //    gameOver = false;
+        //    if (this is TicTacToe)
+        //        for (int i = 0; i < 9; i++)
+        //            board.spaces.AddLast(new Property());// For tictactoe, owner is a needed variable, so type property is used
+        //    currentPlayer = new Player(0);
+        //    players.Add(currentPlayer);
+        //    currentPlayer = new Player(1);
+        //    players.Add(currentPlayer);
+        //    currentPlayer = players[0];
+        //}
+        public static void startGame()
         {
-            gameOver = false;
-            if (this is TicTacToe)
-                for (int i = 0; i < 9; i++)
-                    board.spaces.AddLast(new Property());// For tictactoe, owner is a needed variable, so type property is used
-            currentPlayer = new Player(0);
-            players.Add(currentPlayer);
-            currentPlayer = new Player(1);
-            players.Add(currentPlayer);
-            currentPlayer = players[0];
+            int playerCount = 3;
+            for(int i = 0; i < playerCount; i++)
+            {
+                Player player = new Player(i);
+                Players.Add(player);
+            }
+            CurrentPlayer = Players[0];
         }
-        public void playGame()
+
+            
+        public static void playGame()
         {
             while (!gameOver)
             {
-                currentPlayer.takeTurn();
+                CurrentPlayer.takeTurn();
                 makeNextPlayersTurn();
-                if (currentPlayer.playerID == lastPlayerID)
+                if (CurrentPlayer.playerID == lastPlayerID)
                     gameOver = true; //effectively if there are no other players then end game.
             }
         }
-        private void makeNextPlayersTurn()
+        public static void makeNextPlayersTurn()
         {
-            lastPlayerID = currentPlayer.playerID;
-           if (currentPlayer.playerID >= players.Count - 1)
-                currentPlayer = players[0];
-           else
-                currentPlayer = players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
-           if (currentPlayer.eliminated)
+            lastPlayerID = CurrentPlayer.playerID;
+            if (CurrentPlayer.playerID >= Players.Count - 1)
+            {
+                CurrentPlayer = Players[0];
+            }
+            else
+            {
+                CurrentPlayer = Players[CurrentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
+            }
+            if (CurrentPlayer.eliminated)
+            {
                 makeNextPlayersTurn();
+            }
         }
     }
 }

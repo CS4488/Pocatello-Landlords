@@ -23,6 +23,15 @@ namespace Monopoly_Game
         public MainWindow()
         {
             InitializeComponent();
+            Game.startGame();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int currentPlayerId = Game.CurrentPlayer.playerID;
+            txtInfo.Text = "Current player: " + currentPlayerId;
+            Game.makeNextPlayersTurn();
+
         }
     }
 }

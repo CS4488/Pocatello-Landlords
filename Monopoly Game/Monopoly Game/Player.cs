@@ -18,8 +18,8 @@ namespace Monopoly_Game
         }
         public void takeTurn()
         {
-            moveToSpace();
-            interactWithSpace();
+            //moveToSpace();
+            //interactWithSpace();
         }
     }
 }
