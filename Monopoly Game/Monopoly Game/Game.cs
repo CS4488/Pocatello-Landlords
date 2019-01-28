@@ -23,13 +23,14 @@ namespace Monopoly_Game
     class Game
     {
         Board gameBoard;            
-        List<Player> Players;
+        List<Player> players;
         int lastPlayerID = -1;
         Player currentPlayer;
         private bool gameOver;
 
         public Board GameBoard { get { return gameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
+        public List<Player> Players {get { return players; } set { players = value; } }
 
         public Game()
         {
@@ -50,19 +51,23 @@ namespace Monopoly_Game
             {
                 currentPlayer.takeTurn();
                 makeNextPlayersTurn();
-                if (currentPlayer.playerID == lastPlayerID)
+                if (currentPlayer.playerID == lastPlayerID) {
                     gameOver = true; //effectively if there are no other players then end game.
+                }
             }
         }
         public void makeNextPlayersTurn()
         {
-            lastPlayerID = currentPlayer.playerID;
-           if (currentPlayer.playerID >= Players.Count - 1)
+           lastPlayerID = currentPlayer.playerID;
+           if (currentPlayer.playerID >= Players.Count - 1) {
                 currentPlayer = Players[0];
-           else
+           }
+           else {
                 currentPlayer = Players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
-           if (currentPlayer.eliminated)
+           }
+           if (currentPlayer.eliminated) {
                 makeNextPlayersTurn();
+           }
         }
 
         public bool checkForTicTacToeWin() {
