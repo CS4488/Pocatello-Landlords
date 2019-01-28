@@ -1,4 +1,16 @@
 Monopoly\ Game/.vs
+Monopoly\ Game/[Dd]ebug/
+Monopoly\ Game/[Dd]ebugPublic/
+Monopoly\ Game/[Rr]elease/
+Monopoly\ Game/[Rr]eleases/
+Monopoly\ Game/x64/
+Monopoly\ Game/x86/
+Monopoly\ Game/[Aa][Rr][Mm]/
+Monopoly\ Game/[Aa][Rr][Mm]64/
+Monopoly\ Game/bld/
+Monopoly\ Game/[Bb]in/
+Monopoly\ Game/[Oo]bj/
+Monopoly\ Game/[Ll]og/
 
 
 ## Ignore Visual Studio temporary files, build results, and
