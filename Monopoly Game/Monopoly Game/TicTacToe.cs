@@ -15,8 +15,10 @@ namespace Monopoly_Game
      */
     class TicTacToe : Game
     {
-        public TicTacToe() {
-
+        public TicTacToe()
+        {
+            for (int i = 0; i < 9; i++)
+                base.GameBoard.Spaces.AddLast(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
         }   
     }
 }

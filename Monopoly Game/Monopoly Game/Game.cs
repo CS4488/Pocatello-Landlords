@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly_Game
 {
+
     /*
      * Michael Sterner: Game class 1.0
      * This is the initial starting point for the game; eventually this class will be instantiated by an exterior function.
@@ -22,7 +23,7 @@ namespace Monopoly_Game
     class Game
     {
         Board gameBoard;            
-        List<Player> players;
+        List<Player> Players;
         int lastPlayerID = -1;
         Player currentPlayer;
         private bool gameOver;
@@ -34,15 +35,14 @@ namespace Monopoly_Game
         {
             gameOver = false;
             gameBoard = new Board();
-            players = new List<Player>();
-            if (this is TicTacToe)
-                for (int i = 0; i < 9; i++)
-                    gameBoard.Spaces.AddLast(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
-            currentPlayer = new Player(0);
-            players.Add(currentPlayer);
-            currentPlayer = new Player(1);
-            players.Add(currentPlayer);
-            currentPlayer = players[0];
+            Players = new List<Player>();
+            int playerCount = 2;
+            for (int i = 0; i < playerCount; i++)
+            {
+                Player player = new Player(i);
+                Players.Add(player);
+            }
+            CurrentPlayer = Players[0];
         }
         public void playGame()
         {
@@ -57,10 +57,10 @@ namespace Monopoly_Game
         public void makeNextPlayersTurn()
         {
             lastPlayerID = currentPlayer.playerID;
-           if (currentPlayer.playerID >= players.Count - 1)
-                currentPlayer = players[0];
+           if (currentPlayer.playerID >= Players.Count - 1)
+                currentPlayer = Players[0];
            else
-                currentPlayer = players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
+                currentPlayer = Players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
            if (currentPlayer.eliminated)
                 makeNextPlayersTurn();
         }
