@@ -18,6 +18,7 @@ namespace Monopoly_Game
         }
         public void takeTurn()
         {
+            // Commented out so Test Harness would compile - Rex Christensen - 27JAN2019 - v1;
             //moveToSpace();
             //interactWithSpace();
         }

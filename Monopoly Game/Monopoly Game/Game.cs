@@ -13,69 +13,67 @@ namespace Monopoly_Game
      * Monopoly game.
      * 
      * Please describe changes made here; along with your name, date, and version:
-     * 
+     * Renamed variables and added public properties for use by the test harness - Rex Christensen - 27JAN2019 - v1
+     * Instantiated a Board object and Players list - Rex Christensen - 27JAN2019 - v1
+     * Changed makeNextPlayersTurn() to public for use in the test harness - 27JAN2019 - v1
+     * Added a "Value" to each created property in the board to reflect what space it is on a tic tac toe board - Rex Christensen - 27JAN2019 - v1
      * 
      */
-    static class Game
+    class Game
     {
-        static Board board;
-        static List<Player> players = new List<Player>();
-        static int lastPlayerID = -1;
-        static Player currentPlayer;
-        static private bool gameOver;
+        Board gameBoard;            
+        List<Player> players;
+        int lastPlayerID = -1;
+        Player currentPlayer;
+        private bool gameOver;
 
-        internal static List<Player> Players { get => players; set => players = value; }
-        internal static Player CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
+        public Board GameBoard { get { return gameBoard; } }
+        public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
 
-        //public Game()
-        //{
-        //    gameOver = false;
-        //    if (this is TicTacToe)
-        //        for (int i = 0; i < 9; i++)
-        //            board.spaces.AddLast(new Property());// For tictactoe, owner is a needed variable, so type property is used
-        //    currentPlayer = new Player(0);
-        //    players.Add(currentPlayer);
-        //    currentPlayer = new Player(1);
-        //    players.Add(currentPlayer);
-        //    currentPlayer = players[0];
-        //}
-        public static void startGame()
+        public Game()
         {
-            int playerCount = 3;
-            for(int i = 0; i < playerCount; i++)
-            {
-                Player player = new Player(i);
-                Players.Add(player);
-            }
-            CurrentPlayer = Players[0];
+            gameOver = false;
+            gameBoard = new Board();
+            players = new List<Player>();
+            if (this is TicTacToe)
+                for (int i = 0; i < 9; i++)
+                    gameBoard.Spaces.AddLast(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
+            currentPlayer = new Player(0);
+            players.Add(currentPlayer);
+            currentPlayer = new Player(1);
+            players.Add(currentPlayer);
+            currentPlayer = players[0];
         }
-
-            
-        public static void playGame()
+        public void playGame()
         {
             while (!gameOver)
             {
-                CurrentPlayer.takeTurn();
+                currentPlayer.takeTurn();
                 makeNextPlayersTurn();
-                if (CurrentPlayer.playerID == lastPlayerID)
+                if (currentPlayer.playerID == lastPlayerID)
                     gameOver = true; //effectively if there are no other players then end game.
             }
         }
-        public static void makeNextPlayersTurn()
+        public void makeNextPlayersTurn()
         {
-            lastPlayerID = CurrentPlayer.playerID;
-            if (CurrentPlayer.playerID >= Players.Count - 1)
-            {
-                CurrentPlayer = Players[0];
-            }
-            else
-            {
-                CurrentPlayer = Players[CurrentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
-            }
-            if (CurrentPlayer.eliminated)
-            {
+            lastPlayerID = currentPlayer.playerID;
+           if (currentPlayer.playerID >= players.Count - 1)
+                currentPlayer = players[0];
+           else
+                currentPlayer = players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
+           if (currentPlayer.eliminated)
                 makeNextPlayersTurn();
-            }
+        }
+
+        public bool checkForTicTacToeWin() {
+            bool win = false;
+            // Check for horizontal wins
+            
+            // Check for verticle wins
+
+            // Check for diagonal wins
+
+            return win;
         }
     }
 }
