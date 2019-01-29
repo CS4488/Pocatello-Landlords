@@ -57,7 +57,10 @@ namespace Monopoly_Game
                     tbSquare6.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -76,7 +79,10 @@ namespace Monopoly_Game
                     tbSquare7.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -95,7 +101,10 @@ namespace Monopoly_Game
                     tbSquare8.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -114,7 +123,10 @@ namespace Monopoly_Game
                     tbSquare3.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -133,7 +145,10 @@ namespace Monopoly_Game
                     tbSquare4.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -152,7 +167,10 @@ namespace Monopoly_Game
                     tbSquare5.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -171,7 +189,10 @@ namespace Monopoly_Game
                     tbSquare0.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -190,7 +211,10 @@ namespace Monopoly_Game
                     tbSquare1.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
 
@@ -209,7 +233,10 @@ namespace Monopoly_Game
                     tbSquare2.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
+                if (game.checkForTicTacToeWin())
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
             }
         }
     }
