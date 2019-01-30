@@ -42,180 +42,70 @@ namespace Monopoly_Game
             return prop;
         }
 
-        private void BtnSquare6_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(6);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[6] = prop;
-                if (playerID == 0) {
-                    tbSquare6.Text = "X";
-                } else {
-                    tbSquare6.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare6_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(6, tbSquare6);
         }
 
-        private void BtnSquare7_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(7);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[7] = prop;
-                if (playerID == 0) {
-                    tbSquare7.Text = "X";
-                } else {
-                    tbSquare7.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare7_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(7, tbSquare7);
         }
 
-        private void BtnSquare8_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(8);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[8] = prop;
-                if (playerID == 0) {
-                    tbSquare8.Text = "X";
-                } else {
-                    tbSquare8.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare8_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(8, tbSquare8);
         }
 
-        private void BtnSquare3_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(3); ;
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[3] = prop;
-                if (playerID == 0) {
-                    tbSquare3.Text = "X";
-                } else {
-                    tbSquare3.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare3_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(3, tbSquare3);
         }
 
-        private void BtnSquare4_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(4);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[4] = prop;
-                if (playerID == 0) {
-                    tbSquare4.Text = "X";
-                } else {
-                    tbSquare4.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare4_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(4, tbSquare4);
         }
 
-        private void BtnSquare5_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(5);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[5] = prop;
-                if (playerID == 0) {
-                    tbSquare5.Text = "X";
-                } else {
-                    tbSquare5.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare5_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(5, tbSquare5);
         }
 
-        private void BtnSquare0_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(0);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[0] = prop;
-                if (playerID == 0) {
-                    tbSquare0.Text = "X";
-                } else {
-                    tbSquare0.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare0_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(0, tbSquare0);
         }
 
-        private void BtnSquare1_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(1);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[1] = prop;
-                if (playerID == 0) {
-                    tbSquare1.Text = "X";
-                } else {
-                    tbSquare1.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
-                    MessageBox.Show("You Win!");
-                    System.Windows.Application.Current.Shutdown();
-                }
-            }
+        private void BtnSquare1_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(1, tbSquare1);
         }
 
-        private void BtnSquare2_Click(object sender, RoutedEventArgs e) {
+        private void BtnSquare2_Click(object sender, RoutedEventArgs e)
+        {
+            makeMove(2, tbSquare2);
+        }
+        private void makeMove(int propertyNumber, TextBlock button)
+        {
             playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(2);
+            Property prop = getProperty(propertyNumber);
 
-            if (prop.owner == -1) {
+            if (prop.owner == -1)
+            {
                 prop.owner = playerID;
-                game.GameBoard.Spaces[2] = prop;
-                if (playerID == 0) {
-                    tbSquare2.Text = "X";
-                } else {
-                    tbSquare2.Text = "O";
+                game.GameBoard.Spaces[propertyNumber] = prop;
+                if (playerID == 0)
+                {
+                    button.Text = "X";
+                }
+                else
+                {
+                    button.Text = "O";
                 }
                 game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin()) {
+                if (game.checkForTicTacToeWin())
+                {
                     MessageBox.Show("You Win!");
                     System.Windows.Application.Current.Shutdown();
                 }

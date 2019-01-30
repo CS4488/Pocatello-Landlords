@@ -43,3 +43,18 @@ C:\Users\car54\Desktop\School\Advanced Project\v1.1\Pocatello-Landlords-master\M
 C:\Users\car54\Desktop\School\Advanced Project\v1.1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
 C:\Users\car54\Desktop\School\Advanced Project\v1.1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
 C:\Users\car54\Desktop\School\Advanced Project\v1.1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csprojAssemblyReference.cache
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.g.cs
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\App.g.cs
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.cache
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.lref
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe.config
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.pdb
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.baml
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.g.resources
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
+D:\Documents\Spring 2019\Senior Project\Pocatello-Landlords-master\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
