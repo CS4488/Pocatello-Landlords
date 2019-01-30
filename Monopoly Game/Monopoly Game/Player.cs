@@ -8,8 +8,14 @@ namespace Monopoly_Game
 {
     class Player
     {
-        public int playerID;
-        public bool eliminated = false;
+        int playerID;
+        bool eliminated = false;
+        string playerName;
+
+        public string PlayerName { get{ return playerName; } set{ playerName = value; } }
+        public int PlayerID { get{ return playerID; } set{ playerID = value; } }
+        public bool Eliminated { get{return eliminated; } set{ eliminated = value; } }
+        
         public Player()
         { }
         public Player(int inputID)
