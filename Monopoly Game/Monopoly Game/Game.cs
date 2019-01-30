@@ -51,21 +51,21 @@ namespace Monopoly_Game
             {
                 currentPlayer.takeTurn();
                 makeNextPlayersTurn();
-                if (currentPlayer.playerID == lastPlayerID) {
+                if (currentPlayer.PlayerID == lastPlayerID) {
                     gameOver = true; //effectively if there are no other players then end game.
                 }
             }
         }
         public void makeNextPlayersTurn()
         {
-           lastPlayerID = currentPlayer.playerID;
-           if (currentPlayer.playerID >= Players.Count - 1) {
+           lastPlayerID = currentPlayer.PlayerID;
+           if (currentPlayer.PlayerID >= Players.Count - 1) {
                 currentPlayer = Players[0];
            }
            else {
-                currentPlayer = Players[currentPlayer.playerID + 1]; // note that the playerID's are stored counting from 0
+                currentPlayer = Players[currentPlayer.PlayerID + 1]; // note that the playerID's are stored counting from 0
            }
-           if (currentPlayer.eliminated) {
+           if (currentPlayer.Eliminated) {
                 makeNextPlayersTurn();
            }
         }
