@@ -15,11 +15,14 @@ namespace Monopoly_Game
          */
     class Property : Space
     {
-        public int value, owner;
+        public int _value, owner;
+
+        public int Owner { get{ return owner; } set{ owner = value; } }
+        public int Value { get{ return _value; } set{ value = _value; } }
         public Property()
         {
             owner = -1;
-            value = 0;
+            _value = 0;
         }
 
         /// <summary>
@@ -29,13 +32,13 @@ namespace Monopoly_Game
         /// <param name="inputValue"></param>
         public Property(int inputValue) {
             owner = -1;
-            value = inputValue;
+            _value = inputValue;
         }
 
         public Property(int inputOwner, int inputValue)
         {
             owner = inputOwner;
-            value = inputValue;
+            _value = inputValue;
         }
     }
 }

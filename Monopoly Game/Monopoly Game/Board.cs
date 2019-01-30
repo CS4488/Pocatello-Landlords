@@ -13,16 +13,17 @@ namespace Monopoly_Game
      * Please describe changes made here; along with your name, date, and version:
      * Created constructor that instantiate the spaces linkedList - Rex Christensen - 27JAN2019 - v1
      * Changed the spaces variable to private and implemented a public property - 27JAN2019 - v1
+     * Changed LinkedList to List object - Rex Christensen - 28JAN2019 - v1
      * 
      */
     class Board
     {
-        LinkedList<Space> spaces;
+        List<Space> spaces;
 
-        public LinkedList<Space> Spaces { get { return spaces; } set { spaces = value; } }
+        public List<Space> Spaces { get { return spaces; } set { spaces = value; } }
 
         public Board() {
-            spaces = new LinkedList<Space>();
+            spaces = new List<Space>();
         }
     }
 }
