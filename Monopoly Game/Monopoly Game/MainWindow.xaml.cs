@@ -59,8 +59,6 @@ namespace Monopoly_Game
                     MessageBox.Show("You Win!");
                     System.Windows.Application.Current.Shutdown();
                 }
-                // **************
-                //(Property)game.GameBoard.Spaces[0]
             }
         }
 
