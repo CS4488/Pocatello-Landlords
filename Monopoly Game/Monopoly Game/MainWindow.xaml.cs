@@ -43,7 +43,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare6_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(6);
 
             if (prop.owner == -1) {
@@ -63,7 +63,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare7_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(7);
 
             if (prop.owner == -1) {
@@ -83,7 +83,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare8_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(8);
 
             if (prop.owner == -1) {
@@ -103,7 +103,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare3_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(3); ;
 
             if (prop.owner == -1) {
@@ -123,7 +123,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare4_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(4);
 
             if (prop.owner == -1) {
@@ -143,7 +143,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare5_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(5);
 
             if (prop.owner == -1) {
@@ -163,7 +163,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare0_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(0);
 
             if (prop.owner == -1) {
@@ -183,7 +183,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare1_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(1);
 
             if (prop.owner == -1) {
@@ -203,7 +203,7 @@ namespace Monopoly_Game
         }
 
         private void BtnSquare2_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
+            playerID = game.CurrentPlayer.PlayerID;
             Property prop = getProperty(2);
 
             if (prop.owner == -1) {
