@@ -12,7 +12,7 @@
             <ColumnDefinition Width="357"/>
             <ColumnDefinition Width="225"/>
         </Grid.ColumnDefinitions>
-        <Grid Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="3,35,3.8,35"  Name="playArea">
+        <Grid Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="3,35,3.8,35">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
