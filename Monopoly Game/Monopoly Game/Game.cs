@@ -8,7 +8,7 @@ namespace Monopoly_Game
 {
 
     /*
-     * Michael Sterner: Game class 1.0
+     * Michael Sterner: Game class 1.2
      * This is the initial starting point for the game; eventually this class will be instantiated by an exterior function.
      * Initially, the class will implement a tic-tack-toe game, but it's future purpose will be to execute a playable
      * Monopoly game.
@@ -18,6 +18,7 @@ namespace Monopoly_Game
      * Instantiated a Board object and Players list - Rex Christensen - 27JAN2019 - v1
      * Changed makeNextPlayersTurn() to public for use in the test harness - 27JAN2019 - v1
      * Added a "Value" to each created property in the board to reflect what space it is on a tic tac toe board - Rex Christensen - 27JAN2019 - v1
+     * Moved player list construction to the inheriting class, commented out a couple of unused lines. - M.S. 30JAN2019 - v1.2
      * 
      */
     class Game
@@ -37,25 +38,27 @@ namespace Monopoly_Game
             gameOver = false;
             gameBoard = new Board();
             Players = new List<Player>();
+            /*
+             * Michael Sterner ~ Player list constructor was moved to the inheriting class (I put a method for this in ticTackToe)
             int playerCount = 2;
             for (int i = 0; i < playerCount; i++)
             {
                 Player player = new Player(i);
                 Players.Add(player);
             }
-            CurrentPlayer = Players[0];
+            */
         }
+        /* M.S. This is not implemented in the tic tac toe game. Might help us keep things more generic in the future though.
         public void playGame()
         {
-            while (!gameOver)
-            {
-                currentPlayer.takeTurn();
+
+                currentPlayer.TakeTurn(gameBoard);
                 makeNextPlayersTurn();
-                if (currentPlayer.PlayerID == lastPlayerID) {
+                if (currentPlayer.PlayerID == lastPlayerID){
                     gameOver = true; //effectively if there are no other players then end game.
                 }
-            }
         }
+        */
         public void makeNextPlayersTurn()
         {
            lastPlayerID = currentPlayer.PlayerID;

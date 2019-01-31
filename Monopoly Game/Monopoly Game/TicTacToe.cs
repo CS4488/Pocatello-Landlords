@@ -20,6 +20,9 @@ namespace Monopoly_Game
         {
             for (int i = 0; i < 9; i++)
                 base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
+            Players.Add(new Player(0));
+            Players.Add(new CompPlayer(1));
+            CurrentPlayer = Players[0];
         }
 
         /*
