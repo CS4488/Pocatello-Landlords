@@ -31,8 +31,9 @@ namespace Monopoly_Game
             playerID = inputID;
         }
     
-        public virtual void takeTurn(int spaceIndex, Game game)
+        public virtual bool takeTurn(int spaceIndex, Game game)
         {
+            bool validTurn = false;
             Space spaceClicked = game.GameBoard.Spaces[spaceIndex];
             if(spaceClicked is Property)
             {
@@ -40,8 +41,10 @@ namespace Monopoly_Game
                 if(propertyClicked.Owner == -1)
                 {
                     propertyClicked.Owner = game.CurrentPlayer.PlayerID;
+                    validTurn = true;
                 }
             }
+            return validTurn;
         }
     }
 }

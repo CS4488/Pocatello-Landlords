@@ -40,15 +40,18 @@ namespace Monopoly_Game
             return -1;
         }
 
-        public override void takeTurn(int spaceIndex, Game game)
+        public override bool takeTurn(int spaceIndex, Game game)
         {
+            bool validTurn = false;
             int compMove = this.getMove(game.GameBoard);
             if(compMove == -1)
             {
-                return;
+                return validTurn;
             }
             Property toTake = (Property)game.GameBoard.Spaces[compMove];
             toTake.Owner = game.CurrentPlayer.PlayerID;
+            validTurn = true;
+            return validTurn;
         }
 
         /*

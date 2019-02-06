@@ -39,22 +39,25 @@ namespace Monopoly_Game
             }
             if (base.GameState == GameStates.Running)
             {
-                base.CurrentPlayer.takeTurn(spaceIndex, this);
-                if (checkForTicTacToeWin() || checkForDraw())
+                bool validTurn = base.CurrentPlayer.takeTurn(spaceIndex, this);
+                if (validTurn)
                 {
-                    base.GameState = GameStates.GameOver;
-                    return;
-                }
-                base.makeNextPlayersTurn();
-                if (base.CurrentPlayer is CompPlayer)
-                {
-                    base.CurrentPlayer.takeTurn(spaceIndex, this);
                     if (checkForTicTacToeWin() || checkForDraw())
                     {
                         base.GameState = GameStates.GameOver;
                         return;
                     }
                     base.makeNextPlayersTurn();
+                    if (base.CurrentPlayer is CompPlayer)
+                    {
+                        base.CurrentPlayer.takeTurn(spaceIndex, this);
+                        if (checkForTicTacToeWin() || checkForDraw())
+                        {
+                            base.GameState = GameStates.GameOver;
+                            return;
+                        }
+                        base.makeNextPlayersTurn();
+                    }
                 }
             }
         }
