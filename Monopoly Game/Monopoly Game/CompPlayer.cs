@@ -21,12 +21,16 @@ namespace Monopoly_Game
     {
         private Property[] board;
         public CompPlayer()
-        { }
+        {
+            base.PlayerID = Player.lastAssignedId;
+            Player.lastAssignedId++;
+
+        }
         public CompPlayer(int inputID)
         {
             base.PlayerID = inputID;
         }
-        public override int TakeTurn(Board inputBoard)
+        private int getMove(Board inputBoard)
         {
             board = inputBoard.Spaces.Cast<Property>().ToArray();
             if (WinningMove() != -1) return WinningMove();
@@ -35,6 +39,18 @@ namespace Monopoly_Game
             if (TakeSide() != -1) return TakeSide();
             return -1;
         }
+
+        public override void takeTurn(int spaceIndex, Game game)
+        {
+            int compMove = this.getMove(game.GameBoard);
+            if(compMove == -1)
+            {
+                return;
+            }
+            Property toTake = (Property)game.GameBoard.Spaces[compMove];
+            toTake.Owner = game.CurrentPlayer.PlayerID;
+        }
+
         /*
          * M.S.~ The algorythm for WinningMove is structured similarly to Fernando's Win Condition Check for tic tac toe.
          */

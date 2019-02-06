@@ -23,42 +23,44 @@ namespace Monopoly_Game
      */
     class Game
     {
-        Board gameBoard;            
+        Board gameBoard;
         List<Player> players;
         int lastPlayerID = -1;
         Player currentPlayer;
-        private bool gameOver;
+        private GameStates gameState;
 
         public Board GameBoard { get { return gameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
-        public List<Player> Players {get { return players; } set { players = value; } }
+        public List<Player> Players { get { return players; } set { players = value; } }
+        public GameStates GameState {get; set;}
+    
+
 
         public Game()
         {
-            gameOver = false;
+            gameState = GameStates.Running;
             gameBoard = new Board();
             Players = new List<Player>();
-            /*
-             * Michael Sterner ~ Player list constructor was moved to the inheriting class (I put a method for this in ticTackToe)
-            int playerCount = 2;
-            for (int i = 0; i < playerCount; i++)
-            {
-                Player player = new Player(i);
-                Players.Add(player);
-            }
-            */
         }
-        /* M.S. This is not implemented in the tic tac toe game. Might help us keep things more generic in the future though.
-        public void playGame()
-        {
 
-                currentPlayer.TakeTurn(gameBoard);
-                makeNextPlayersTurn();
-                if (currentPlayer.PlayerID == lastPlayerID){
-                    gameOver = true; //effectively if there are no other players then end game.
+        public Player getPlayerById(int id)
+        {
+            for(int i = 0; i < players.Count; i++)
+            {
+                if(players[i].PlayerID == id)
+                {
+                    return players[i];
                 }
+            }
+            return null;
         }
-        */
+
+        public virtual void handleTurn(int spaceIndex)
+        {
+            //default implemntation
+            //if not needed we can make this abstract
+        }
+
         public void makeNextPlayersTurn()
         {
            lastPlayerID = currentPlayer.PlayerID;

@@ -8,28 +8,40 @@ namespace Monopoly_Game
 {
     class Player
     {
-        int playerID;
-        bool eliminated = false;
-        string playerName;
+        protected static int lastAssignedId = 0;
+
+        private int playerID;
+        private bool eliminated = false;
+        private string playerName;
+        private string token;
 
         public string PlayerName { get{ return playerName; } set{ playerName = value; } }
         public int PlayerID { get{ return playerID; } set{ playerID = value; } }
         public bool Eliminated { get{return eliminated; } set{ eliminated = value; } }
+        public string Token { get { return token; } set { token = value;  } }
         
         public Player()
-        { }
+        {
+            this.playerID = Player.lastAssignedId;
+            Player.lastAssignedId++;
+        }
+
         public Player(int inputID)
         {
             playerID = inputID;
         }
-        public virtual int TakeTurn(Board board) // M.S. ~ This was made virtual so that the Computerplayer's turn could be handled differently - 30JAN2019
+    
+        public virtual void takeTurn(int spaceIndex, Game game)
         {
-            // Commented out so Test Harness would compile - Rex Christensen - 27JAN2019 - v1;
-            //moveToSpace();
-            //interactWithSpace();
-            return -1;
+            Space spaceClicked = game.GameBoard.Spaces[spaceIndex];
+            if(spaceClicked is Property)
+            {
+                Property propertyClicked = (Property)spaceClicked;
+                if(propertyClicked.Owner == -1)
+                {
+                    propertyClicked.Owner = game.CurrentPlayer.PlayerID;
+                }
+            }
         }
     }
-    
-
 }

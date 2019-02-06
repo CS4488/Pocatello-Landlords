@@ -19,10 +19,44 @@ namespace Monopoly_Game
         public TicTacToe()
         {
             for (int i = 0; i < 9; i++)
+            {
                 base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
-            Players.Add(new Player(0));
-            Players.Add(new CompPlayer(1));
+            }
+            Player playerOne = new Player();
+            playerOne.Token = "X";
+            CompPlayer compPlayer = new CompPlayer();
+            compPlayer.Token = "O";
+            Players.Add(playerOne);
+            Players.Add(compPlayer);
             CurrentPlayer = Players[0];
+        }
+
+        public override void handleTurn(int spaceIndex)
+        {
+            if (base.GameState == GameStates.GameOver)
+            {
+                return;
+            }
+            if (base.GameState == GameStates.Running)
+            {
+                base.CurrentPlayer.takeTurn(spaceIndex, this);
+                if (checkForTicTacToeWin())
+                {
+                    base.GameState = GameStates.GameOver;
+                    return;
+                }
+                base.makeNextPlayersTurn();
+                if (base.CurrentPlayer is CompPlayer)
+                {
+                    base.CurrentPlayer.takeTurn(spaceIndex, this);
+                    if (checkForTicTacToeWin())
+                    {
+                        base.GameState = GameStates.GameOver;
+                        return;
+                    }
+                    base.makeNextPlayersTurn();
+                }
+            }
         }
 
         /*

@@ -38,107 +38,87 @@ namespace Monopoly_Game
             game = new TicTacToe();
         }
 
-        private Property getProperty(int square) {
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(square);
-            return prop;
+        private void updateDisplay()
+        {
+            TextBlock[] buttonLabels = new TextBlock[9];
+            buttonLabels[0] = tbSquare0;
+            buttonLabels[1] = tbSquare1;
+            buttonLabels[2] = tbSquare2;
+            buttonLabels[3] = tbSquare3;
+            buttonLabels[4] = tbSquare4;
+            buttonLabels[5] = tbSquare5;
+            buttonLabels[6] = tbSquare6;
+            buttonLabels[7] = tbSquare7;
+            buttonLabels[8] = tbSquare8;
+
+            for(int i = 0; i < game.GameBoard.Spaces.Count; i++)
+            {
+                Property property = (Property)game.GameBoard.Spaces[i];
+                if(property.Owner != -1)
+                {
+                    Player owner = game.getPlayerById(property.Owner);
+                    buttonLabels[i].Text = owner.Token;
+                }
+
+            }
+            if (game.GameState == GameStates.GameOver) 
+            {
+                MessageBox.Show("Game over!");
+            }
         }
 
         private void BtnSquare6_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(6);
+            game.handleTurn(6);
+            updateDisplay();
         }
 
         private void BtnSquare7_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(7);
+            game.handleTurn(7);
+            updateDisplay();
         }
 
         private void BtnSquare8_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(8);
+            game.handleTurn(8);
+            updateDisplay();
         }
 
         private void BtnSquare3_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(3);
+            game.handleTurn(3);
+            updateDisplay();
         }
 
         private void BtnSquare4_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(4);
+            game.handleTurn(4);
+            updateDisplay();
         }
 
         private void BtnSquare5_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(5);
+            game.handleTurn(5);
+            updateDisplay();
         }
 
         private void BtnSquare0_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(0);
+            game.handleTurn(0);
+            updateDisplay();
         }
 
         private void BtnSquare1_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(1);
+            game.handleTurn(1);
+            updateDisplay();
         }
 
         private void BtnSquare2_Click(object sender, RoutedEventArgs e)
         {
-            makeMove(2);
-        }
-        private void makeMove(int propertyNumber)
-        {
-            int move = 0;
-            playerID = game.CurrentPlayer.PlayerID;
-            Property prop = getProperty(propertyNumber);
-            actualizeDisplay(propertyNumber);
-            if (prop.owner == -1)
-            {
-                prop.owner = playerID;
-                game.GameBoard.Spaces[propertyNumber] = prop;
-                game.makeNextPlayersTurn();
-                if (game.checkForTicTacToeWin())
-                {
-                    MessageBox.Show("Game Over!");
-                    System.Windows.Application.Current.Shutdown();
-                    return;//M.S.~ Didn't know this, but the script continues after the window is shutdown, which will throw an error
-                }
-                if (game.CurrentPlayer is CompPlayer)
-                {// M.S.~ Computer player turn is handled here.
-                    move = game.CurrentPlayer.TakeTurn(game.GameBoard);
-                    if (move <= -1)
-                    {
-                        MessageBox.Show("Stale-mate");
-                        System.Windows.Application.Current.Shutdown();
-                        return;
-                    }
-                    else makeMove(move);
-                }
-            }
-        }
-        private void actualizeDisplay(int propertyNum)
-        {
-            if (propertyNum == 0) actualizeButton(tbSquare0);
-            if (propertyNum == 1) actualizeButton(tbSquare1);
-            if (propertyNum == 2) actualizeButton(tbSquare2);
-            if (propertyNum == 3) actualizeButton(tbSquare3);
-            if (propertyNum == 4) actualizeButton(tbSquare4);
-            if (propertyNum == 5) actualizeButton(tbSquare5);
-            if (propertyNum == 6) actualizeButton(tbSquare6);
-            if (propertyNum == 7) actualizeButton(tbSquare7);
-            if (propertyNum == 8) actualizeButton(tbSquare8);
-        }
-        private void actualizeButton(TextBlock button)
-        {
-            if (playerID == 0)
-            {
-                button.Text = "X";
-            }
-            else
-            {
-                button.Text = "O";
-            }
+            game.handleTurn(2);
+            updateDisplay();
         }
     }
 }
