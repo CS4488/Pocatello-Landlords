@@ -40,7 +40,7 @@ namespace Monopoly_Game
             if (base.GameState == GameStates.Running)
             {
                 base.CurrentPlayer.takeTurn(spaceIndex, this);
-                if (checkForTicTacToeWin())
+                if (checkForTicTacToeWin() || checkForDraw())
                 {
                     base.GameState = GameStates.GameOver;
                     return;
@@ -49,7 +49,7 @@ namespace Monopoly_Game
                 if (base.CurrentPlayer is CompPlayer)
                 {
                     base.CurrentPlayer.takeTurn(spaceIndex, this);
-                    if (checkForTicTacToeWin())
+                    if (checkForTicTacToeWin() || checkForDraw())
                     {
                         base.GameState = GameStates.GameOver;
                         return;
@@ -97,6 +97,19 @@ namespace Monopoly_Game
             }
 
             return false;
+        }
+        
+        public bool checkForDraw() {
+            bool allSpacesTaken = true;
+
+            Property[] temp = GameBoard.Spaces.Cast<Property>().ToArray();
+            foreach (Property p in temp) {
+                if (p.Owner == -1) {
+                    allSpacesTaken = false;
+                }
+            }
+
+            return allSpacesTaken;
         }
     }
 }
