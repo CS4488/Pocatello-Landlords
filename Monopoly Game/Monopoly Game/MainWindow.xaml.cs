@@ -35,7 +35,9 @@ namespace Monopoly_Game
         public MainWindow()
         {
             InitializeComponent();
-            game = new TicTacToe();
+            //game = new TicTacToe();
+            playArea.Visibility = Visibility.Hidden;
+            playArea.IsEnabled = false;
         }
 
         private void updateDisplay()
@@ -58,6 +60,9 @@ namespace Monopoly_Game
                 {
                     Player owner = game.getPlayerById(property.Owner);
                     buttonLabels[i].Text = owner.Token;
+                } else {
+                    // For use when starting a new game.
+                    buttonLabels[i].Text = "";
                 }
 
             }
@@ -119,6 +124,26 @@ namespace Monopoly_Game
         {
             game.handleTurn(2);
             updateDisplay();
+        }
+
+        private void MiNewGame_Click(object sender, RoutedEventArgs e) {
+            game = new TicTacToe();
+            updateDisplay();
+            playArea.Visibility = Visibility.Visible;
+            playArea.IsEnabled = true;
+        }
+
+        private void MiJoinGame_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Functionality coming soon!");
+        }
+
+        private void MiObserveGame_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Functionality coming soon!");
+        }
+
+        private void MiExit_Click(object sender, RoutedEventArgs e) {
+            System.Windows.Application.Current.Shutdown();
+            return;
         }
     }
 }

@@ -12,6 +12,14 @@
             <ColumnDefinition Width="357"/>
             <ColumnDefinition Width="225"/>
         </Grid.ColumnDefinitions>
+        <Menu Name="mnMainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3">
+            <MenuItem Name="miGame" Header="Game">
+                <MenuItem Name="miNewGame" Header="New Game" Click="MiNewGame_Click"/>
+                <MenuItem Name="miJoinGame" Header="Join Game" Click="MiJoinGame_Click"/>
+                <MenuItem Name="miObserveGame" Header="Observe Game" Click="MiObserveGame_Click"/>
+                <MenuItem Name="miExit" Header="Exit" Click="MiExit_Click"/>
+            </MenuItem>
+        </Menu>
         <Grid Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="3,35,3.8,35" Name="playArea">
             <Grid.RowDefinitions>
                 <RowDefinition/>

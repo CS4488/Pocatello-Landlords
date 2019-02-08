@@ -41,6 +41,7 @@ namespace Monopoly_Game
             gameState = GameStates.Running;
             gameBoard = new Board();
             Players = new List<Player>();
+            Player.LastAssignedID = 0;
         }
 
         public Player getPlayerById(int id)
