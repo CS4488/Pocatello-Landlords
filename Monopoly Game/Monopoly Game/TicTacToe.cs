@@ -48,7 +48,7 @@ namespace Monopoly_Game
                         return;
                     }
                     base.makeNextPlayersTurn();
-                    if (base.CurrentPlayer is CompPlayer) // **************** This is now failing ********************
+                    if (base.CurrentPlayer is CompPlayer) 
                     {
                         base.CurrentPlayer.takeTurn(spaceIndex, this);
                         if (checkForTicTacToeWin() || checkForDraw())
