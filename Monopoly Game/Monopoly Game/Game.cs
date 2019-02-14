@@ -27,7 +27,7 @@ namespace Monopoly_Game
         List<Player> players;
         int lastPlayerID = -1;
         Player currentPlayer;
-        private GameStates gameState;
+        public GameStates gameState;
 
         public Board GameBoard { get { return gameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }

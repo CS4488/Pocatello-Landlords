@@ -30,7 +30,7 @@ namespace Monopoly_Game
     */
     public partial class MainWindow : Window
     {
-        TicTacToe game;
+        Game game;
         int playerID;
         public MainWindow()
         {
@@ -69,6 +69,7 @@ namespace Monopoly_Game
             if (game.GameState == GameStates.GameOver) 
             {
                 MessageBox.Show("Game over!");
+                //foreach (Client c in game.Players) { c.Shutdown(); }
             }
         }
 
@@ -127,7 +128,7 @@ namespace Monopoly_Game
         }
 
         private void MiNewGame_Click(object sender, RoutedEventArgs e) {
-            game = new TicTacToe();
+            game = new TicTacToeServer();
             updateDisplay();
             playArea.Visibility = Visibility.Visible;
             playArea.IsEnabled = true;

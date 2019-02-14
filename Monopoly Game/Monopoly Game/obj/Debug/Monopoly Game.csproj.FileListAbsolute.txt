@@ -13,3 +13,22 @@ C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\M
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe.config
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.pdb
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csprojAssemblyReference.cache
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.g.cs
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\App.g.cs
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.cache
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.lref
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.baml
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.g.resources
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Lidgren.Network.dll
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Lidgren.Network.pdb
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Lidgren.Network.xml
+C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CopyComplete
