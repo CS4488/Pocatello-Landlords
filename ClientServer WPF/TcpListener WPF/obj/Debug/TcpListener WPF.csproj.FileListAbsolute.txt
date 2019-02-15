@@ -1,0 +1,15 @@
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\bin\Debug\TcpListener WPF.exe.config
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\bin\Debug\TcpListener WPF.exe
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\bin\Debug\TcpListener WPF.pdb
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.csprojAssemblyReference.cache
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\MainWindow.g.cs
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\App.g.cs
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF_MarkupCompile.cache
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF_MarkupCompile.lref
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\MainWindow.baml
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.g.resources
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener_WPF.Properties.Resources.resources
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.csproj.GenerateResource.cache
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.csproj.CoreCompileInputs.cache
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.exe
+D:\Documents\Spring 2019\Senior Project\TcpListener WPF\TcpListener WPF\obj\Debug\TcpListener WPF.pdb
