@@ -15,6 +15,8 @@ namespace Monopoly_Game
      * M.S. 1/30/19 I really want to make this generic but don't want to get too far ahead of myself. The current code only handles tic
      * tac toe on the local level.
      * 
+     * M.S. Added a means for a player to send the event of it's turn to the server. 2/27/19
+     * 
      * Please describe changes made here; along with your name, date, and version:
      */
     class CompPlayer : Player
@@ -51,7 +53,7 @@ namespace Monopoly_Game
             Property toTake = (Property)game.GameBoard.Spaces[compMove];
             toTake.Owner = game.CurrentPlayer.PlayerID;
             validTurn = true;
-            game.client.SendMessage(compMove.ToString());
+            game.client.SendMessage("p" + PlayerID + " to " + compMove.ToString());
             return validTurn;
         }
 

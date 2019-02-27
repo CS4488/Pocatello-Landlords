@@ -4,6 +4,16 @@ using Lidgren.Network;
 
 namespace Server
 {
+    /*
+     * Michael Sterner: Server Class 1.0 2/27/19
+     * This is a modification of the code sent by email by Rex to the group. This is a server that runs on a console for more effective debugging.
+     * Might not really be nessesary, but the adaptation was a bit easier. This can also be found as a class within the Monoploy Game solution.
+     * 
+     * Please describe changes made here; along with your name, date, and version:
+     * M.S. Rex put in Threading into the program class. 2/22/19
+     * M.S. I designated this solution for testing in my Eperimental branch... The Monoploy project will act independantly from the Server console just fine.
+     * 
+     */
     class Server
     {
         private NetServer server;
@@ -76,7 +86,7 @@ namespace Server
             Console.WriteLine("Shutdown package \"exit\" received. Press any key to finish shutdown");
             Console.ReadKey();
         }
-
+        //M.S. modified to send messages to all connected servers 
         public void SendMessage(string text)
         {
             if (server.Connections.Count != 0)
@@ -91,7 +101,7 @@ namespace Server
         }
 
         public void Disconnect()
-        {            
+        {
             foreach (NetConnection net in server.Connections) { net.Disconnect("Bye"); }
         }
     }

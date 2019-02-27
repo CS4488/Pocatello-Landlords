@@ -1,0 +1,15 @@
+D:\seba\Games\Projects\LidGrenTest\Server\bin\Debug\Server.exe.config
+D:\seba\Games\Projects\LidGrenTest\Server\bin\Debug\Server.exe
+D:\seba\Games\Projects\LidGrenTest\Server\bin\Debug\Server.pdb
+D:\seba\Games\Projects\LidGrenTest\Server\bin\Debug\Lidgren.Network.dll
+D:\seba\Games\Projects\LidGrenTest\Server\obj\Debug\Server.exe
+D:\seba\Games\Projects\LidGrenTest\Server\obj\Debug\Server.pdb
+D:\seba\Games\Projects\LidGrenTest\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Mikie\Desktop\LidGrenTest\Server\bin\Debug\Server.exe.config
+C:\Users\Mikie\Desktop\LidGrenTest\Server\bin\Debug\Server.exe
+C:\Users\Mikie\Desktop\LidGrenTest\Server\bin\Debug\Server.pdb
+C:\Users\Mikie\Desktop\LidGrenTest\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Mikie\Desktop\LidGrenTest\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Mikie\Desktop\LidGrenTest\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\Mikie\Desktop\LidGrenTest\Server\obj\Debug\Server.exe
+C:\Users\Mikie\Desktop\LidGrenTest\Server\obj\Debug\Server.pdb

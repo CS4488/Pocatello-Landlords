@@ -27,6 +27,8 @@ namespace Monopoly_Game
     * Adjusted the event handlers for each button to reflect change from LinkedList to List data structure - R.C. - 29JAN19 - v1
     * M.S. Made the makeMove function more generic, so as to accept moves that are not dependent on player clicks... This was
     * done to make it possible for the computer player to input a move. M.S. - 30JAN2019
+    * Added some dumb stuff to make the work we've done presentable on our peer-to-peer milestone. M.S. 2/27/19
+    * 
     */
     public partial class MainWindow : Window
     {
@@ -69,7 +71,7 @@ namespace Monopoly_Game
             if (game.GameState == GameStates.GameOver) 
             {
                 MessageBox.Show("Game over!");
-                //foreach (Client c in game.Players) { c.Shutdown(); }
+                game.client.Disconnect();
             }
         }
 
@@ -128,7 +130,7 @@ namespace Monopoly_Game
         }
 
         private void MiNewGame_Click(object sender, RoutedEventArgs e) {
-            game = new TicTacToeServer();
+            game = new TicTacToe();
             updateDisplay();
             playArea.Visibility = Visibility.Visible;
             playArea.IsEnabled = true;
@@ -144,7 +146,13 @@ namespace Monopoly_Game
 
         private void MiExit_Click(object sender, RoutedEventArgs e) {
             System.Windows.Application.Current.Shutdown();
+            game.client.Disconnect();
             return;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            updateDisplay();
         }
     }
 }

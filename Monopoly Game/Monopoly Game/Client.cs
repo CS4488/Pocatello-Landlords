@@ -7,13 +7,17 @@ namespace Monopoly_Game
     {
         private NetClient client;
         private bool stop;
-        public void StartClient()
+        private static string[] parseList;
+        private Game clientGame;
+        public string[] ParseList { get { return parseList; } }
+
+        public void StartClient(Game game)
         {
             var config = new NetPeerConfiguration("game");
             config.AutoFlushSendQueue = false;
             client = new NetClient(config);
             client.Start();
-
+            clientGame = game;
             string ip = "localhost";
             //string ip = "134.50.122.68";
             //string ip = "134.50.156.20";
@@ -31,7 +35,25 @@ namespace Monopoly_Game
 
         public void Disconnect()
         {
+            stop = true;
             client.Disconnect("Bye");
+        }
+
+        public void parseGameData()
+        {
+            if (parseList[0][0] == 'p')
+            {
+                Space spaceParsed = clientGame.GameBoard.Spaces[Int16.Parse(parseList[2])];
+                if (spaceParsed is Property)
+                {
+                    Property propertyClicked = (Property)spaceParsed;
+                    if (propertyClicked.Owner == -1)
+                    {
+                        propertyClicked.Owner = clientGame.CurrentPlayer.PlayerID;
+                        clientGame.makeNextPlayersTurn();
+                    }
+                }
+            }
         }
 
         public void ReadMessages()
@@ -48,14 +70,13 @@ namespace Monopoly_Game
                         case NetIncomingMessageType.Data:
                             {
                                 Console.WriteLine("I got smth!");
-                                string data = message.ReadString();
-                                Console.WriteLine(data);
+                                parseList = message.ReadString().Split(' ');
 
-                                if (data == "exit")
+                                if (parseList[0] == "exit")
                                 {
                                     stop = true;
                                 }
-
+                                parseGameData();
                                 break;
                             }
                         case NetIncomingMessageType.DebugMessage:
@@ -68,12 +89,12 @@ namespace Monopoly_Game
                             Console.WriteLine("Unhandled message type: " + message.MessageType);
                             break;
                     }
+
                     client.Recycle(message);
                 }
             }
 
             Console.WriteLine("Shutdown package \"exit\" received. Press any key to finish shutdown");
-            Console.ReadKey();
         }
     }
 }

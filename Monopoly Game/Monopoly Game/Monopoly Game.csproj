@@ -64,7 +64,6 @@
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="TicTacToe.cs" />
-    <Compile Include="TicTacToeServer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

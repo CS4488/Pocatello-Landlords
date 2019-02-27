@@ -20,6 +20,7 @@ namespace Monopoly_Game
      * Changed makeNextPlayersTurn() to public for use in the test harness - 27JAN2019 - v1
      * Added a "Value" to each created property in the board to reflect what space it is on a tic tac toe board - Rex Christensen - 27JAN2019 - v1
      * Moved player list construction to the inheriting class, commented out a couple of unused lines. - M.S. 30JAN2019 - v1.2
+     * Client was added to the game. Games can still work atonomously from the Server but it is always important to have a disconnect method in the handleTurn function. - M.S. 2/27/19
      * 
      */
     class Game
@@ -44,8 +45,8 @@ namespace Monopoly_Game
             gameBoard = new Board();
             Players = new List<Player>();
             Player.LastAssignedID = 0;
-
-            client.StartClient();
+            // M.S. Client is a relevant part of all game types
+            client.StartClient(this);
             ThreadStart listenThreadStart = new ThreadStart(client.ReadMessages);
             listenThread = new Thread(listenThreadStart);
             listenThread.Start();
@@ -65,6 +66,11 @@ namespace Monopoly_Game
 
         public virtual void handleTurn(int spaceIndex)
         {
+            if (GameState == GameStates.GameOver)
+            {
+                client.Disconnect(); //M.S. added for proper thread handling 2/26/19
+                return;
+            }
             //default implemntation
             //if not needed we can make this abstract
         }
@@ -83,6 +89,8 @@ namespace Monopoly_Game
            }
         }
 
+        //M.S.
+        
         
     }
 }

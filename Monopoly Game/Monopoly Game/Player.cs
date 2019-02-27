@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Monopoly_Game
 {
+    /*
+ * Player class 1.0
+ * 
+ * M.S. Added a means for a player to send the event of it's turn to the server. 2/27/19
+ */
     class Player
     {
         protected static int lastAssignedId = 0;
@@ -43,7 +48,7 @@ namespace Monopoly_Game
                 {
                     propertyClicked.Owner = game.CurrentPlayer.PlayerID;
                     validTurn = true;
-                    game.client.SendMessage(spaceIndex.ToString());
+                    game.client.SendMessage("p" + PlayerID + " to " + spaceIndex.ToString());
                 }
             }
             return validTurn;
