@@ -1,87 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Lidgren.Network;
-namespace Monopoly_Game
+
+namespace Server
 {
     class Server
     {
-        private Game game;
-        private static NetServer server;
-        public Server(Game inputGame)
-        {
-            game = inputGame;
-            NetPeerConfiguration config = new NetPeerConfiguration("chat");
-            config.MaximumConnections = 100;
-            config.Port = 14242;
-            server = new NetServer(config);
-            System.Windows.Application.Current.Activated += new EventHandler(RunServer);
-        }
+        private NetServer server;
+        private List<NetPeer> clients;
+
         public void StartServer()
         {
+            var config = new NetPeerConfiguration("game") { Port = 14242 };
+            server = new NetServer(config);
             server.Start();
-        }
-        public void Shutdown()
-        {
-            server.Shutdown("Requested by user");
-        }
-        private void RunServer(object sender, EventArgs e)
-        {
-            while (game.gameState == GameStates.Running)
+
+            if (server.Status == NetPeerStatus.Running)
             {
-                NetIncomingMessage im;
-                while ((im = server.ReadMessage()) != null)
+                Console.WriteLine("Server is running on port " + config.Port);
+            }
+            else
+            {
+                Console.WriteLine("Server not started...");
+            }
+            clients = new List<NetPeer>();
+        }
+
+        public void ReadMessages()
+        {
+            NetIncomingMessage message;
+            var stop = false;
+
+            while (!stop)
+            {
+                while ((message = server.ReadMessage()) != null)
                 {
-                    // handle incoming message
-                    switch (im.MessageType)
+                    switch (message.MessageType)
                     {
-                        case NetIncomingMessageType.DebugMessage:
-                        case NetIncomingMessageType.ErrorMessage:
-                        case NetIncomingMessageType.WarningMessage:
-                        case NetIncomingMessageType.VerboseDebugMessage:
-                            string text = im.ReadString();
-                            System.Windows.MessageBox.Show(text);
-                            break;
-
-                        case NetIncomingMessageType.StatusChanged:
-                            NetConnectionStatus status = (NetConnectionStatus)im.ReadByte();
-
-                            string reason = im.ReadString();
-                            System.Windows.MessageBox.Show(NetUtility.ToHexString(im.SenderConnection.RemoteUniqueIdentifier) + " " + status + ": " + reason);
-
-                            if (status == NetConnectionStatus.Connected)
-                                System.Windows.MessageBox.Show("Remote hail: " + im.SenderConnection.RemoteHailMessage.ReadString());
-
-                            //UpdateConnectionsList();
-                            break;
                         case NetIncomingMessageType.Data:
-                            // incoming chat message from a client
-                            string chat = im.ReadString();
-
-                            System.Windows.MessageBox.Show("Broadcasting '" + chat + "'");
-
-                            // broadcast this to all connections, except sender
-                            List<NetConnection> all = server.Connections; // get copy
-                            all.Remove(im.SenderConnection);
-
-                            if (all.Count > 0)
                             {
-                                NetOutgoingMessage om = server.CreateMessage();
-                                om.Write(NetUtility.ToHexString(im.SenderConnection.RemoteUniqueIdentifier) + " said: " + chat);
-                                server.SendMessage(om, all, NetDeliveryMethod.ReliableOrdered, 0);
+                                Console.WriteLine("Data from: {0}", message.SenderConnection.Peer.Configuration.LocalAddress);
+                                var data = message.ReadString();
+                                Console.WriteLine(data);
+                                if (data == "exit")
+                                {
+                                    stop = true;
+                                }
+                                SendMessage(data);
+                                break;
+                            }
+                        case NetIncomingMessageType.DebugMessage:
+                            Console.WriteLine(message.ReadString());
+                            break;
+                        case NetIncomingMessageType.StatusChanged:
+                            Console.WriteLine(message.SenderConnection.Status);
+                            if (message.SenderConnection.Status == NetConnectionStatus.Connected)
+                            {
+                                clients.Add(message.SenderConnection.Peer);
+                                Console.WriteLine("{0} has connected.", message.SenderConnection.Peer.Configuration.LocalAddress);
+                            }
+                            if (message.SenderConnection.Status == NetConnectionStatus.Disconnected)
+                            {
+                                clients.Remove(message.SenderConnection.Peer);
+                                Console.WriteLine("{0} has disconnected.", message.SenderConnection.Peer.Configuration.LocalAddress);
                             }
                             break;
                         default:
-                            System.Windows.MessageBox.Show("Unhandled type: " + im.MessageType + " " + im.LengthBytes + " bytes " + im.DeliveryMethod + "|" + im.SequenceChannel);
+                            Console.WriteLine("Unhandled message type: {message.MessageType}");
                             break;
                     }
-                    server.Recycle(im);
+                    server.Recycle(message);
                 }
-                Thread.Sleep(1);
             }
+
+            Console.WriteLine("Shutdown package \"exit\" received. Press any key to finish shutdown");
+            Console.ReadKey();
+        }
+
+        public void SendMessage(string text)
+        {
+            if (server.Connections.Count != 0)
+            {
+                foreach (NetConnection net in server.Connections)
+                {
+                    NetOutgoingMessage message = server.CreateMessage(text);
+                    server.SendMessage(message, net, NetDeliveryMethod.ReliableOrdered);
+                    server.FlushSendQueue();
+                }
+            }
+        }
+
+        public void Disconnect()
+        {
+            NetConnection net = server.Connections[0];
+            net.Disconnect("Bye");
         }
     }
 }

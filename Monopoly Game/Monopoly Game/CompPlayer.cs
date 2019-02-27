@@ -51,6 +51,7 @@ namespace Monopoly_Game
             Property toTake = (Property)game.GameBoard.Spaces[compMove];
             toTake.Owner = game.CurrentPlayer.PlayerID;
             validTurn = true;
+            game.client.SendMessage(compMove.ToString());
             return validTurn;
         }
 

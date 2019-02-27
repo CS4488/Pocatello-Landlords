@@ -37,12 +37,13 @@ namespace Monopoly_Game
             bool validTurn = false;
             Space spaceClicked = game.GameBoard.Spaces[spaceIndex];
             if(spaceClicked is Property)
-            {
+            {            
                 Property propertyClicked = (Property)spaceClicked;
                 if(propertyClicked.Owner == -1)
                 {
                     propertyClicked.Owner = game.CurrentPlayer.PlayerID;
                     validTurn = true;
+                    game.client.SendMessage(spaceIndex.ToString());
                 }
             }
             return validTurn;

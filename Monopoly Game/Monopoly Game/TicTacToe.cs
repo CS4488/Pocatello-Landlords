@@ -35,6 +35,7 @@ namespace Monopoly_Game
         {
             if (base.GameState == GameStates.GameOver)
             {
+                client.Disconnect(); //M.S. added for proper thread handling 2/26/19
                 return;
             }
             if (base.GameState == GameStates.Running)

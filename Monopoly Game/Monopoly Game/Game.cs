@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Monopoly_Game
@@ -28,7 +29,8 @@ namespace Monopoly_Game
         int lastPlayerID = -1;
         Player currentPlayer;
         public GameStates gameState;
-
+        public Client client = new Client();
+        public Thread listenThread;
         public Board GameBoard { get { return gameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
         public List<Player> Players { get { return players; } set { players = value; } }
@@ -42,6 +44,11 @@ namespace Monopoly_Game
             gameBoard = new Board();
             Players = new List<Player>();
             Player.LastAssignedID = 0;
+
+            client.StartClient();
+            ThreadStart listenThreadStart = new ThreadStart(client.ReadMessages);
+            listenThread = new Thread(listenThreadStart);
+            listenThread.Start();
         }
 
         public Player getPlayerById(int id)

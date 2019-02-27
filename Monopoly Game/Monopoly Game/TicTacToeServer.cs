@@ -22,18 +22,13 @@ namespace Monopoly_Game
             {
                 base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
             }
-            Client playerOne = new Client();
+            Player playerOne = new Player();
             playerOne.Token = "X";
-            Client playerTwo = new Client();
-            playerTwo.Token = "O";
+            CompPlayer compPlayer = new CompPlayer();
+            compPlayer.Token = "O";
             Players.Add(playerOne);
-            Players.Add(playerTwo);
+            Players.Add(compPlayer);
             CurrentPlayer = Players[0];
-            Server server = new Server(this);
-            server.StartServer();
-            playerOne.Connect("localhost", 14242);
-            playerTwo.Connect("localhost", 14242);
-            //server.Shutdown();
         }
 
         public override void handleTurn(int spaceIndex)
