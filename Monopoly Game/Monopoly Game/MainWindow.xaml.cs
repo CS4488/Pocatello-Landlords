@@ -21,6 +21,7 @@ namespace Monopoly_Game
 
     /*
     * Rex Christesnsen: MainWindow.xaml.cs class 1.0
+    * Kalen Williams - Refactoring display to DisplayManager
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Added a Tic Tac Toe board composed of 9 buttons that will show either X or O depending on what player clicked on them - R.C. - 27JAN19
@@ -31,106 +32,36 @@ namespace Monopoly_Game
     public partial class MainWindow : Window
     {
         TicTacToe game;
-        int playerID;
+        DisplayManager dm;
+
+        Dictionary<Tuple<int, int>, int> gridToIndexMap = new Dictionary<Tuple<int, int>, int>();
+
         public MainWindow()
         {
             InitializeComponent();
-            //game = new TicTacToe();
             playArea.Visibility = Visibility.Hidden;
             playArea.IsEnabled = false;
+            fillMap();
         }
 
-        private void updateDisplay()
+        //handle all button clicks
+        private void BtnClick(object sender, RoutedEventArgs e)
         {
-            TextBlock[] buttonLabels = new TextBlock[9];
-            buttonLabels[0] = tbSquare0;
-            buttonLabels[1] = tbSquare1;
-            buttonLabels[2] = tbSquare2;
-            buttonLabels[3] = tbSquare3;
-            buttonLabels[4] = tbSquare4;
-            buttonLabels[5] = tbSquare5;
-            buttonLabels[6] = tbSquare6;
-            buttonLabels[7] = tbSquare7;
-            buttonLabels[8] = tbSquare8;
+            Button btn = sender as Button;
+            int x = (int)btn.GetValue(Grid.RowProperty);
+            int y = (int)btn.GetValue(Grid.ColumnProperty);
 
-            for(int i = 0; i < game.GameBoard.Spaces.Count; i++)
-            {
-                Property property = (Property)game.GameBoard.Spaces[i];
-                if(property.Owner != -1)
-                {
-                    Player owner = game.getPlayerById(property.Owner);
-                    buttonLabels[i].Text = owner.Token;
-                } else {
-                    // For use when starting a new game.
-                    buttonLabels[i].Text = "";
-                }
+            Tuple<int, int> coords = Tuple.Create(x, y);
 
-            }
-            if (game.GameState == GameStates.GameOver) 
-            {
-                MessageBox.Show("Game over!");
-            }
+            int index = gridToIndexMap[coords];
+            handleGame(index);
         }
 
-        private void BtnSquare6_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(6);
-            updateDisplay();
-        }
-
-        private void BtnSquare7_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(7);
-            updateDisplay();
-        }
-
-        private void BtnSquare8_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(8);
-            updateDisplay();
-        }
-
-        private void BtnSquare3_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(3);
-            updateDisplay();
-        }
-
-        private void BtnSquare4_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(4);
-            updateDisplay();
-        }
-
-        private void BtnSquare5_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(5);
-            updateDisplay();
-        }
-
-        private void BtnSquare0_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(0);
-            updateDisplay();
-        }
-
-        private void BtnSquare1_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(1);
-            updateDisplay();
-        }
-
-        private void BtnSquare2_Click(object sender, RoutedEventArgs e)
-        {
-            game.handleTurn(2);
-            updateDisplay();
-        }
-
+        // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e) {
             game = new TicTacToe();
-            updateDisplay();
-            playArea.Visibility = Visibility.Visible;
-            playArea.IsEnabled = true;
+            this.dm = new DisplayManager(game, playArea);
+            dm.updateDisplay();
         }
 
         private void MiJoinGame_Click(object sender, RoutedEventArgs e) {
@@ -144,6 +75,50 @@ namespace Monopoly_Game
         private void MiExit_Click(object sender, RoutedEventArgs e) {
             System.Windows.Application.Current.Shutdown();
             return;
+        }
+
+        //Dispatches game logic and display logic to proper classes
+        private void handleGame(int indexClicked)
+        {
+            game.handleTurn(indexClicked);
+            dm.updateDisplay();
+        }
+
+        private void fillMap()
+        {
+            //set up mapping
+            //definitely a way to do this mathematically
+            //but I wasn't sure how and this works
+            // formula is:
+            // x = index % col
+            // y = index / col
+            // if someone wants to reverse that
+            Tuple<int, int> coords = Tuple.Create(0, 0);
+            gridToIndexMap.Add(coords, 0);
+
+            coords = Tuple.Create(0, 1);
+            gridToIndexMap.Add(coords, 1);
+            
+            coords = Tuple.Create(0, 2);
+            gridToIndexMap.Add(coords, 2);
+            
+            coords = Tuple.Create(1, 0);
+            gridToIndexMap.Add(coords, 3);
+            
+            coords = Tuple.Create(1, 1);
+            gridToIndexMap.Add(coords, 4);
+            
+            coords = Tuple.Create(1, 2);
+            gridToIndexMap.Add(coords, 5);
+            
+            coords = Tuple.Create(2, 0);
+            gridToIndexMap.Add(coords, 6);
+            
+            coords = Tuple.Create(2, 1);
+            gridToIndexMap.Add(coords, 7);
+            
+            coords = Tuple.Create(2, 2);
+            gridToIndexMap.Add(coords, 8);
         }
     }
 }

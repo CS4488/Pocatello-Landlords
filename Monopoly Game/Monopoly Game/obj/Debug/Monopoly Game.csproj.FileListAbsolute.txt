@@ -13,3 +13,18 @@ C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\M
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
 C:\Users\car54\Desktop\School\Advanced Project\v2.2\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe.config
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.pdb
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csprojAssemblyReference.cache
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.g.cs
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\App.g.cs
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.cache
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.lref
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.baml
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.g.resources
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
+C:\Users\kalenpw\Desktop\Project\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
