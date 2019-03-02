@@ -18,6 +18,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+
         <Button HorizontalAlignment="Left" Margin="769,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
         <Button HorizontalAlignment="Left" Margin="847,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
         <Button HorizontalAlignment="Left" Margin="925,889,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
