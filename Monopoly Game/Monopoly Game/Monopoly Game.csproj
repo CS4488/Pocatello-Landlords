@@ -58,10 +58,17 @@
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
     <Compile Include="GameStates.cs" />
+    <Compile Include="LandlordsBoard.xaml.cs">
+      <DependentUpon>LandlordsBoard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Observer.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="TicTacToe.cs" />
+    <Page Include="LandlordsBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +110,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrow.png" />
+    <Resource Include="images\board.jpg" />
+    <Resource Include="images\border.png" />
+    <Resource Include="images\car.png" />
+    <Resource Include="images\chest.jpg" />
+    <Resource Include="images\diamond.png" />
+    <Resource Include="images\idapower.png" />
+    <Resource Include="images\pocatello pd.jpg" />
+    <Resource Include="images\prison.png" />
+    <Resource Include="images\question.png" />
+    <Resource Include="images\train.jpg" />
+    <Resource Include="images\water.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
