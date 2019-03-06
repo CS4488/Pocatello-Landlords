@@ -45,3 +45,14 @@ C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Mo
 C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
 C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
 C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Fernando Munoz\Source\Repos\CS4488\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CopyComplete

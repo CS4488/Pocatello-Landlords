@@ -42,6 +42,8 @@ namespace Monopoly_Game
             playArea.Visibility = Visibility.Hidden;
             playArea.IsEnabled = false;
             fillMap();
+
+            LandlordsBoard thing = new LandlordsBoard();
         }
 
         //handle all button clicks
