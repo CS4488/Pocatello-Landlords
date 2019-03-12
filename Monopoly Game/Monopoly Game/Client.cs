@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Monopoly_Game {
     /*
@@ -47,23 +49,24 @@ namespace Monopoly_Game {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                 }
 
-                // Deserialize data
+                Game currentGame = DeserializeObject(data);
+                // Return the game object to the caller
 
             } catch (Exception ex) {
 
             }
         }
 
-        public void SendMessage() {
-            Thread sendThread = new Thread(Send); // This will need to be a paramaterized thread, or use a ThreadPool as the Read does
+        public void SendMessage(Game game) {
+            Thread sendThread = new Thread(() => Send(game)); 
             sendThread.Start();
         }
 
-        private void Send() { // Pass in the game object to serialize it, or serialize then pass in the txt file
-            string message = null; // *********** serialize the game object into a txt file here ************
+        private void Send(Game game) {
+            string message = null;
             try {
-                // Here we will want to serialize the object, or send it as a .txt file that can then be interpreted by the game class.
-                // Possible serialize the game object as an .XML object
+                // Serialize game object to .XML string
+                message = SerializeObject(game);
                 byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
 
                 NetworkStream stream = client.GetStream();
@@ -73,6 +76,27 @@ namespace Monopoly_Game {
                 //client.Close();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        // Shamelessly stolen from:
+        // https://stackoverflow.com/questions/2434534/serialize-an-object-to-string
+        private string SerializeObject<T>(T toSerialize) {
+            XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
+
+            using (StringWriter textWriter = new StringWriter()) {
+                xmlSerializer.Serialize(textWriter, toSerialize);
+                return textWriter.ToString();
+            }
+        }
+
+        // Shameless stolen from:
+        // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
+        private Game DeserializeObject(string gameText) {
+            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+            using (TextReader reader = new StringReader(gameText)) {
+                Game result = (Game)serializer.Deserialize(reader);
+                return result;
             }
         }
     }
