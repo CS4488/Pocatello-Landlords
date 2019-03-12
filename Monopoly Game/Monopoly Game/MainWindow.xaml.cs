@@ -28,6 +28,7 @@ namespace Monopoly_Game
     * Adjusted the event handlers for each button to reflect change from LinkedList to List data structure - R.C. - 29JAN19 - v1
     * M.S. Made the makeMove function more generic, so as to accept moves that are not dependent on player clicks... This was
     * done to make it possible for the computer player to input a move. M.S. - 30JAN2019
+    * Rex - Added a Host Game menu option that creates and starts a Server object - 12MAR2019
     */
     public partial class MainWindow : Window
     {
@@ -62,6 +63,13 @@ namespace Monopoly_Game
             game = new TicTacToe();
             this.dm = new DisplayManager(game, playArea);
             dm.updateDisplay();
+        }
+
+        private void MiHostGame_Click(object sender, RoutedEventArgs e) {
+            Server gameServer = new Server();
+            gameServer.Connect();
+            // This should be delayed until at least one person is connected
+            MiNewGame_Click(sender, e);
         }
 
         private void MiJoinGame_Click(object sender, RoutedEventArgs e) {

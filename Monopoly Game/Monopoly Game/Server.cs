@@ -44,7 +44,10 @@ namespace Monopoly_Game {
             while(true) { // *************** Add some sort of exit flag here ********************** May not be needed
                 TcpClient client = server.AcceptTcpClient();
                 clients.Add(client);
-                ThreadPool.QueueUserWorkItem(readMessage, client);
+                //ThreadPool.QueueUserWorkItem(readMessage, client);
+                Thread newThread = new Thread(() => readMessage(client));
+                newThread.IsBackground = true;
+                newThread.Start();
             }
         }
 
@@ -63,6 +66,7 @@ namespace Monopoly_Game {
                     // Deserialize data back into a game object
                     Game currentGame = DeserializeObject(data);
                     // ************** Return game object back to caller ****************
+                    // Maybe call an event handler that sends the new game object somewhere????
                 }
 
                 return; 

@@ -15,6 +15,7 @@
         <Menu Name="mnMainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3">
             <MenuItem Name="miGame" Header="Game">
                 <MenuItem Name="miNewGame" Header="New Game" Click="MiNewGame_Click"/>
+                <MenuItem Name="miHostGame" Header="Host Game" Click="MiHostGame_Click"/>
                 <MenuItem Name="miJoinGame" Header="Join Game" Click="MiJoinGame_Click"/>
                 <MenuItem Name="miObserveGame" Header="Observe Game" Click="MiObserveGame_Click"/>
                 <MenuItem Name="miExit" Header="Exit" Click="MiExit_Click"/>

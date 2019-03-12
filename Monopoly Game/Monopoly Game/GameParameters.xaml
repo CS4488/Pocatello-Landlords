@@ -1,0 +1,45 @@
+﻿<Window x:Class="Monopoly_Game.GameParameters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Monopoly_Game"
+        mc:Ignorable="d"
+        Title="Game Parameters" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Select Game:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+        <ComboBox Name="cmbChooseGame" Height="20" Width="150" Grid.Column="1"/>
+        <Label Content="Select Token:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Grid.Row="2"/>
+        <ComboBox Name="cmbToken" Height="20" Width="150" Grid.Column="1" Grid.Row="2"/>
+        <Button Name="btnSubmit" Content="OK" Grid.Row="2" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+        Width="100" Margin="0,0,0,15" Click="BtnSubmit_Click"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Select Number of Players:" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="15"/>
+            <Label Content="Self:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+            <Label Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+            <Label Content="Computer:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
+            <TextBox Name="txtCompPlayerNum" VerticalAlignment="Center" Width="40" Grid.Row="2" Grid.Column="1"/>
+            <Label Content="Network:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
+            <TextBox Name="txtNetPlayerNum" VerticalAlignment="Center" Width="40" Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Window>
