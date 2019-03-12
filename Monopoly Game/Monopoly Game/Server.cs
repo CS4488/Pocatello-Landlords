@@ -6,6 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Monopoly_Game {
     /*
@@ -59,6 +61,8 @@ namespace Monopoly_Game {
                 while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     // Deserialize data back into a game object
+                    Game currentGame = DeserializeObject(data);
+                    // ************** Return game object back to caller ****************
                 }
 
                 return; 
@@ -67,23 +71,40 @@ namespace Monopoly_Game {
             }
         }
 
-        public void SendToClients() {
+        public void SendToClients(Game game) {
             foreach (TcpClient c in clients) {
-                writeMessgae(c);
+                writeMessgae(c, game);
             }
         }
 
-        private void writeMessgae(object obj) {
+        private void writeMessgae(object obj, Game game) {
             try {
                 TcpClient client = (TcpClient)obj;
 
                 NetworkStream stream = client.GetStream();
 
-                data = null; // *** serialize the object here
+                data = SerializeObject(game);
 
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(data);
             } catch (Exception ex) {
                 // process exception
+            }
+        }
+
+        private Game DeserializeObject(string gameText) {
+            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+            using (TextReader reader = new StringReader(gameText)) {
+                Game result = (Game)serializer.Deserialize(reader);
+                return result;
+            }
+        }
+
+        private string SerializeObject<T>(T toSerialize) {
+            XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
+
+            using (StringWriter textWriter = new StringWriter()) {
+                xmlSerializer.Serialize(textWriter, toSerialize);
+                return textWriter.ToString();
             }
         }
     }
