@@ -62,6 +62,7 @@
     <Compile Include="LandlordsBoard.xaml.cs">
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MonopolyDisplayManager.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Space.cs" />
@@ -125,6 +126,9 @@
     <Resource Include="images\question.png" />
     <Resource Include="images\train.jpg" />
     <Resource Include="images\water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="car.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
