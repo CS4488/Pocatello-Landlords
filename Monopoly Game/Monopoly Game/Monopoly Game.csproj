@@ -58,6 +58,8 @@
     </ApplicationDefinition>
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameStates.cs" />
     <Compile Include="LandlordsBoard.xaml.cs">
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>

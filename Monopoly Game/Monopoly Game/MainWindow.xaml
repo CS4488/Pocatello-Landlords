@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Monopoly_Game"
         mc:Ignorable="d"
-        Title="MainWindow" Name="myMainWindow" Height="450" Width="800">
-    <Grid x:Name="MainGrid" x:FieldModifier="public" >
+        Title="MainWindow" Name="myMainWindow">
+    <Grid x:Name="MainGrid" x:FieldModifier="public">
         <Frame x:Name="frm_Main"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="225"/>
