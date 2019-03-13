@@ -34,8 +34,10 @@ namespace Monopoly_Game
     {
         TicTacToe game;
         DisplayManager dm;
-
+        int numPlayers;
         Dictionary<Tuple<int, int>, int> gridToIndexMap = new Dictionary<Tuple<int, int>, int>();
+
+        public int NumPlayers { get{ return numPlayers; } set{ numPlayers = value; } }
 
         public MainWindow()
         {
@@ -69,6 +71,9 @@ namespace Monopoly_Game
             Server gameServer = new Server();
             gameServer.Connect();
             // This should be delayed until at least one person is connected
+            while (gameServer.Clients.Count != numPlayers) { // *******************************************************************
+                // This is just here to delay until the count is right
+            }
             MiNewGame_Click(sender, e);
         }
 

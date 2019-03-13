@@ -23,6 +23,11 @@ namespace Monopoly_Game {
         byte[] bytes;
         string data;
         List<TcpClient> clients;
+        Game currentGame;
+        string gameString;
+
+        public Game CurrentGame { get{ return currentGame; } }
+        public List<TcpClient> Clients { get{ return clients; } }
 
         public Server() {
             server = null;
@@ -64,9 +69,8 @@ namespace Monopoly_Game {
                 while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     // Deserialize data back into a game object
-                    Game currentGame = DeserializeObject(data);
-                    // ************** Return game object back to caller ****************
-                    // Maybe call an event handler that sends the new game object somewhere????
+                    currentGame = DeserializeObject(data);
+                    // ************ Possibly some tag that the game has changed? ********
                 }
 
                 return; 
@@ -87,9 +91,10 @@ namespace Monopoly_Game {
 
                 NetworkStream stream = client.GetStream();
 
-                data = SerializeObject(game);
+                //data = SerializeObject(game);
+                gameString = SerializeObject(game);
 
-                byte[] message = System.Text.Encoding.ASCII.GetBytes(data);
+                byte[] message = System.Text.Encoding.ASCII.GetBytes(gameString);
             } catch (Exception ex) {
                 // process exception
             }

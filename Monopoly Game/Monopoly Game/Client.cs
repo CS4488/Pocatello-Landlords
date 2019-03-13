@@ -21,6 +21,9 @@ namespace Monopoly_Game {
         Int32 port = 14242;
         TcpClient client;
         string server;
+        Game currentGame;
+
+        public Game CurrentGame { get{ return currentGame; } }
 
         public Client() {
             server = "127.0.0.1";
@@ -49,7 +52,7 @@ namespace Monopoly_Game {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                 }
 
-                Game currentGame = DeserializeObject(data);
+                currentGame = DeserializeObject(data);
                 // Return the game object to the caller
 
             } catch (Exception ex) {
