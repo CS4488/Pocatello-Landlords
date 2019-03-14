@@ -52,5 +52,20 @@ namespace Monopoly_Game
                 MessageBox.Show("Game over!");
             }
         }
+
+
+
+        /// <summary>
+        /// Call to Game to run dice roll logic and get dice values
+        /// </summary>
+        public void Game_InitiateDiceRoll()
+        {
+            MessageBox.Show("Best of luck...", "DICE ROLL");
+            Tuple<int, int> dice = game.InitateDiceRoll();
+
+            MessageBox.Show("You rolled...", String.Concat("... a {0] and {1}", dice.Item1, dice.Item2));
+        }
+
+
     }
 }

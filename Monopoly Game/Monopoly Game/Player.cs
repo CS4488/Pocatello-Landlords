@@ -14,13 +14,17 @@ namespace Monopoly_Game
         private bool eliminated = false;
         private string playerName;
         private string token;
+        private int _Position;
 
         public string PlayerName { get{ return playerName; } set{ playerName = value; } }
         public int PlayerID { get{ return playerID; } set{ playerID = value; } }
         public bool Eliminated { get{return eliminated; } set{ eliminated = value; } }
         public string Token { get { return token; } set { token = value;  } }
         public static int LastAssignedID { get{ return lastAssignedId; } set{ lastAssignedId = value; } }
-        
+
+
+        public int Position { get { return _Position; } set { _Position = value; } }
+
         public Player()
         {
             this.playerID = Player.lastAssignedId;

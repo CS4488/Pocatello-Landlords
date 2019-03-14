@@ -33,8 +33,6 @@ namespace Monopoly_Game
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
         public List<Player> Players { get { return players; } set { players = value; } }
         public GameStates GameState {get; set;}
-    
-
 
         public Game()
         {
@@ -76,6 +74,42 @@ namespace Monopoly_Game
            }
         }
 
+
+
+        #region Display Manager Calls
+        /// <summary>
+        /// Call from Display Manager when player is to toll the dice
+        /// </summary>
+        public Tuple<int, int> InitateDiceRoll()
+        {
+            // Update the game board to advance the player  by the specified number of places
+            Tuple<int, int> dice = GetDiceValues();
+
+            currentPlayer.Position += dice.Item1 + dice.Item2;
+
+            return dice;
+        }
+
+        /// <summary>
+        /// Fernando Munoz
+        /// March 9th, 2019
+        /// 
+        /// </summary>
+        /// <returns>A pair of ints between 1 and 6 representing the dice roll</returns>
+        private Tuple<int, int> GetDiceValues()
+        {
+            Random r = new Random();
+            Tuple<int, int> dice;
+
+            dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
+
+            return dice;
+        }
+
+
         
+        #endregion
+
+
     }
 }

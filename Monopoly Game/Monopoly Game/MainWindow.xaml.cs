@@ -62,7 +62,7 @@ namespace Monopoly_Game
         // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e) {
             game = new TicTacToe();
-            this.dm = new DisplayManager(game, playArea);
+            dm = new DisplayManager(game, playArea);
             dm.updateDisplay();
         }
 
