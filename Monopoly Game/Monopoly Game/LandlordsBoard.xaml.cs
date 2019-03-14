@@ -13,52 +13,47 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Monopoly_Game
 {
-    //TODO: The following is a list of methods that the Landlords game should be able to handle. 
-    //      We should keep in mind that everything the gameBoard class should be responsible for is
-    //      display logic.
-    //
-    /*  There will be more as the game is developed, and we may want to change around the way things are organized
-     *  This list is not exhaustive...
-     *  
-     *  Gameboard Update Methods
-     *       1. Move game peice (int player#, int numberSpaces), (int player#, Button destination)
-     *       2. Display dice roll value (int rollValue)
-     *       3. Update player properties(List properties)
-     *       4. Update opponent properties( List<Pair<Player, List<Properties>>>, or something like this)
-     *       5. Update player cards
-     *       6. Display Endgame Gamestate (You won, You lost, Draw... and show message accordingly)
-     *       7. Update current player's turn
-     *       8. Show other player actions (dice rolls, properties (bought, sold, etc), cards drawn...)
-     *  
-     *  Player Actions
-     *      1. Buy property
-     *      2. Draw card
-     *      3. Use card
-     *      4. Build on property
-     *      5. Roll dice
-     *      6. 
-     */
-
-
 
     /// <summary>
-    /// Interaction logic for LandlordsBoard.xaml
+    /// Purpose: Creates and gets all the interactive UI elements
     /// Made by Fernando Munoz
     /// March 3rd, 2019
+    /// 
+    /// 
+    /// Naming Conventions:
+    ///     Button (Space): btnSpace[number(0 indexed)]
+    ///     Space Name: tbSpace[number(0 indexed)]Name
+    ///     Space Cost: tbSpace[numbe(0 indexed)]Cost
+    /// 
     /// </summary>
     public partial class LandlordsBoard : Page
     {
-
+        #region Private variables
         private List<Button> _Spaces = new List<Button>();
+        private List<TextBlock> _SpaceCosts = new List<TextBlock>();
+        private List<TextBlock> _SpaceNames = new List<TextBlock>();
 
+        private readonly byte[] _PropertyNdxs = {1, 3, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17,
+                                    19, 20, 22, 24, 25, 26, 27, 28, 29, 30, 32,
+                                    33, 35, 36, 38, 40};
+        private readonly byte[] _LootCrateNdxs = { 4, 18, 34 };
+        private readonly byte[] _OpportunityNdxs = { 7, 23, 37 };
+        private readonly byte[] _EventNdxs = { 0, 2, 31, 39, 21 };
+
+        #endregion
+
+        #region Constructors
         public LandlordsBoard()
         {
             InitializeComponent();
             InitializeGameBoard();
         }
+        #endregion
 
+        #region Properties
         public List<Button> Spaces
         {
             get
@@ -67,26 +62,85 @@ namespace Monopoly_Game
             }
         }
 
-        private void InitializeGameBoard()
+        public List<TextBlock> SpaceCosts
         {
-            getAllSpaces();
+            get
+            {
+                return _SpaceCosts;
+            }
         }
+
+        public List<TextBlock> SpaceNames
+        {
+            get
+            {
+                return _SpaceNames;
+            }
+        }
+
+        public byte[] PropertyNdxs
+        {
+            get
+            {
+                return _PropertyNdxs;
+            }
+        }
+
+        public byte[] LootCrateNdxs
+        {
+            get
+            {
+                return _LootCrateNdxs;
+            }
+        }
+
+        public byte[] OpportunityNdxs
+        {
+            get
+            {
+                return _OpportunityNdxs;
+            }
+        }
+        #endregion
 
         #region Playable Space Methods
 
-        /*
-         * Fernando Munoz 
-         * March 5th, 2019
-         * 
-         * Description: Sets the local field _Spaces to contain a list of all the playable spaces (which are of type Button)
-         */
-        private void getAllSpaces()
+        /// <summary>
+        /// Fernando Munoz 
+        /// March 5th, 2019
+        /// Updated March 12th to use generics and work for getting all types of UI elements
+        ///
+        /// Description: Sets the local field _Spaces to contain a list of all the playable spaces(which are of type Button)
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list">List to add the UI element to</param>
+        /// <param name="part1">First part of name to search</param>
+        /// <param name="part2">Second part, which follows the number, of a UI element to search</param>
+        private void GetUIElements<T> (List<T> list, string part1, string part2)
         {
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 41; i++)
             {
-                Button buttonFound = (Button)this.FindName("btnSpace" + i.ToString());
-                _Spaces.Add(buttonFound);
+                T temp = (T)this.FindName(part1 + i.ToString() + part2);
+
+                if (temp != null)
+                {
+                    list.Add(temp);
+                }
             }
+        }
+        #endregion
+
+        #region Internal Methods
+
+        /// <summary>
+        /// Sets each respective list to contain the UI elements found on the gameboard
+        /// </summary>
+        private void InitializeGameBoard()
+        {
+            GetUIElements(_Spaces, "btnSpace", String.Empty);
+            GetUIElements(_SpaceCosts, "tbSpace", "Cost");
+            GetUIElements(_SpaceNames, "tbSpace", "Name");
         }
         #endregion
     }

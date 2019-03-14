@@ -5,59 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Monopoly_Game"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="mainGrid" x:FieldModifier="public">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="225"/>
-            <ColumnDefinition Width="357"/>
-            <ColumnDefinition Width="225"/>
-        </Grid.ColumnDefinitions>
-        <Menu Name="mnMainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3">
-            <MenuItem Name="miGame" Header="Game">
-                <MenuItem Name="miNewGame" Header="New Game" Click="MiNewGame_Click"/>
-                <MenuItem Name="miJoinGame" Header="Join Game" Click="MiJoinGame_Click"/>
-                <MenuItem Name="miObserveGame" Header="Observe Game" Click="MiObserveGame_Click"/>
-                <MenuItem Name="miExit" Header="Exit" Click="MiExit_Click"/>
-            </MenuItem>
-        </Menu>
-        <Grid Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="3,35,3.8,35" Name="playArea">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+        Title="MainWindow" Name="myMainWindow">
+    <Grid x:Name="MainGrid" x:FieldModifier="public">
+        <Frame x:Name="frm_Main"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="357"/>
+                <ColumnDefinition Width="225"/>
             </Grid.ColumnDefinitions>
-            <Button Name="btnSquare1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="BtnClick">
-                <TextBlock Name="tbSquare1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Click="BtnClick">
-                <TextBlock Name="tbSquare2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Click="BtnClick">
-                <TextBlock Name="tbSquare3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Click="BtnClick">
-                <TextBlock Name="tbSquare4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Click="BtnClick">
-                <TextBlock Name="tbSquare5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Click="BtnClick">
-                <TextBlock Name="tbSquare6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Click="BtnClick">
-                <TextBlock Name="tbSquare7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Click="BtnClick">
-                <TextBlock Name="tbSquare8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-            <Button Name="btnSquare9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="2" Click="BtnClick">
-                <TextBlock Name="tbSquare9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
-            </Button>
-        </Grid>
+            <Menu Name="mnMainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3">
+                <MenuItem Name="miGame" Header="Game">
+                    <MenuItem Name="miNewGame" Header="New Game" Click="MiNewGame_Click"/>
+                    <MenuItem Name="miJoinGame" Header="Join Game" Click="MiJoinGame_Click"/>
+                    <MenuItem Name="miObserveGame" Header="Observe Game" Click="MiObserveGame_Click"/>
+                    <MenuItem Name="miExit" Header="Exit" Click="MiExit_Click"/>
+                </MenuItem>
+            </Menu>
+            <Grid Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="3,35,3.8,35" Name="playArea">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnSquare1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="BtnClick">
+                    <TextBlock Name="tbSquare1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Click="BtnClick">
+                    <TextBlock Name="tbSquare2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Click="BtnClick">
+                    <TextBlock Name="tbSquare3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Click="BtnClick">
+                    <TextBlock Name="tbSquare4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Click="BtnClick">
+                    <TextBlock Name="tbSquare5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Click="BtnClick">
+                    <TextBlock Name="tbSquare6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Click="BtnClick">
+                    <TextBlock Name="tbSquare7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Click="BtnClick">
+                    <TextBlock Name="tbSquare8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+                <Button Name="btnSquare9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="2" Click="BtnClick">
+                    <TextBlock Name="tbSquare9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="45"/>
+                </Button>
+            </Grid>-->
     </Grid>
 </Window>
