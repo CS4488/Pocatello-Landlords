@@ -516,10 +516,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
+      "sha512": "GmkKfoyerqmsHMn7OZj0AKpcBabD+GaafqphvX2Mw406IwiJRy1pKcKqdCfKJfYmkRyJ6+e+RaUylgdJoDa1jQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -681,23 +682,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tyler\\.nuget\\packages\\": {},
+    "C:\\Users\\Nando\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tyler\\source\\repos\\TcpClient App\\TcpClient App\\TcpClient App.csproj",
+      "projectUniqueName": "C:\\Users\\Nando\\Source\\Repos\\Pocatello-Landlords\\TcpClient App\\TcpClient App\\TcpClient App.csproj",
       "projectName": "TcpClient App",
-      "projectPath": "C:\\Users\\tyler\\source\\repos\\TcpClient App\\TcpClient App\\TcpClient App.csproj",
-      "packagesPath": "C:\\Users\\tyler\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tyler\\source\\repos\\TcpClient App\\TcpClient App\\obj\\",
+      "projectPath": "C:\\Users\\Nando\\Source\\Repos\\Pocatello-Landlords\\TcpClient App\\TcpClient App\\TcpClient App.csproj",
+      "packagesPath": "C:\\Users\\Nando\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nando\\Source\\Repos\\Pocatello-Landlords\\TcpClient App\\TcpClient App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tyler\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -722,6 +723,7 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
