@@ -8,19 +8,16 @@ namespace Monopoly_Game
 {
     class Space
     {
-        private String _Name;
+        string spaceName;
 
-        public string SpaceName { get{ return _Name; } set{ _Name = value; } }
-
-
+        public string SpaceName { get{ return spaceName; } set{ spaceName = value; } }
         public Space()
         {
-            _Name = String.Empty;
+            spaceName = " ";
         }
-
         public Space(string inputName)
         {
-            _Name = inputName;
+            spaceName = inputName;
         }
     }
 }
