@@ -22,6 +22,7 @@ namespace Monopoly_Game {
         TcpClient client;
         string server;
         Game currentGame;
+        Player myPlayer;
 
         public Game CurrentGame { get{ return currentGame; } }
 
@@ -52,7 +53,13 @@ namespace Monopoly_Game {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                 }
 
-                currentGame = DeserializeObject(data);
+                var receivedObject = DeserializeObject(data);
+
+                if (receivedObject is Game) {
+                    currentGame = (Game)receivedObject;
+                } else if (receivedObject is Player) {
+                    myPlayer = (Player)receivedObject;
+                }
                 // Return the game object to the caller
 
             } catch (Exception ex) {
@@ -95,10 +102,16 @@ namespace Monopoly_Game {
 
         // Shameless stolen from:
         // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
-        private Game DeserializeObject(string gameText) {
+        private object DeserializeObject(string gameText) {
             XmlSerializer serializer = new XmlSerializer(typeof(Game));
             using (TextReader reader = new StringReader(gameText)) {
-                Game result = (Game)serializer.Deserialize(reader);
+                var result = serializer.Deserialize(reader); // This was a game object with the deserializer cast to Game as well
+                // ????
+                if (result is Game) {
+                    result = (Game)result;
+                } else if (result is Player) {
+                    result = (Player)result;
+                }
                 return result;
             }
         }

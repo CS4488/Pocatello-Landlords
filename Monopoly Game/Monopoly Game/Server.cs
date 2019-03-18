@@ -49,7 +49,11 @@ namespace Monopoly_Game {
             while(true) { // *************** Add some sort of exit flag here ********************** May not be needed
                 TcpClient client = server.AcceptTcpClient();
                 clients.Add(client);
-                //ThreadPool.QueueUserWorkItem(readMessage, client);
+
+                // Create and send Player object back to client. **** Does this need to be it's own thread? ****
+                Player play = new Player();
+                sendPlayerObject(client, play);
+
                 Thread newThread = new Thread(() => readMessage(client));
                 newThread.IsBackground = true;
                 newThread.Start();
@@ -79,9 +83,25 @@ namespace Monopoly_Game {
             }
         }
 
-        public void SendToClients(Game game) {
+        public void SendGameToClients(Game game) {
             foreach (TcpClient c in clients) {
                 writeMessgae(c, game);
+            }
+        }
+
+        private void sendPlayerObject(object obj, Player play) {
+            try {
+                TcpClient client = (TcpClient)obj;
+
+                NetworkStream stream = client.GetStream();
+
+                string playerString = SerializeObject(play);
+
+                byte[] message = System.Text.Encoding.ASCII.GetBytes(playerString);
+
+                stream.Write(message, 0, message.Length);
+            } catch (Exception ex) {
+                // Process exception
             }
         }
 
@@ -91,10 +111,11 @@ namespace Monopoly_Game {
 
                 NetworkStream stream = client.GetStream();
 
-                //data = SerializeObject(game);
                 gameString = SerializeObject(game);
 
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(gameString);
+
+                stream.Write(message, 0, message.Length);
             } catch (Exception ex) {
                 // process exception
             }

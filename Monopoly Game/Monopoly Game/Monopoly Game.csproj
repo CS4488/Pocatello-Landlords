@@ -58,6 +58,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameParameters.xaml.cs">
       <DependentUpon>GameParameters.xaml</DependentUpon>
     </Compile>
