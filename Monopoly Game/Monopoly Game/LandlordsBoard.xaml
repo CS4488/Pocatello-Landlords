@@ -19,282 +19,368 @@
             </Image.RenderTransform>
         </Image>
 
-        <Button HorizontalAlignment="Left" Margin="769,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="847,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="925,889,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="997,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1076,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1153,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1232,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="692,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="613,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="769,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="847,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="925,65,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="997,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1076,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1155,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1232,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="692,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="613,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="357,478,0,0" VerticalAlignment="Top" Width="74" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="153.463" Y="-153.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="435,478,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="75.567" Y="-75.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="513,478,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="0.666" Y="-0.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="585,478,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-74.234" Y="74.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="664,477,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-153.463" Y="153.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="741,477,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-230.027" Y="230.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="820,476,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-309.256" Y="309.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="280,477,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="230.027" Y="-230.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="201,478,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="309.256" Y="-309.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1181,478,0,0" VerticalAlignment="Top" Width="76" Height="126" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="153.463" Y="-153.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1258,479,0,0" VerticalAlignment="Top" Width="77" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="75.567" Y="-75.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1337,480,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="0.666" Y="-0.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1409,480,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-74.234" Y="74.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1488,479,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-153.463" Y="153.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1565,478,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-230.027" Y="230.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1644,478,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="-309.256" Y="309.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1105,476,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="230.027" Y="-230.333"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button  HorizontalAlignment="Left" Margin="1025,478,0,0" VerticalAlignment="Top" Width="74" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.924"/>
-                    <TranslateTransform X="309.256" Y="-309.667"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="485,65,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1309,65,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="485,889,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="1309,889,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
 
-        <!-- Property Labels -->
-        <TextBlock Text="Zoo Idaho" HorizontalAlignment="Center" Margin="615,143,1233,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Melaleuca Field" HorizontalAlignment="Center" Margin="1347,275,505,0" VerticalAlignment="Top" Width="68"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Height="66">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Museum of Clean" HorizontalAlignment="Center" Margin="531,218,1323,0" VerticalAlignment="Top" Width="66"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Ross Park" HorizontalAlignment="Center" Margin="849,143,1001,0" VerticalAlignment="Top" Width="70"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Meth Trafficking" HorizontalAlignment="Center" Margin="1309,72,486,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="16">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Idaho Potato Museum" HorizontalAlignment="Center" Margin="521,450,1328,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Museum. of National Historty" HorizontalAlignment="Center" Margin="521,288,1332,0" VerticalAlignment="Top" Width="67"  Height="44" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Shoshone Falls Park" HorizontalAlignment="Center" Margin="999,131,849,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Scout Mountain Campground" HorizontalAlignment="Center" Margin="517,824,1340,0" VerticalAlignment="Top" Width="63"  Height="50" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text=" Pebble Creek Resort" HorizontalAlignment="Center" Margin="528,677,1325,0" VerticalAlignment="Top" Width="67"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Holt Arena" HorizontalAlignment="Center" Margin="1339,440,509,0" VerticalAlignment="Top" Width="72"  Height="52" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Ross Park &#xA;Aquatic Complex" HorizontalAlignment="Center" Margin="772,116,1078,0" VerticalAlignment="Top" Width="70"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Hotel Yellowstone" HorizontalAlignment="Center" Margin="693,926,1156,0" VerticalAlignment="Top" Width="71"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Chief Theatre" HorizontalAlignment="Center" Margin="619,926,1233,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Stephens &#xA;Performing &#xA;Arts Center" HorizontalAlignment="Center" Margin="1337,669,513,0" VerticalAlignment="Top" Width="70"  Height="53" FontFamily="Modern No. 20" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" TextAlignment="Center">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <Label Content="Idaho State &#xA;University" HorizontalAlignment="Center" Margin="1328,825,514,0" VerticalAlignment="Top" Background="{x:Null}" Width="78" HorizontalContentAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Modern No. 20" FontWeight="Bold" FontSize="14">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <TextBlock Text="Fort Hall Replica" HorizontalAlignment="Center" Margin="1077,131,772,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="25"/>
-        <TextBlock Text="Outer Limits" HorizontalAlignment="Center" Margin="1083,926,772,0" VerticalAlignment="Top" Width="65"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Massacre Rocks State Park" HorizontalAlignment="Center" Margin="521,594,1331,0" VerticalAlignment="Top" Width="68"  Height="41" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="89.942"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Marshall Library" HorizontalAlignment="Center" Margin="851,926,1001,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Geronimo's Trampoline Park" HorizontalAlignment="Center" Margin="1236,926,619,0" VerticalAlignment="Top" Width="65"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Text="Portneuf Wellness Complex" HorizontalAlignment="Center" Margin="1345,205,518,0" VerticalAlignment="Top" Width="57"  Height="55" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-89.877"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <Image Margin="534,920,1327,101" Source="images/prison.png" Stretch="Fill" d:IsLocked="True"/>
-        <TextBlock Text="Pocatello Women's Detention Center" HorizontalAlignment="Center" Margin="516,894,1307,0" VerticalAlignment="Top" Width="97"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="10"/>
+        <Canvas x:Name="BoardWrapper">
+            <!--GO-->
+            <Button x:Name="_1"  HorizontalAlignment="Left" Margin="1309,889,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock x:Name="label1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="115"  Height="111" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
+            </Button>
+
+            <Button x:Name="_2" HorizontalAlignment="Left" Margin="1232,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Name="label2" Text="Geronimo's Trampoline Park" HorizontalAlignment="Center" VerticalAlignment="Top" Width="65"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="1153,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  Height="33" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                <Run Text="Child"/><LineBreak/><Run Text=" Support"/>
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="1076,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Outer Limits" HorizontalAlignment="Center" VerticalAlignment="Top" Width="65"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="997,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Loot Crate" HorizontalAlignment="Center" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="925,889,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Width="68"  Height="39" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Pocatello Regional Transit"/>
+                    <Image Source="images/train.jpg" Stretch="Fill" d:IsLocked="True"/>
+                </StackPanel>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="847,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Marshall Library" HorizontalAlignment="Center" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="769,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+
+                <TextBlock Text="Opportunity" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="692,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Hotel Yellowstone" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="613,889,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+
+                <TextBlock Text="Chief Theatre" HorizontalAlignment="Center" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="485,889,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <StackPanel>
+                    <TextBlock Text="Pocatello Women's Detention Center" HorizontalAlignment="Center" Margin="35,0,0,70" VerticalAlignment="Top" Width="90"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="9"/>
+                    <!--<Image RenderTransformOrigin="10,10" Source="images/prison.png" Stretch="Fill" d:IsLocked="True"/>-->
+                </StackPanel>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="510,787,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <TextBlock Text="Scout Mountain Campground" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="63"  Height="50" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5"></TextBlock>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="510,709,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Margin="10,0,0,90" Text="Idaho Power" HorizontalAlignment="Center" VerticalAlignment="Top" Width="61"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="512,630,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text=" Pebble Creek Resort" HorizontalAlignment="Center" VerticalAlignment="Top" Width="67"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="510,551,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Massacre Rocks State Park" HorizontalAlignment="Center" VerticalAlignment="Top" Width="68"  Height="41" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="513,478,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Margin="0,0,0,95" Text="Yellowstone Bus Tours" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="511,401,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Idaho Potato Museum" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                </TextBlock>
+            </Button>
+
+
+            <Button HorizontalAlignment="Left" Margin="511,323,0,0" VerticalAlignment="Top" Width="74" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="0,0,0,80" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="511,245,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Museum of National Historty" HorizontalAlignment="Center" VerticalAlignment="Top" Width="67"  Height="44" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="511,168,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Museum of Clean" HorizontalAlignment="Center" VerticalAlignment="Top" Width="66"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="485,65,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Free Parkour" HorizontalAlignment="Center" Margin="0,0,50,50" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="18" FontWeight="ExtraBlack">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-45.213"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="613,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Zoo Idaho" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="692,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="769,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Ross Park &#xA;Aquatic Complex" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="70"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="847,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Ross Park" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="925,65,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock HorizontalAlignment="Center" Margin="0,0,0,60" VerticalAlignment="Top" Width="72"  Height="61" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                <Run Text="Union Pacific"/><LineBreak/><Run Text="R. R. "/>
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="997,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Shoshone Falls Park" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="1076,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Ross Park" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="1155,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="72"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Text="Pocatello Water Dept.">
+                </TextBlock>
+            </Button>
+
+            <Button HorizontalAlignment="Left" Margin="1232,65,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <TextBlock Text="Fort Hall Casino" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="25"/>
+            </Button>
+
+            <!--go to jail-->
+            <Button HorizontalAlignment="Left" Margin="1309,62,0,0" VerticalAlignment="Top" Width="125" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}">
+                <StackPanel Height="125" Width="125">
+                    <Image Panel.ZIndex="100" Margin="0,0,0,0" Source="images/pocatello pd.jpg" Stretch="Fill" d:IsLocked="True"/>
+                    <TextBlock Panel.ZIndex="101" Text="Meth Trafficking GO TO JAIL" HorizontalAlignment="Center" Margin="-2,0,-2,90" VerticalAlignment="Top" Width="124"  Height="60" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1335,167,0,0" VerticalAlignment="Top" Width="74" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Portneuf Wellness Complex" HorizontalAlignment="Center" VerticalAlignment="Top" Width="57"  Height="55" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1335,244,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Melaleuca Field" HorizontalAlignment="Center" VerticalAlignment="Top" Width="68"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Height="66">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1333,324,0,0" VerticalAlignment="Top" Width="76" Height="126" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Loot Crate" HorizontalAlignment="Center" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1334,404,0,0" VerticalAlignment="Top" Width="77" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Holt Arena" HorizontalAlignment="Center" VerticalAlignment="Top" Width="72"  Height="52" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1338,478,0,0" VerticalAlignment="Top" Width="69" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Salt Lake Express" Margin="0,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1332,552,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1333,629,0,0" VerticalAlignment="Top" Width="75" Height="125" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Stephens &#xA;Performing &#xA;Arts Center" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="70"  Height="53" FontFamily="Modern No. 20" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1335,707,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+
+                <TextBlock Text="Donation : Build the Wall" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Width="72"  Height="50" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="1339,786,0,0" VerticalAlignment="Top" Width="75" Height="124" BorderBrush="#FF20FF0A" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <TextBlock Text="Idaho State University" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="62"  Height="53" FontFamily="Modern No. 20" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Button>
+
+        </Canvas>
+
+        <!--Images-->
         <Image Margin="1009,951,861,79" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" d:IsLocked="True"/>
         <Image Margin="1369,365,501,665" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" d:IsLocked="True">
             <Image.RenderTransform>
@@ -310,33 +396,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="549,370,1300,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="1298,374,550,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="998,905,850,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.071"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
         <Image Margin="646,281,1015,661" Source="images/border.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" d:IsLocked="True">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -389,25 +448,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Free Parkour" HorizontalAlignment="Center" Margin="483,84,1365,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="18" FontWeight="ExtraBlack">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-45.213"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <Image Margin="1338,91,517,916" Source="images/pocatello pd.jpg" Stretch="Fill" d:IsLocked="True"/>
-        <TextBlock Text="GO TO JAIL" HorizontalAlignment="Center" Margin="1312,164,483,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="20">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Fort Hall Casino" HorizontalAlignment="Center" Margin="1233,133,616,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="25"/>
-        <TextBlock HorizontalAlignment="Center" Margin="1312,901,493,0" VerticalAlignment="Top" Width="115"  Height="111" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
         <Image Margin="1313,951,516,85" Source="images/arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" d:IsLocked="True">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -416,7 +456,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Margin="930,926,938,79" Source="images/train.jpg" Stretch="Fill" d:IsLocked="True"/>
         <Image Margin="936,91,938,916" Source="images/train.jpg" Stretch="Fill"/>
         <Image Margin="1351,499,517,492" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
@@ -434,29 +473,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Salt Lake Express" HorizontalAlignment="Center" Margin="1291,526,557,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="924,68,924,0" VerticalAlignment="Top" Width="72"  Height="61" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Union Pacific"/><LineBreak/><Run Text="R. R. "/></TextBlock>
-        <TextBlock Text="Yellowstone Bus Tours" HorizontalAlignment="Center" Margin="559,525,1290,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="924,892,928,0" VerticalAlignment="Top" Width="68"  Height="39" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Pocatello Regional Transit"/>
         <Image Margin="520,744,1346,283" Source="images/idapower.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" d:IsLocked="True">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -465,22 +481,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Idaho Power" HorizontalAlignment="Center" Margin="559,756,1300,0" VerticalAlignment="Top" Width="61"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
         <Image Margin="1156,103,693,938" Source="images/water.jpg" Stretch="Fill" d:IsLocked="True"/>
-        <TextBlock HorizontalAlignment="Center" Margin="1155,71,693,0" VerticalAlignment="Top" Width="72"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Text="Pocatello Water Dept.">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform></TextBlock>
         <Image Margin="1350,585,500,430" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" d:IsLocked="True">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -505,45 +506,14 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="771,899,1078,0" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-0.98"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="1291,609,558,0" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90.069"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="693,73,1156,0" VerticalAlignment="Top" Width="71"  Height="13" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-0.922"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="1155,908,694,0" VerticalAlignment="Top" Width="71"  Height="33" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Child"/><LineBreak/><Run Text=" Support"/></TextBlock>
-        <TextBlock Text="*" HorizontalAlignment="Center" Margin="1182,946,718,0" VerticalAlignment="Top" Width="20"  Height="16" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.824,0.934" FontWeight="Bold" FontSize="24">
+        <!--<TextBlock Text="*" HorizontalAlignment="Center" Margin="1182,946,718,0" VerticalAlignment="Top" Width="20"  Height="16" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.824,0.934" FontWeight="Bold" FontSize="24">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-0.071"/>
                     <TranslateTransform X="0.009" Y="-0.015"/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
-        </TextBlock>
+        </TextBlock>-->
         <Image Margin="1356,734,509,280" Source="images/diamond.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -552,13 +522,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock Text="Donation : Build the Wall" HorizontalAlignment="Center" Margin="1299,750,549,0" VerticalAlignment="Top" Width="72"  Height="38" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="-90"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
         <Button HorizontalAlignment="Left" Margin="520,892,0,0" VerticalAlignment="Top" Width="88" Height="87" BorderBrush="#FF20FF0A" Background="{x:Null}"/>
 
         <!-- Players Money Textbox Area -->
@@ -601,7 +564,7 @@
             </Grid>
         </Border>
         <!-- Opponents Properties Stack Panel Area -->
-        
+
         <Border Margin="40,185,1485,390" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFECF17F">
             <Grid>
                 <Grid.ColumnDefinitions>
