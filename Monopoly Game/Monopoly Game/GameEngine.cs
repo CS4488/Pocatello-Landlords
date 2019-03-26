@@ -19,8 +19,41 @@ namespace Monopoly_Game
 
         private static DisplayManager _DM;
         private static Game _Game;
-        //private static Network _Network;
+        private static Server _Server;
+        private static Client _Client;
+
         private static int _LocalPlayerID;
+        private static int _NumberOfPlayers;
+
+
+        /// <summary>
+        /// The network will either be of type Server or Client.
+        /// </summary>
+        public static void SetupAsServer()
+        {
+            _Server = new Server();
+            _Server.Connect();
+            while (_Server.Clients.Count != _NumberOfPlayers)
+            { // *******************************************************************
+                // This is just here to delay until the count is right
+            }
+           // NewGame(sender, e);
+
+        }
+
+        public static void SetupAsClient()
+        {
+
+        }
+
+
+
+
+        public static int NumberOfPlayers
+        {
+            get { return _NumberOfPlayers; }
+            set { _NumberOfPlayers = value; }
+        }
 
         public static DisplayManager DM
         {
@@ -74,6 +107,15 @@ namespace Monopoly_Game
              * _Game = _Network
              * 
              */
+
+
+        }
+
+        private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _Game = new Game();
+            //_DM = new DisplayManager(_Game, playArea);
+            _DM.updateDisplay();
         }
 
 

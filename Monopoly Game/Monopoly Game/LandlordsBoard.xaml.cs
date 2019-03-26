@@ -42,7 +42,6 @@ namespace Monopoly_Game
         private readonly byte[] _LootCrateNdxs = { 4, 18, 34 };
         private readonly byte[] _OpportunityNdxs = { 7, 23, 37 };
         private readonly byte[] _EventNdxs = { 0, 2, 31, 39, 21 };
-
         #endregion
 
         #region Constructors
