@@ -17,7 +17,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Select Game:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
-        <ComboBox Name="cmbChooseGame" Height="20" Width="150" Grid.Column="1"/>
+        <ComboBox Name="cmbChooseGame" Height="20" Width="150" Grid.Column="1" SelectionChanged="cmbChooseGame_SelectionChanged">
+            <ComboBoxItem Content="Tic Tac Toe"/>
+            <ComboBoxItem Content="Monopoly"/>
+        </ComboBox>
         <Label Content="Select Token:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Grid.Row="2"/>
         <ComboBox Name="cmbToken" Height="20" Width="150" Grid.Column="1" Grid.Row="2"/>
         <Button Name="btnSubmit" Content="OK" Grid.Row="2" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Center"

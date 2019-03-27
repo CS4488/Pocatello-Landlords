@@ -18,6 +18,7 @@ namespace Monopoly_Game
     {
         public TicTacToe()
         {
+            base.maxNumPlayers = 2;
             for (int i = 0; i < 9; i++)
             {
                 base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
