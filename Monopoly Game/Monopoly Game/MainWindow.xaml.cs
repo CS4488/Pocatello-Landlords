@@ -64,12 +64,6 @@ namespace Monopoly_Game
             dm.updateDisplay();
         }
 
-        //Launches monpoly
-        private void MiMonopoly_Click(object sender, RoutedEventArgs e) {
-            LandlordsBoard landloardsBoard = new LandlordsBoard();
-            this.Content = landloardsBoard;
-        }
-
         private void MiJoinGame_Click(object sender, RoutedEventArgs e) {
             MessageBox.Show("Functionality coming soon!");
         }

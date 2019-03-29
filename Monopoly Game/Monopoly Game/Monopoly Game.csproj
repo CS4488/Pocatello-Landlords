@@ -103,7 +103,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Database\properties.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,9 +124,6 @@
     <Resource Include="images\question.png" />
     <Resource Include="images\train.jpg" />
     <Resource Include="images\water.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\create_property_table.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
