@@ -58,11 +58,12 @@ namespace Monopoly_Game {
 
                 int i;
 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) { 
+                while (stream.DataAvailable && (i = stream.Read(bytes, 0, bytes.Length)) != 0) {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                    int x = data.Length;
                     fullData += data;
                 }
-                // **** Nothing below this line appears to be firing. Why???????????????????????
+                // **** Nothing below this line appears to be firing. 
 
                 var receivedObject = DeserializeObject(fullData);
 
@@ -118,7 +119,7 @@ namespace Monopoly_Game {
             }
         }
 
-        // Shameless stolen from:
+        // Shamelessly stolen from:
         // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
         private object DeserializeObject(string gameText) {
             XmlSerializer serializer = new XmlSerializer(typeof(Game));

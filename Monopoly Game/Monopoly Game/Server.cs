@@ -87,7 +87,7 @@ namespace Monopoly_Game {
 
                 int i;
 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) {
+                while (stream.DataAvailable && (i = stream.Read(bytes, 0, bytes.Length)) != 0) {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     // Deserialize data back into a game object
                     //currentGame = DeserializeObject(data);
@@ -97,7 +97,7 @@ namespace Monopoly_Game {
 
                 currentGame = DeserializeObject(data);
 
-                return; 
+                //return; // **************** Removed Return statement
             } catch (Exception ex) {
                 // Process exception
                 MessageBox.Show(ex.Message);
