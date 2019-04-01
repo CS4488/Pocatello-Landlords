@@ -1,15 +1,21 @@
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe.config
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.pdb
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csprojAssemblyReference.cache
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.g.cs
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\App.g.cs
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.cache
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.lref
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.baml
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.g.resources
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
-C:\Users\car54\Desktop\School\Advanced Project\v0_1\Pocatello-Landlords-master\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe.config
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.exe
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\bin\Debug\Monopoly Game.pdb
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csprojAssemblyReference.cache
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\GameParameters.g.cs
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\LandlordsBoard.g.cs
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.g.cs
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\App.g.cs
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.cache
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game_MarkupCompile.lref
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\GameParameters.baml
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\LandlordsBoard.baml
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\MainWindow.baml
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.g.resources
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly_Game.Properties.Resources.resources
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.GenerateResource.cache
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\NetworkTestHarness.g.cs
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\NetworkTestHarness.baml

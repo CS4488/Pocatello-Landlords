@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MICHAEL STERNER\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\obj\Debug\
 Monopoly_Game
 none
 false
 DEBUG;TRACE
-C:\Users\MICHAEL STERNER\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\App.xaml
-11151548125
+C:\Users\car54\Desktop\School\Advanced Project\v2.4.3\Pocatello-Landlords-nando\Monopoly Game\Monopoly Game\App.xaml
+4-1567584393
 
-171651655158
+26-356465908
 131569487696
-MainWindow.xaml;
+GameParameters.xaml;LandlordsBoard.xaml;MainWindow.xaml;NetworkTestHarness.xaml;
 
-False
+True
 

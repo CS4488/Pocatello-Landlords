@@ -18,199 +18,128 @@ namespace Monopoly_Game
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    /*
+    * Rex Christesnsen: MainWindow.xaml.cs class 1.0
+    * Kalen Williams - Refactoring display to DisplayManager
+    * 
+    * Please describe changes made here; along with your name, date, and version:
+    * Added a Tic Tac Toe board composed of 9 buttons that will show either X or O depending on what player clicked on them - R.C. - 27JAN19
+    * Adjusted the event handlers for each button to reflect change from LinkedList to List data structure - R.C. - 29JAN19 - v1
+    * M.S. Made the makeMove function more generic, so as to accept moves that are not dependent on player clicks... This was
+    * done to make it possible for the computer player to input a move. M.S. - 30JAN2019
+    * Rex - Added a Host Game menu option that creates and starts a Server object - 12MAR2019
+    */
     public partial class MainWindow : Window
     {
+
+        
+
         TicTacToe game;
-        int playerID;
+        DisplayManager dm;
+        int numPlayers;
+        Dictionary<Tuple<int, int>, int> gridToIndexMap = new Dictionary<Tuple<int, int>, int>();
+
+        public int NumPlayers { get{ return numPlayers; } set{ numPlayers = value; } }
+
         public MainWindow()
         {
             InitializeComponent();
+            playArea.Visibility = Visibility.Hidden;
+            playArea.IsEnabled = false;
+            fillMap();
+        }
+
+        //handle all button clicks
+        private void BtnClick(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            int x = (int)btn.GetValue(Grid.RowProperty);
+            int y = (int)btn.GetValue(Grid.ColumnProperty);
+
+            Tuple<int, int> coords = Tuple.Create(x, y);
+
+            int index = gridToIndexMap[coords];
+            handleGame(index);
+        }
+
+        // begin a new game
+        private void MiNewGame_Click(object sender, RoutedEventArgs e) {
             game = new TicTacToe();
+            this.dm = new DisplayManager(game, playArea);
+            dm.updateDisplay();
         }
 
-        private LinkedListNode<Space> getCurrentNode(int square){
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(square);
-
-            int i = 0;
-            LinkedListNode<Space> currentNode = game.GameBoard.Spaces.First;
-            while (i < square) {
-                currentNode = currentNode.Next;
-                i++;
+        private void MiHostGame_Click(object sender, RoutedEventArgs e) {
+            Server gameServer = new Server();
+            gameServer.Connect();
+            // This should be delayed until at least one person is connected
+            while (gameServer.Clients.Count != numPlayers) { // *******************************************************************
+                // This is just here to delay until the count is right
             }
-
-            return currentNode;
+            MiNewGame_Click(sender, e);
         }
 
-        private void BtnSquare6_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(6);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(6);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare6.Text = "X";
-                } else {
-                    tbSquare6.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+        private void MiJoinGame_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Functionality coming soon!");
         }
 
-        private void BtnSquare7_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(7);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(7);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare7.Text = "X";
-                } else {
-                    tbSquare7.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+        private void MiObserveGame_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Functionality coming soon!");
         }
 
-        private void BtnSquare8_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(8);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(8);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare8.Text = "X";
-                } else {
-                    tbSquare8.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+        private void MiExit_Click(object sender, RoutedEventArgs e) {
+            System.Windows.Application.Current.Shutdown();
+            return;
         }
 
-        private void BtnSquare3_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(3);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(3);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare3.Text = "X";
-                } else {
-                    tbSquare3.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+        //Dispatches game logic and display logic to proper classes
+        private void handleGame(int indexClicked)
+        {
+            game.handleTurn(indexClicked);
+            dm.updateDisplay();
         }
 
-        private void BtnSquare4_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(4);
+        private void fillMap()
+        {
+            //set up mapping
+            //definitely a way to do this mathematically
+            //but I wasn't sure how and this works
+            // formula is:
+            // x = index % col
+            // y = index / col
+            // if someone wants to reverse that
+            Tuple<int, int> coords = Tuple.Create(0, 0);
+            gridToIndexMap.Add(coords, 0);
 
-            LinkedListNode<Space> currentNode = getCurrentNode(4);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare4.Text = "X";
-                } else {
-                    tbSquare4.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+            coords = Tuple.Create(0, 1);
+            gridToIndexMap.Add(coords, 1);
+            
+            coords = Tuple.Create(0, 2);
+            gridToIndexMap.Add(coords, 2);
+            
+            coords = Tuple.Create(1, 0);
+            gridToIndexMap.Add(coords, 3);
+            
+            coords = Tuple.Create(1, 1);
+            gridToIndexMap.Add(coords, 4);
+            
+            coords = Tuple.Create(1, 2);
+            gridToIndexMap.Add(coords, 5);
+            
+            coords = Tuple.Create(2, 0);
+            gridToIndexMap.Add(coords, 6);
+            
+            coords = Tuple.Create(2, 1);
+            gridToIndexMap.Add(coords, 7);
+            
+            coords = Tuple.Create(2, 2);
+            gridToIndexMap.Add(coords, 8);
         }
 
-        private void BtnSquare5_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(5);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(5);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare5.Text = "X";
-                } else {
-                    tbSquare5.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
-        }
-
-        private void BtnSquare0_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(0);
-
-            LinkedListNode<Space> currentNode = game.GameBoard.Spaces.First;
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare0.Text = "X";
-                } else {
-                    tbSquare0.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
-        }
-
-        private void BtnSquare1_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(1);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(1);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare1.Text = "X";
-                } else {
-                    tbSquare1.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
-        }
-
-        private void BtnSquare2_Click(object sender, RoutedEventArgs e) {
-            playerID = game.CurrentPlayer.playerID;
-            Property prop = (Property)game.GameBoard.Spaces.ElementAt(2);
-
-            LinkedListNode<Space> currentNode = getCurrentNode(2);
-
-            if (prop.owner == -1) {
-                prop.owner = playerID;
-                currentNode.Value = prop;
-                if (playerID == 0) {
-                    tbSquare2.Text = "X";
-                } else {
-                    tbSquare2.Text = "O";
-                }
-                game.makeNextPlayersTurn();
-                game.checkForTicTacToeWin();
-            }
+        private void MiTestHarness_Click(object sender, RoutedEventArgs e) {
+            NetworkTestHarness harness = new NetworkTestHarness();
+            harness.ShowDialog();
         }
     }
 }

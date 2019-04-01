@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Monopoly_Game
 {
-    class Space
+    public class Space
     {
         string spaceName;
+
+        public string SpaceName { get{ return spaceName; } set{ spaceName = value; } }
         public Space()
         {
             spaceName = " ";

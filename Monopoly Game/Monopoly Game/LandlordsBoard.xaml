@@ -1,0 +1,1388 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Monopoly_Game"
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Monopoly_Game.LandlordsBoard"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="LandlordsBoard">
+
+    <Page.Resources>
+        <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+        <Style x:Key="stylePlayable" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Transparent"
+                            Background="{TemplateBinding Background}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#3F20FF0A"  />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Viewbox Stretch="Fill">
+        <Grid Background="#FF8C8C8C" Height="1080" Width="1920">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="169*"/>
+                <ColumnDefinition Width="471*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="images/board.jpg" Stretch="Fill" Margin="483,63,483,62" Grid.ColumnSpan="2" />
+            <TextBlock x:Name="tbSpace22Name" Text="Zoo Idaho" HorizontalAlignment="Center" Margin="108.333,142,1233,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace33Name" Text="Melaleuca Field" HorizontalAlignment="Center" Margin="840.333,274,505,0" VerticalAlignment="Top" Width="68"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Height="66" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace20Name" Text="Museum of Clean" HorizontalAlignment="Center" Margin="24.333,218,1323,0" VerticalAlignment="Top" Width="66"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace25Name" Text="Ross Park" HorizontalAlignment="Center" Margin="342.333,142,1001,0" VerticalAlignment="Top" Width="70"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace31Name" Text="Meth Trafficking" HorizontalAlignment="Center" Margin="802.333,72,486,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="16" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace17Name" Text="Idaho Potato Museum" HorizontalAlignment="Center" Margin="14.333,450,1328,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace19Name" Text="Museum. of National Historty" HorizontalAlignment="Center" Margin="14.333,288,1332,0" VerticalAlignment="Top" Width="67"  Height="44" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace27Name" Text="Shoshone Falls Park" HorizontalAlignment="Center" Margin="492.333,130,849,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace12Name" Text="Scout Mountain Campground" HorizontalAlignment="Center" Margin="10.333,824,1340,0" VerticalAlignment="Top" Width="63"  Height="50" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace14Name" Text=" Pebble Creek Resort" HorizontalAlignment="Center" Margin="21.333,676,1325,0" VerticalAlignment="Top" Width="67"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace35Name" Text="Holt Arena" HorizontalAlignment="Center" Margin="832.333,440,509,0" VerticalAlignment="Top" Width="72"  Height="52" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace24Name" Text="Ross Park &#xA;Aquatic Complex" HorizontalAlignment="Center" Margin="265.333,116,1078,0" VerticalAlignment="Top" Width="70"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace8Name" Text="Hotel Yellowstone" HorizontalAlignment="Center" Margin="186.333,926,1156,0" VerticalAlignment="Top" Width="71"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace9Name" Text="Chief Theatre" HorizontalAlignment="Center" Margin="112.333,926,1233,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace38Name" Text="Stephens &#xA;Performing &#xA;Arts Center" HorizontalAlignment="Center" Margin="830.333,668,513,0" VerticalAlignment="Top" Width="70"  Height="54" FontFamily="Modern No. 20" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace28Name" Text="Fort Hall Replica" HorizontalAlignment="Center" Margin="570.333,130,772,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="26" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace3Name" Text="Outer Limits" HorizontalAlignment="Center" Margin="576.333,926,772,0" VerticalAlignment="Top" Width="65"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace15Name" Text="Massacre Rocks State Park" HorizontalAlignment="Center" Margin="14.333,594,1331,0" VerticalAlignment="Top" Width="68"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.942000000000007"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace6Name" Text="Marshall Library" HorizontalAlignment="Center" Margin="344.333,926,1001,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace1Name" Text="Geronimo's Trampoline Park" HorizontalAlignment="Center" Margin="729.333,926,619,0" VerticalAlignment="Top" Width="65"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace32Name" Text="Portneuf Wellness Complex" HorizontalAlignment="Center" Margin="838.333,204,518,0" VerticalAlignment="Top" Width="57"  Height="56" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.99999999999999989" ScaleX="0.99999999999999989"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.877"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace11Name" Text="Pocatello Women's Detention Center" HorizontalAlignment="Center" Margin="9.333,894,1307,0" VerticalAlignment="Top" Width="97"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="10" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace18Name" Text="Loot Crate" HorizontalAlignment="Center" Margin="42.333,370,1300,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace34Name" Text="Loot Crate" HorizontalAlignment="Center" Margin="791.333,374,550,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace4Name" Text="Loot Crate" HorizontalAlignment="Center" Margin="491.333,904,850,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.071"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="207.333,310,1135,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45.428"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="579.333,692,763,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45.428"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace21Name" Text="Free Parkour" HorizontalAlignment="Center" Margin="484,77,1364,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="18" FontWeight="ExtraBlack" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-40.868"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Text="GO TO JAIL" HorizontalAlignment="Center" Margin="805.333,164,483,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="20" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace30Name" Text="Fort Hall Casino" HorizontalAlignment="Center" Margin="726.333,132,616,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="26" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace0Name" HorizontalAlignment="Center" Margin="810.333,896,488,0" VerticalAlignment="Top" Width="115"  Height="112" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14" Grid.Column="1"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
+            <Image Margin="429.333,90,938,916" Source="images/train.jpg" Stretch="Fill" Grid.Column="1"/>
+            <Image Margin="844.333,498,517,492" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.99999999999999989" ScaleX="0.99999999999999989"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.803999999999988"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock x:Name="tbSpace36Name" Text="Salt Lake Express" HorizontalAlignment="Center" Margin="784.333,526,557,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace26Name" HorizontalAlignment="Center" Margin="417.333,68,924,0" VerticalAlignment="Top" Width="72"  Height="60" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Union Pacific"/><LineBreak/><Run Text="R. R. "/></TextBlock>
+            <TextBlock x:Name="tbSpace16Name" Text="Yellowstone Bus Tours" HorizontalAlignment="Center" Margin="52.333,524,1290,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace5Name" HorizontalAlignment="Center" Margin="417.333,892,928,0" VerticalAlignment="Top" Width="68"  Height="38" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Pocatello Regional Transit" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace13Name" Text="Idaho Power" HorizontalAlignment="Center" Margin="52.333,756,1300,0" VerticalAlignment="Top" Width="61"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace29Name" HorizontalAlignment="Center" Margin="648.333,70,693,0" VerticalAlignment="Top" Width="72"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Text="Pocatello Water Dept." Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="tbSpace7Name" Text="Opportunity" HorizontalAlignment="Center" Margin="264.333,898,1078,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.98000000000000009"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace37Name" Text="Opportunity" HorizontalAlignment="Center" Margin="784.333,608,558,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.069"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace23Name" Text="Opportunity" HorizontalAlignment="Center" Margin="186.333,72,1156,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.922"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace2Name" HorizontalAlignment="Center" Margin="648.333,908,694,0" VerticalAlignment="Top" Width="71"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Child"/><LineBreak/><Run Text=" Support"/></TextBlock>
+            <TextBlock Text="*" HorizontalAlignment="Center" Margin="675.333,946,718,0" VerticalAlignment="Top" Width="20"  Height="16" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.824,0.934" FontWeight="Bold" FontSize="24" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.071"/>
+                        <TranslateTransform X="0.009" Y="-0.015"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Image Margin="849.333,734,509,280" Source="images/diamond.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.149000000000015"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock x:Name="tbSpace39Name" Text="Donation : Build the Wall" HorizontalAlignment="Center" Margin="792.333,750,549,0" VerticalAlignment="Top" Width="72"  Height="38" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Label Content=" Pocatello &#xA;Landlords" HorizontalAlignment="Left" Margin="112.333,467,0,0" VerticalAlignment="Top" Height="173" Width="688" FontFamily="Modern No. 20" FontSize="72" Background="{x:Null}" BorderBrush="#FF150000" HorizontalContentAlignment="Center" Foreground="Black" Grid.Column="1"/>
+
+            <Image Margin="27.333,920,1327,101" Source="images/prison.png" Stretch="Fill" Grid.Column="1"/>
+            <Image Margin="502.333,951,861,79" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" Grid.Column="1"/>
+            <Image Margin="862.333,365,501,665" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-90"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="501,362,1369,668" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="139.333,281,1015,661" Source="images/border.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-45"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="233.333,323,1098,685" Source="images/chest.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="612.333,706,721,309" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="831.333,91,517,916" Source="images/pocatello pd.jpg" Stretch="Fill" Grid.Column="1"/>
+            <Image Margin="806.333,951,516,85" Source="images/arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-180.439"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="429.333,935,938,79" Source="images/train.jpg" Stretch="Fill" Grid.Column="1"/>
+            <Image Margin="4.333,493,1357,498" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90.279"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="13.333,744,1346,283" Source="images/idapower.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="649.333,103,693,938" Source="images/water.jpg" Stretch="Fill" Grid.Column="1"/>
+            <Image Margin="843.333,585,500,430" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="186.333,91,1157,924" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="267.333,926,1076,89" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <!-- Players Money Textbox Area -->
+            <Border Margin="976.333,67,239,979" Grid.Column="1">
+                <Grid>
+                    <Label Content="Money" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" FontSize="24" Width="102" FontFamily="Modern No. 20"/>
+                    <TextBox HorizontalAlignment="Left" Height="34" Margin="107,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" FontSize="18" BorderBrush="{x:Null}" Text="$750.00" IsEnabled="False"/>
+                </Grid>
+            </Border>
+
+            <!-- Players Properties Stack Panel Area -->
+            <Border Margin="973.333,185,45,495" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFE1E1E1" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="383*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Height="211" Margin="0,28,0,0" VerticalAlignment="Top" Width="391" Grid.ColumnSpan="2"/>
+                    <Label Content="Properties Owned" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
+                    <Border Margin="0,443.267,-3.833,-227" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FF4CB0D6" Grid.ColumnSpan="2">
+                        <Grid Margin="0,0,2.167,0">
+                            <StackPanel HorizontalAlignment="Left" Height="78.909" Margin="0,24.98,0,0" VerticalAlignment="Top" Width="391"/>
+                            <Label Content="Opportunity Cards" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Player's Opportunity Cards Stack Panel Area -->
+            <Border Margin="973.333,838,45,62" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFE08423" Grid.Column="1">
+                <Grid Margin="0,0,2.167,0">
+                    <StackPanel HorizontalAlignment="Left" Height="78.909" Margin="0,24.98,0,0" VerticalAlignment="Top" Width="391"/>
+                    <Label Content="Opportunity Cards" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
+                </Grid>
+            </Border>
+            <!-- Opponents Properties Stack Panel Area -->
+
+            <Border Margin="40,185,71.667,390" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFECF17F">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="383*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Height="427.798" Margin="10,29.98,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Content="Opponent Properties" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
+                    <Image Margin="-8256,-598,8460.667,1004.333" Source="images/border.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.998" ScaleX="1.002"/>
+                                <SkewTransform AngleY="-0.243"/>
+                                <RotateTransform Angle="-44.879"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Grid Margin="-8818,-1010,8161.667,854.333">
+
+                        <Image Margin="282,0,282,1" Source="images/board.jpg" Stretch="Fill" />
+
+
+
+
+                        <TextBlock Text="Zoo Idaho" HorizontalAlignment="Center" Margin="414,80,1032,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Melaleuca Field" HorizontalAlignment="Center" Margin="1146,212,304,0" VerticalAlignment="Top" Width="68"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" Height="66">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Museum of Clean" HorizontalAlignment="Center" Margin="330,156,1122,0" VerticalAlignment="Top" Width="66"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Ross Park" HorizontalAlignment="Center" Margin="648,80,800,0" VerticalAlignment="Top" Width="70"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Meth Trafficking" HorizontalAlignment="Center" Margin="1108,10,285,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Idaho Potato Museum" HorizontalAlignment="Center" Margin="320,388,1127,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Museum. of National Historty" HorizontalAlignment="Center" Margin="320,226,1131,0" VerticalAlignment="Top" Width="67"  Height="44" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Shoshone Falls Park" HorizontalAlignment="Center" Margin="798,68,648,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Scout Mountain Campground" HorizontalAlignment="Center" Margin="316,762,1139,0" VerticalAlignment="Top" Width="63"  Height="50" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text=" Pebble Creek Resort" HorizontalAlignment="Center" Margin="327,614,1124,0" VerticalAlignment="Top" Width="67"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Holt Arena" HorizontalAlignment="Center" Margin="1138,378,308,0" VerticalAlignment="Top" Width="72"  Height="52" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Ross Park &#xA;Aquatic Complex" HorizontalAlignment="Center" Margin="571,54,877,0" VerticalAlignment="Top" Width="70"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Hotel Yellowstone" HorizontalAlignment="Center" Margin="492,864,955,0" VerticalAlignment="Top" Width="71"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Chief Theatre" HorizontalAlignment="Center" Margin="418,864,1032,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Stephens &#xA;Performing &#xA;Arts Center" HorizontalAlignment="Center" Margin="1136,606,312,0" VerticalAlignment="Top" Width="70"  Height="54" FontFamily="Modern No. 20" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" TextAlignment="Center">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <Label Content="Idaho State &#xA;University" HorizontalAlignment="Center" Margin="1127,762,313,0" VerticalAlignment="Top" Background="{x:Null}" Width="78" HorizontalContentAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Modern No. 20" FontWeight="Bold" FontSize="14">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <TextBlock Text="Fort Hall Replica" HorizontalAlignment="Center" Margin="876,68,571,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="26"/>
+                        <TextBlock Text="Outer Limits" HorizontalAlignment="Center" Margin="882,864,571,0" VerticalAlignment="Top" Width="65"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Massacre Rocks State Park" HorizontalAlignment="Center" Margin="320,532,1130,0" VerticalAlignment="Top" Width="68"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="89.942"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Marshall Library" HorizontalAlignment="Center" Margin="650,864,800,0" VerticalAlignment="Top" Width="68"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Geronimo's Trampoline Park" HorizontalAlignment="Center" Margin="1035,864,418,0" VerticalAlignment="Top" Width="65"  Height="40" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="Portneuf Wellness Complex" HorizontalAlignment="Center" Margin="1144,142,317,0" VerticalAlignment="Top" Width="57"  Height="56" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-89.877"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Pocatello Women's Detention Center" HorizontalAlignment="Center" Margin="315,832,1106,0" VerticalAlignment="Top" Width="97"  Height="30" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="10"/>
+                        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="348,308,1099,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="1097,312,349,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="797,842,649,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.071"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Loot Crate" HorizontalAlignment="Center" Margin="513,248,934,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-45.428"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="885,630,562,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-45.428"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Free Parkour" HorizontalAlignment="Center" Margin="282,22,1164,0" VerticalAlignment="Top" Width="72"  FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="18" FontWeight="ExtraBlack">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-45.213"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="GO TO JAIL" HorizontalAlignment="Center" Margin="1111,102,282,0" VerticalAlignment="Top" Width="125"  Height="26" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontSize="20">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Fort Hall Casino" HorizontalAlignment="Center" Margin="1032,70,415,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="26"/>
+                        <TextBlock HorizontalAlignment="Center" Margin="1111,838,292,0" VerticalAlignment="Top" Width="115"  Height="112" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
+                        <Image Margin="735,28,737,854" Source="images/train.jpg" Stretch="Fill"/>
+                        <Image Margin="1150,436,316,430" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-89.804"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBlock Text="Salt Lake Express" HorizontalAlignment="Center" Margin="1090,464,356,0" VerticalAlignment="Top" Width="72"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="723,6,723,0" VerticalAlignment="Top" Width="72"  Height="60" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform><Run Text="Union Pacific"/><LineBreak/><Run Text="R. R. "/></TextBlock>
+                        <TextBlock Text="Yellowstone Bus Tours" HorizontalAlignment="Center" Margin="358,462,1089,0" VerticalAlignment="Top" Width="71"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="723,830,727,0" VerticalAlignment="Top" Width="68"  Height="38" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Pocatello Regional Transit"/>
+                        <TextBlock Text="Idaho Power" HorizontalAlignment="Center" Margin="358,694,1099,0" VerticalAlignment="Top" Width="61"  Height="28" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="954,8,492,0" VerticalAlignment="Top" Width="72"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Text="Pocatello Water Dept.">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform></TextBlock>
+                        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="570,836,877,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-0.98"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="1090,546,357,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90.069"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Opportunity" HorizontalAlignment="Center" Margin="492,10,955,0" VerticalAlignment="Top" Width="71"  Height="14" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-0.922"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="954,846,493,0" VerticalAlignment="Top" Width="71"  Height="32" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform><Run Text="Child"/><LineBreak/><Run Text=" Support"/></TextBlock>
+                        <TextBlock Text="*" HorizontalAlignment="Center" Margin="981,884,517,0" VerticalAlignment="Top" Width="20"  Height="16" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.824,0.934" FontWeight="Bold" FontSize="24">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-0.071"/>
+                                    <TranslateTransform X="0.009" Y="-0.015"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <Image Margin="1155,672,308,218" Source="images/diamond.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90.149"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBlock Text="Donation : Build the Wall" HorizontalAlignment="Center" Margin="1098,688,348,0" VerticalAlignment="Top" Width="72"  Height="38" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <Button x:Name="btnSpace81" HorizontalAlignment="Left" Margin="319,830,0,0" VerticalAlignment="Top" Width="88" Height="86"  Background="{x:Null}"/>
+
+                    </Grid>
+                    <Image Margin="-8590,-420,8931.667,880.333" Source="images/prison.png" Stretch="Fill"/>
+                    <Image Margin="-8265,-399,8612.667,865.333" Source="images/chest.jpg" Stretch="Fill"/>
+                    <Image Margin="-8018,-802,8366.667,1268.333" Source="images/chest.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.996" ScaleX="1.004"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8613,-804,8960.667,1270.333" Source="images/chest.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.996" ScaleX="1.004"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8513,-860,8718.667,1266.333" Source="images/border.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.998" ScaleX="1.002"/>
+                                <SkewTransform AngleY="-0.243"/>
+                                <RotateTransform Angle="-44.879"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8449,-830,8775.667,1282.333" Source="images/chest.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.998" ScaleX="1.002"/>
+                                <SkewTransform AngleY="-0.243"/>
+                                <RotateTransform Angle="-44.879"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8189,-567,8516.667,1024.333" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.998" ScaleX="1.002"/>
+                                <SkewTransform AngleY="-0.243"/>
+                                <RotateTransform Angle="-44.879"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Label Content=" Pocatello &#xA;Landlords" HorizontalAlignment="Left" Margin="-8416,-731,0,0" VerticalAlignment="Top" Height="119" Width="228" FontFamily="Modern No. 20" FontSize="72" Background="{x:Null}" BorderBrush="#FF150000" HorizontalContentAlignment="Center" Foreground="Black"/>
+
+                    <Image Margin="-8039,-990,8377.667,1441.333" Source="images/pocatello pd.jpg" Stretch="Fill"/>
+                    <Image Margin="-8057,-399,8376.667,869.333" Source="images/arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-0.004"/>
+                                <RotateTransform Angle="179.559"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8319,-416,8665.667,865.333" Source="images/train.jpg" Stretch="Fill"/>
+                    <Image Margin="-8599,-714,8945.667,1154.333" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.996" ScaleX="1.004"/>
+                                <SkewTransform AngleX="-0.002"/>
+                                <RotateTransform Angle="90.278"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8599,-541,8944.667,1006.333" Source="images/idapower.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.996" ScaleX="1.004"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8164,-982,8497.667,1456.333" Source="images/water.jpg" Stretch="Fill"/>
+                    <Image Margin="-8031,-651,8365.667,1107.333" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.996" ScaleX="1.004"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8481,-990,8815.667,1446.333" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="-8425,-416,8760.667,872.333" Source="images/question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <!-- Players Money Textbox Area -->
+                    <Border Margin="-7940,-1006,8186.667,1484.333">
+                        <Grid>
+                            <Label Content="Money" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" FontSize="24" Width="102" FontFamily="Modern No. 20"/>
+                            <TextBox HorizontalAlignment="Left" Height="34" Margin="107,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" FontSize="18" BorderBrush="{x:Null}" Text="$750.00" IsEnabled="False"/>
+                            <Border Margin="1534,156,-1534,-156">
+                                <Grid>
+                                    <Label Content="Money" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" FontSize="18" Width="78"/>
+                                    <TextBox HorizontalAlignment="Left" Height="34" Margin="78,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <!-- Players Properties Stack Panel Area -->
+                    <Border Margin="-7942,-926,8054.667,1151.333" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFE1E1E1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="383*"/>
+                                <ColumnDefinition Width="8*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel HorizontalAlignment="Left" Height="211" Margin="0,28,0,0" VerticalAlignment="Top" Width="391" Grid.ColumnSpan="2"/>
+                            <Label Content="Properties Owned" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
+                            <Border Margin="0,443.267,-3.833,-227" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FF4CB0D6" Grid.ColumnSpan="2">
+                                <Grid Margin="0,0,2.167,0">
+                                    <StackPanel HorizontalAlignment="Left" Height="78.909" Margin="0,24.98,0,0" VerticalAlignment="Top" Width="391"/>
+                                    <Label Content="Opportunity Cards" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <!-- Player's Opportunity Cards Stack Panel Area -->
+                    <Border Margin="-7942,-476,8054.667,854.333" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFE08423">
+                        <Grid Margin="0,0,2.167,0">
+                            <StackPanel HorizontalAlignment="Left" Height="78.909" Margin="0,24.98,0,0" VerticalAlignment="Top" Width="391"/>
+                            <Label Content="Opportunity Cards" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
+                        </Grid>
+                    </Border>
+                    <!-- Opponents Properties Stack Panel Area -->
+                    <Border Margin="-8928,-926,9040.667,1079.333" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFECF17F">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="383*"/>
+                                <ColumnDefinition Width="8*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Height="427.798" Margin="10,29.98,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                            <Label Content="Opponent Properties" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+            <Path Data="M225,1290" Fill="#FFFF1901" HorizontalAlignment="Left" Height="1" Margin="225,1290,0,-211" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+            <Path Data="M315,1320" Fill="#FFFF1901" HorizontalAlignment="Left" Height="1" Margin="315,1320,0,-241" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+            <Path Data="M130,1195" Fill="#FFFF1901" HorizontalAlignment="Left" Height="1" Margin="130,1195,0,-116" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+            <Image Margin="515.333,661,639,281" Source="images/border.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-45"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace0" HorizontalAlignment="Left" Margin="803.333,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Image Margin="7.333,113,1313,915" Source="car.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-35.036"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Button x:Name="btnSpace21" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="485,64,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2">
+                <Image Source="images/car.png" Stretch="Fill" RenderTransformOrigin="0.591,0.595" Height="59" Width="100" Grid.Column="1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-37.942"/>
+                            <TranslateTransform X="2.339" Y="-7.061"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Button>
+            <Button x:Name="btnSpace31" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="803.333,64,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace23" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="185.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace34" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="674.333,476,0,0" VerticalAlignment="Top" Width="76" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="153.463" Y="-153.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace36" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="829.333,477,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="0.666" Y="-0.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace37" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="902.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-74.234" Y="74.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace10" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="485,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnSpace18" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="358,479,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="153.463" Y="-153.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace1" HorizontalAlignment="Left" Margin="725.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace4" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="491.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace7" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="262.333,888,0,0" Grid.Column="1"/>
+
+            <Button x:Name="btnSpace2" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="126"  Background="{x:Null}" Margin="646.333,888,0,0" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace2Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="649.333,998,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <Button x:Name="btnSpace8" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="185.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace9" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="106.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace1Cost" Grid.Column="1" FontFamily="Modern No. 20" FontWeight="Bold" HorizontalAlignment="Left" Margin="728.333,998,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace3Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="571.333,997,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace5Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="418.333,998,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace6Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="342.333,997,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace8Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="186.333,997,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace9Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="108.333,997,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
+            <TextBlock x:Name="tbSpace12Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="487,822,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace13Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="487,743,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace14Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="486,667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace156Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="487,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace15Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="482,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace17Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="484,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace19Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="484,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace20Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="486,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-25.16" Y="19.22"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace22Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="108.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace24Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="265.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace25Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="342.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace27Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="492.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace28Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="571.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace29Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="650.333,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace30Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="728.333,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace32Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="882.333,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace33Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="881.333,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace35Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="881.333,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace36Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="885.333,534,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="66" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace38Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="882.333,688,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="66" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace40Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="884.333,843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="66" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbSpace39Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="883.333,765,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="66" TextAlignment="Center" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="btnSpace3" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="568.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace5" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="126"  Background="{x:Null}" Margin="419.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace6" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="126"  Background="{x:Null}" Margin="340.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace11" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="13.333,888,0,0" VerticalAlignment="Top" Width="90" Height="91"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace12" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="313.333,476,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-309.256" Y="309.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace13" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="234.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-230.027" Y="230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace14" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="157.333,475,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-153.463" Y="153.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace15" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="78.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-74.234" Y="74.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace16" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="6.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="0.666" Y="-0.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace17" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="435,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="75.567" Y="-75.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace19" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="280,475,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="230.027" Y="-230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace28" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="568.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <TextBlock x:Name="tbSpace26Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="418.333,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
+            <Button x:Name="btnSpace26" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="418.333,64,0,0" VerticalAlignment="Top" Width="69" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace29" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="646.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace30" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="725.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace27" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="491.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace25" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="340.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace24" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="262.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace22" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="106.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace20" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="201,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="309.256" Y="-309.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace33" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="597.333,476,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="230.027" Y="-230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace32" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="520.333,477,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="309.256" Y="-309.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <TextBlock x:Name="tbSpace40Name" Text="Idaho State University" HorizontalAlignment="Center" Margin="821.333,830,520,0" VerticalAlignment="Top" Width="72"  Height="38" FontFamily="Modern No. 20" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="btnSpace38" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="980.333,476,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-153.463" Y="153.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace39" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="1058.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-230.027" Y="230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace40" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="1136.333,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="-309.256" Y="309.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSpace35" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="752.333,479,0,0" VerticalAlignment="Top" Width="77" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.924"/>
+                        <TranslateTransform X="75.567" Y="-75.667"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnLootCrateDeck" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="432.333,-8,0,0" VerticalAlignment="Top" Width="138" Height="254"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1" BorderBrush="{x:Null}" AutomationProperties.HelpText="This is the opportunity card deck.">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="44.628"/>
+                        <TranslateTransform X="-230.027" Y="230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnOpportunityDeck" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="805.333,372,0,0" VerticalAlignment="Top" Width="138" Height="254"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1" BorderBrush="{x:Null}" AutomationProperties.HelpText="This is the opportunity card deck.">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="44.628"/>
+                        <TranslateTransform X="-230.027" Y="230.333"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+    </Viewbox>
+</Page>

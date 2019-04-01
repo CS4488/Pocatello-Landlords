@@ -6,21 +6,53 @@ using System.Threading.Tasks;
 
 namespace Monopoly_Game
 {
-    class Player
+    public class Player
     {
-        public int playerID;
-        public bool eliminated = false;
+        protected static int lastAssignedId = 0;
+
+        private int playerID;
+        private bool eliminated = false;
+        private string playerName;
+        private string token;
+        private int _Position;
+
+        public string PlayerName { get{ return playerName; } set{ playerName = value; } }
+        public int PlayerID { get{ return playerID; } set{ playerID = value; } }
+        public bool Eliminated { get{return eliminated; } set{ eliminated = value; } }
+        public string Token { get { return token; } set { token = value;  } }
+        public static int LastAssignedID { get{ return lastAssignedId; } set{ lastAssignedId = value; } }
+
+        public int Position
+        {
+            get { return _Position; }
+            set { _Position = value; }
+        }
+        
         public Player()
-        { }
+        {
+            this.playerID = Player.lastAssignedId;
+            Player.lastAssignedId++;
+        }
+
         public Player(int inputID)
         {
             playerID = inputID;
         }
-        public void takeTurn()
+    
+        public virtual bool takeTurn(int spaceIndex, Game game)
         {
-            // Commented out so Test Harness would compile - Rex Christensen - 27JAN2019 - v1;
-            //moveToSpace();
-            //interactWithSpace();
+            bool validTurn = false;
+            Space spaceClicked = game.GameBoard.Spaces[spaceIndex];
+            if(spaceClicked is Property)
+            {
+                Property propertyClicked = (Property)spaceClicked;
+                if(propertyClicked.Owner == -1)
+                {
+                    propertyClicked.Owner = game.CurrentPlayer.PlayerID;
+                    validTurn = true;
+                }
+            }
+            return validTurn;
         }
     }
 }
