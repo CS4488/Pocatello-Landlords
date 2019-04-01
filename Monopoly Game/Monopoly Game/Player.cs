@@ -46,9 +46,9 @@ namespace Monopoly_Game
             if(spaceClicked is Property)
             {
                 Property propertyClicked = (Property)spaceClicked;
-                if(propertyClicked.Owner == -1)
+                if(propertyClicked.OwnerPlayerID == -1)
                 {
-                    propertyClicked.Owner = game.CurrentPlayer.PlayerID;
+                    propertyClicked.OwnerPlayerID = game.CurrentPlayer.PlayerID;
                     validTurn = true;
                 }
             }

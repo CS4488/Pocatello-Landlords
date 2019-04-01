@@ -26,11 +26,16 @@ namespace Monopoly_Game
         private static int _NumberOfPlayers;
 
 
+        public static void InitializeFromGame()
+        {
+
+        }
         /// <summary>
         /// The network will either be of type Server or Client.
         /// </summary>
-        public static void SetupAsServer()
+        public static void SetupAsServer(List<Space> boardSpaces)
         {
+            _Game = new Game(boardSpaces);
             _Server = new Server();
             _Server.Connect();
             while (_Server.Clients.Count != _NumberOfPlayers)
@@ -41,9 +46,9 @@ namespace Monopoly_Game
 
         }
 
-        public static void SetupAsClient()
+        public static void SetupAsClient(List<Space> boardSpaces)
         {
-
+            _Game = new Game(boardSpaces);
         }
 
 

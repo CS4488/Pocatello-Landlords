@@ -58,6 +58,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameParameters.xaml.cs">
       <DependentUpon>GameParameters.xaml</DependentUpon>
@@ -134,6 +135,9 @@
     <Resource Include="images\question.png" />
     <Resource Include="images\train.jpg" />
     <Resource Include="images\water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="car.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

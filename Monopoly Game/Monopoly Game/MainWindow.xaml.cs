@@ -45,9 +45,9 @@ namespace Monopoly_Game
         public MainWindow()
         {
             InitializeComponent();
-            playArea.Visibility = Visibility.Hidden;
-            playArea.IsEnabled = false;
-            fillMap();
+            LandlordsBoard lb = new LandlordsBoard();
+            frm_Main.Content = lb;
+            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
         }
 
         //handle all button clicks
@@ -66,7 +66,7 @@ namespace Monopoly_Game
         // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e) {
             game = new TicTacToe();
-            this.dm = new DisplayManager(game, playArea);
+            //this.dm = new DisplayManager(game, playArea);
             dm.updateDisplay();
         }
 

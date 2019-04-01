@@ -20,7 +20,7 @@ namespace Monopoly_Game
         {
             for (int i = 0; i < 9; i++)
             {
-                base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
+                //base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
             }
             Player playerOne = new Player();
             playerOne.Token = "X";
@@ -78,24 +78,24 @@ namespace Monopoly_Game
 
             // Horizontal checks
             for (int i = 0; i < 8; i += 3) {
-                if (temp[i].owner == temp[i + 1].owner && temp[i].owner == temp[i + 2].owner && temp[i].owner != -1) {
+                if (temp[i].OwnerPlayerID == temp[i + 1].OwnerPlayerID && temp[i].OwnerPlayerID == temp[i + 2].OwnerPlayerID && temp[i].OwnerPlayerID != -1) {
                     return true;
                 }
             }
 
             // Vertical checks
             for (int i = 0; i < 3; i++) {
-                if (temp[i].owner == temp[i + 3].owner && temp[i].owner == temp[i + 6].owner && temp[i].owner != -1) {
+                if (temp[i].OwnerPlayerID == temp[i + 3].OwnerPlayerID && temp[i].OwnerPlayerID == temp[i + 6].OwnerPlayerID && temp[i].OwnerPlayerID != -1) {
                     return true;
                 }
             }
 
             // Diagonal checks
-            if (temp[0].owner == temp[4].owner && temp[0].owner == temp[8].owner && temp[0].owner != -1) {
+            if (temp[0].OwnerPlayerID == temp[4].OwnerPlayerID && temp[0].OwnerPlayerID == temp[8].OwnerPlayerID && temp[0].OwnerPlayerID != -1) {
                 return true;
             }
 
-            if (temp[2].owner == temp[4].owner && temp[2].owner == temp[6].owner && temp[2].owner != -1) {
+            if (temp[2].OwnerPlayerID == temp[4].OwnerPlayerID && temp[2].OwnerPlayerID == temp[6].OwnerPlayerID && temp[2].OwnerPlayerID != -1) {
                 return true;
             }
 
@@ -107,7 +107,7 @@ namespace Monopoly_Game
 
             Property[] temp = GameBoard.Spaces.Cast<Property>().ToArray();
             foreach (Property p in temp) {
-                if (p.Owner == -1) {
+                if (p.OwnerPlayerID == -1) {
                     allSpacesTaken = false;
                 }
             }

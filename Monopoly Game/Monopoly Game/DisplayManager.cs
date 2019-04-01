@@ -27,8 +27,8 @@ namespace Monopoly_Game {
 
             for (int i = 0; i < game.GameBoard.Spaces.Count; i++) {
                 Property property = (Property)game.GameBoard.Spaces[i];
-                if (property.Owner != -1) {
-                    Player owner = game.getPlayerById(property.Owner);
+                if (property.OwnerPlayerID != -1) {
+                    Player owner = game.getPlayerById(property.OwnerPlayerID);
                     //our buttons are indexed same as grid
                     Button btn = (Button)grid.Children[i];
                     var btnLabel = btn.Content as TextBlock;
@@ -44,5 +44,12 @@ namespace Monopoly_Game {
                 MessageBox.Show("Game over!");
             }
         }
+
+        public void movePlayerToken (List<StackPanel> moveAreas, int playerID, StackPanel start, int moves){
+            //TODO:
+                // Get the player token from the `start` stackPanel using the `playerID`, move it `moves` number of spaces
+                // within the `moveAreas`.
+        }
+
     }
 }

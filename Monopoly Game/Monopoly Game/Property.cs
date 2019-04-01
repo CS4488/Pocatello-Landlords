@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Monopoly_Game
 {
@@ -10,35 +11,60 @@ namespace Monopoly_Game
          * Rex Christesnsen: Property class 1.0
          * 
          * Please describe changes made here; along with your name, date, and version:
-         * Addws public Constructor for use with Tic Tac Toe test harness - Rex Christensen - 27JAN1019 - v1
+         * Adds public Constructor for use with Tic Tac Toe test harness - Rex Christensen - 27JAN1019 - v1
          * 
          */
+
     class Property : Space
     {
-        public int _value, owner;
+        private int _Value;
+        private TextBlock _ValueTB;
+        private int _OwnerPlayerID;
+        private StackPanel _BuildingArea;
 
-        public int Owner { get{ return owner; } set{ owner = value; } }
-        public int Value { get{ return _value; } set{ value = _value; } }
-        public Property()
+        public int OwnerPlayerID { get { return _OwnerPlayerID; } set { _OwnerPlayerID = value; } }
+        public TextBlock ValueTB { get { return _ValueTB;} }
+        public StackPanel BuildingArea { get { return _BuildingArea; } }
+
+        public int Value
         {
-            owner = -1;
-            _value = 0;
+            get{
+                return _Value;
+            }
+            set {
+                if (value.ToString() != _ValueTB.Text)
+                {
+                    _ValueTB.Text = value.ToString();
+                }
+                _Value = value;
+                    
+            }
         }
 
-        /// <summary>
-        /// This constructor for use with the Tic Tac Toe test harness
-        /// Rex Christensen - 27JAN2019 - v1
-        /// </summary>
-        /// <param name="inputValue"></param>
-        public Property(int inputValue) {
-            owner = -1;
-            _value = inputValue;
-        }
 
-        public Property(int inputOwner, int inputValue)
+
+        public Property(string id, TextBlock name, Button btn, StackPanel moveArea, StackPanel bldgArea, TextBlock valueTB ) : base (id, name, btn, moveArea)
         {
-            owner = inputOwner;
-            _value = inputValue;
+            _OwnerPlayerID = -1;
+            _Value = 0;
+            _BuildingArea = bldgArea;
+            _ValueTB = valueTB;
         }
+
+        ///// <summary>
+        ///// This constructor for use with the Tic Tac Toe test harness
+        ///// Rex Christensen - 27JAN2019 - v1
+        ///// </summary>
+        ///// <param name="inputValue"></param>
+        //public Property(int inputValue) {
+        //    _OwnerPlayerID = -1;
+        //    _Value = inputValue;
+        //}
+
+        //public Property(int inputOwner, int inputValue)
+        //{
+        //    _OwnerPlayerID = inputOwner;
+        //    _Value = inputValue;
+        //}
     }
 }
