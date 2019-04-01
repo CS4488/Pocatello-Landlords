@@ -58,12 +58,15 @@ namespace Monopoly_Game {
 
                 int i;
 
-                while (stream.DataAvailable && (i = stream.Read(bytes, 0, bytes.Length)) != 0) {
+                while ((i = stream.Read(bytes, 0, bytes.Length)) > 0) /* != 0 && stream.DataAvailable)*/ {
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     int x = data.Length;
                     fullData += data;
+                    if (!stream.DataAvailable) break;
                 }
-                // **** Nothing below this line appears to be firing. 
+                // **** Nothing below this line appears to be firing.
+
+                MessageBox.Show(fullData);
 
                 var receivedObject = DeserializeObject(fullData);
 
@@ -122,16 +125,21 @@ namespace Monopoly_Game {
         // Shamelessly stolen from:
         // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
         private object DeserializeObject(string gameText) {
-            XmlSerializer serializer = new XmlSerializer(typeof(Game));
-            using (TextReader reader = new StringReader(gameText)) {
-                var result = serializer.Deserialize(reader); // This was a game object with the deserializer cast to Game as well
-                // ????
-                if (result is Game) {
+            try {
+                XmlSerializer serializer = new XmlSerializer(typeof(Game)); 
+                using (TextReader reader = new StringReader(gameText)) {
+                    var result = serializer.Deserialize(reader); // This was a game object with the deserializer cast to Game as well
+                                                                 // ????
                     result = (Game)result;
-                } else if (result is Player) {
-                    result = (Player)result;
+                    return result;
                 }
-                return result;
+            } catch (Exception ex) {
+                XmlSerializer serializer = new XmlSerializer(typeof(Player));
+                using (TextReader reader = new StringReader(gameText)) {
+                    var result = serializer.Deserialize(reader);
+                    result = (Player)result;
+                    return result;
+                }
             }
         }
     }

@@ -87,17 +87,17 @@ namespace Monopoly_Game {
 
                 int i;
 
-                while (stream.DataAvailable && (i = stream.Read(bytes, 0, bytes.Length)) != 0) {
+                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) { // ************ This loop now never enters ********
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     // Deserialize data back into a game object
                     //currentGame = DeserializeObject(data);
                     // ************ Possibly some tag that the game has changed? ********
                     fullData += data;
+                    if (!stream.DataAvailable) break;
                 }
 
                 currentGame = DeserializeObject(data);
 
-                //return; // **************** Removed Return statement
             } catch (Exception ex) {
                 // Process exception
                 MessageBox.Show(ex.Message);
@@ -107,7 +107,7 @@ namespace Monopoly_Game {
         public void SendGameToClients(Game game) {
             foreach (TcpClient c in clients) {
                 //c.Connect(localHost, port); // Will this create a new client in the Server list of clients?
-                writeMessgae(c, game);
+                writeMessage(c, game);
             }
         }
 
@@ -119,6 +119,8 @@ namespace Monopoly_Game {
 
                 string playerString = SerializeObject(play);
 
+                MessageBox.Show("Sent Player.\n\n" + playerString);
+
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(playerString);
 
                 stream.Write(message, 0, message.Length);
@@ -128,13 +130,15 @@ namespace Monopoly_Game {
             }
         }
 
-        private void writeMessgae(object obj, Game game) { // This client is not connected here for some reason
+        private void writeMessage(object obj, Game game) { // This client is not connected here for some reason
             try {
                 TcpClient client = (TcpClient)obj;
 
                 NetworkStream stream = client.GetStream();
 
                 gameString = SerializeObject(game);
+
+                MessageBox.Show("Sent Game.\n\n" + gameString);
 
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(gameString);
 
