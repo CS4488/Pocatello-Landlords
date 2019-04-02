@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Xml.Serialization;
 using System.IO;
 using System.Windows;
+using System.Xml;
 
 namespace Monopoly_Game {
     /*
@@ -16,6 +17,7 @@ namespace Monopoly_Game {
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Methods for connecting to and communicating with multiple clients.
+    * Corrections made for threading, network communication, and serialization/deserialization - Rex 1APR2019
     */
     class Server {
         TcpListener server;
@@ -47,66 +49,55 @@ namespace Monopoly_Game {
 
         private void ConnectClient() {
             server.Start();
-            while(true) { // *************** Add some sort of exit flag here ********************** May not be needed
+            while(true) { 
                 TcpClient client = server.AcceptTcpClient();
                 clients.Add(client);
-
-                // Create and send Player object back to client. **** Does this need to be it's own thread? ****
-                Player play = new Player();
-                sendPlayerObject(client, play);
-
-                // ***** For Test Harness ****
-                SendGameToClients(currentGame);
 
                 Thread newThread = new Thread(() => readMessage(client));
                 newThread.IsBackground = true;
                 newThread.Start();
 
-                // ************ For Test Harness *************
-                // Add some notification that a client has connected.
-                TestHarnessViewModel.Status += "Client Connected!\n";
+                // Send the game object first 
+                SendGameToClients(currentGame);
 
-                //Application.Current.Dispatcher.Invoke(() => {
-                //    foreach (Window w in Application.Current.Windows) {
-                //        if (w.GetType() == typeof(NetworkTestHarness)) {
-                //            (w as NetworkTestHarness).updateDisplay();
-                //        }
-                //    }
-                //});
+                // Create and send Player object back to client. 
+                Player play = new Player();
+                sendPlayerObject(client, play);
+
+                TestHarnessViewModel.Status += "Client Connected!\n";
             }
         }
 
         private void readMessage(object obj) {
-            try {
-                TcpClient client = (TcpClient)obj;
+            while (true) {
+                try {
+                    TcpClient client = (TcpClient)obj;
 
-                string data = null;
-                string fullData = "";
+                    string data = null;
+                    string fullData = "";
 
-                NetworkStream stream = client.GetStream();
+                    NetworkStream stream = client.GetStream();
 
-                int i;
+                    int i;
 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) { // ************ This loop now never enters ********
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    // Deserialize data back into a game object
-                    //currentGame = DeserializeObject(data);
-                    // ************ Possibly some tag that the game has changed? ********
-                    fullData += data;
-                    if (!stream.DataAvailable) break;
+                    while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) { 
+                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+
+                        fullData += data;
+                        if (!stream.DataAvailable) break;
+                    }
+
+                    currentGame = DeserializeObject(fullData);
+
+                } catch (Exception ex) {
+                    // Process exception
+                    MessageBox.Show(ex.Message);
                 }
-
-                currentGame = DeserializeObject(data);
-
-            } catch (Exception ex) {
-                // Process exception
-                MessageBox.Show(ex.Message);
             }
         }
 
         public void SendGameToClients(Game game) {
             foreach (TcpClient c in clients) {
-                //c.Connect(localHost, port); // Will this create a new client in the Server list of clients?
                 writeMessage(c, game);
             }
         }
@@ -119,8 +110,6 @@ namespace Monopoly_Game {
 
                 string playerString = SerializeObject(play);
 
-                MessageBox.Show("Sent Player.\n\n" + playerString);
-
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(playerString);
 
                 stream.Write(message, 0, message.Length);
@@ -130,15 +119,13 @@ namespace Monopoly_Game {
             }
         }
 
-        private void writeMessage(object obj, Game game) { // This client is not connected here for some reason
+        private void writeMessage(object obj, Game game) { 
             try {
                 TcpClient client = (TcpClient)obj;
 
                 NetworkStream stream = client.GetStream();
 
                 gameString = SerializeObject(game);
-
-                MessageBox.Show("Sent Game.\n\n" + gameString);
 
                 byte[] message = System.Text.Encoding.ASCII.GetBytes(gameString);
 
@@ -148,6 +135,8 @@ namespace Monopoly_Game {
             }
         }
 
+        // Shamelessly stolen from:
+        // https://stackoverflow.com/questions/2434534/serialize-an-object-to-string
         private Game DeserializeObject(string gameText) {
             XmlSerializer serializer = new XmlSerializer(typeof(Game));
             using (TextReader reader = new StringReader(gameText)) {
@@ -156,11 +145,14 @@ namespace Monopoly_Game {
             }
         }
 
+        // Shamelessly modified from:
+        // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
         private string SerializeObject<T>(T toSerialize) {
             XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
 
             using (StringWriter textWriter = new StringWriter()) {
                 xmlSerializer.Serialize(textWriter, toSerialize);
+
                 return textWriter.ToString();
             }
         }

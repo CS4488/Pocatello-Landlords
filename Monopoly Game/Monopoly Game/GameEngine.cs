@@ -113,7 +113,7 @@ namespace Monopoly_Game
 
         private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
         {
-            _Game = new Game();
+            _Game = new Game(true); // Bool parameter only used to differentiate constructors - Rex 1APR19
             //_DM = new DisplayManager(_Game, playArea);
             _DM.updateDisplay();
         }

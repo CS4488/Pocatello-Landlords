@@ -16,6 +16,7 @@ namespace Monopoly_Game {
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Methods for connecting to and communicating with a host server.
+    * Corrections made for threading, network communication, and serialization/deserialization - Rex 1APR2019
     */
     class Client {
         Int32 port = 14242;
@@ -37,11 +38,8 @@ namespace Monopoly_Game {
             newThread.Start();
         }
 
-        private void Connect() { // Changed from void to Task and added async
+        private void Connect() { 
             client = new TcpClient(server, port);
-            //ThreadPool.QueueUserWorkItem(Read, client); // ***** Do I want to do this as a pool? or just create a new thread?
-
-            Read(client);
 
             Thread readThread = new Thread(() => Read(client));
             readThread.IsBackground = true;
@@ -49,43 +47,39 @@ namespace Monopoly_Game {
         }
 
         private void Read(object obj) { // The object parameter shouldn't be needed
-            try {
-                byte[] bytes = new byte[256]; // This buffer is not long enough
-                string data = null;
-                string fullData = "";
+            while (true) {
+                try {
+                    byte[] bytes = new byte[256]; 
+                    string data = null;
+                    string fullData = "";
 
-                NetworkStream stream = client.GetStream();
+                    NetworkStream stream = client.GetStream();
 
-                int i;
+                    int i;
 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) > 0) /* != 0 && stream.DataAvailable)*/ {
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    int x = data.Length;
-                    fullData += data;
-                    if (!stream.DataAvailable) break;
-                }
-                // **** Nothing below this line appears to be firing.
-
-                MessageBox.Show(fullData);
-
-                var receivedObject = DeserializeObject(fullData);
-
-                if (receivedObject is Game) {
-                    currentGame = (Game)receivedObject;
-                    // This shouldn't be null;
-                    currentGame.MyPlayer = myPlayer;
-                    if (!inGame) {
-                        currentGame.Players.Add(myPlayer);
-                        inGame = true;
-                        SendMessage(currentGame); // ****** This is sending back the game object with this player now added to the Players list
+                    while ((i = stream.Read(bytes, 0, bytes.Length)) > 0) {
+                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                        int x = data.Length;
+                        fullData += data;
+                        if (!stream.DataAvailable) break;
                     }
-                } else if (receivedObject is Player) {
-                    myPlayer = (Player)receivedObject;
-                }
-                // Return the game object to the caller
 
-            } catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                    var receivedObject = DeserializeObject(fullData);
+
+                    if (receivedObject is Game) { 
+                        currentGame = (Game)receivedObject;
+                    } else if (receivedObject is Player) {
+                        myPlayer = (Player)receivedObject;
+                        if (!inGame) {
+                            currentGame.Players.Add(myPlayer);
+                            inGame = true;
+                            SendMessage(currentGame); // Send back game object with new player added
+                        }
+                    }
+
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -104,8 +98,6 @@ namespace Monopoly_Game {
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
 
-                //stream.Close();
-                //client.Close();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -122,20 +114,20 @@ namespace Monopoly_Game {
             }
         }
 
-        // Shamelessly stolen from:
+        // Shamelessly modified from:
         // https://stackoverflow.com/questions/10518372/how-to-deserialize-xml-to-object
         private object DeserializeObject(string gameText) {
             try {
                 XmlSerializer serializer = new XmlSerializer(typeof(Game)); 
                 using (TextReader reader = new StringReader(gameText)) {
-                    var result = serializer.Deserialize(reader); // This was a game object with the deserializer cast to Game as well
-                                                                 // ????
+                    var result = serializer.Deserialize(reader); 
+
                     result = (Game)result;
                     return result;
                 }
             } catch (Exception ex) {
                 XmlSerializer serializer = new XmlSerializer(typeof(Player));
-                using (TextReader reader = new StringReader(gameText)) {
+                using (TextReader reader = new StringReader(gameText)) { 
                     var result = serializer.Deserialize(reader);
                     result = (Player)result;
                     return result;

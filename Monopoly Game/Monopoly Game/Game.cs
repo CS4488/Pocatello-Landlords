@@ -20,6 +20,7 @@ namespace Monopoly_Game
      * Added a "Value" to each created property in the board to reflect what space it is on a tic tac toe board - Rex Christensen - 27JAN2019 - v1
      * Moved player list construction to the inheriting class, commented out a couple of unused lines. - M.S. 30JAN2019 - v1.2
      * Added variables for the host player, number of players, and maximum number of players. Added creation of host player in constructor - Rex 27MAR19
+     * Created a alternate constructor for common use, leaving default constructor for use by DeserializeObject methods - Rex 1APR19
      * 
      */
     public class Game
@@ -39,8 +40,24 @@ namespace Monopoly_Game
         public GameStates GameState {get; set;}
         public Player MyPlayer { get { return myPlayer; } set { myPlayer = value; } }
 
+        /// <summary>
+        /// Default constructor for use by the deserialization methods in the Client and Server classes.
+        /// Removed the default creation of a new Player object
+        /// </summary>
         public Game()
         {
+            gameState = GameStates.Running;
+            gameBoard = new Board();
+            Players = new List<Player>();
+            Player.LastAssignedID = 0;
+        }
+
+        /// <summary>
+        /// Rex Chrsitensen - 4/1/2019
+        /// Normal use constructor
+        /// </summary>
+        /// <param name="foo">Useless parameter only added to separate from the default constructor</param>
+        public Game(bool foo) { 
             gameState = GameStates.Running;
             gameBoard = new Board();
             Players = new List<Player>();
@@ -48,7 +65,6 @@ namespace Monopoly_Game
             // Creat a new player for the host
             myPlayer = new Player();
             Players.Add(myPlayer);
-            // Added for the TestHarness
             currentPlayer = myPlayer;
         }
 

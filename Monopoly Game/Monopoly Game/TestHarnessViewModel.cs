@@ -6,6 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Monopoly_Game {
+
+    /*
+    * Rex Christesnsen: TestHarnessViewModel.cs version 1.0 3/30/2019
+    * 
+    * Please describe changes made here; along with your name, date, and version:
+    * Variables and Parameters used to control information presented in the TestHarness GUI
+    */
+
     public static class TestHarnessViewModel {
         static string currentPlayer;
         static string numPlayers;

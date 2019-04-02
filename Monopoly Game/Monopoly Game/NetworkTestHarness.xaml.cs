@@ -16,6 +16,14 @@ namespace Monopoly_Game {
     /// <summary>
     /// Interaction logic for NetworkTestHarness.xaml
     /// </summary>
+
+    /*
+    * Rex Christesnsen: NetworkTestHarness.xaml.cs version 1.0 3/30/2019
+    * 
+    * Please describe changes made here; along with your name, date, and version:
+    * Methods and logic to control the Test Harness
+    */
+
     public partial class NetworkTestHarness : Window {
         Game currentGame;
         Server server;
@@ -25,7 +33,7 @@ namespace Monopoly_Game {
         }
 
         private void BtnCreateGame_Click(object sender, RoutedEventArgs e) {
-            currentGame = new Game();
+            currentGame = new Game(true); // Bool parameter only used to differentiate constructors
             TestHarnessViewModel.Status += "Game Created!\n";
         }
 
@@ -36,18 +44,16 @@ namespace Monopoly_Game {
                 server.CurrentGame = currentGame;
             }
             TestHarnessViewModel.Status += "Waiting for connection...\n";
-            //updateDisplay();
         }
 
         private void BtnJoinGame_Click(object sender, RoutedEventArgs e) {
             client = new Client();
             client.ConnectToServer();
-            currentGame = client.CurrentGame;
-            //updateDisplay();
         }
 
         private void BtnEndTurn_Click(object sender, RoutedEventArgs e) {
             if (server != null) {
+                // Do stuff to change the current player   
                 server.SendGameToClients(currentGame);
                 updateDisplay();
                 return;
@@ -59,17 +65,15 @@ namespace Monopoly_Game {
         }
 
         public void updateDisplay() {
+            if (server != null) {
+                currentGame = server.CurrentGame;
+            } else if (client != null) {
+                currentGame = client.CurrentGame;
+            }
             TestHarnessViewModel.CurrentPlayer = currentGame.CurrentPlayer.PlayerID.ToString();
             TestHarnessViewModel.NumPlayers = currentGame.Players.Count.ToString();
             TestHarnessViewModel.State = currentGame.GameState.ToString();
             TestHarnessViewModel.MyPlayer = currentGame.MyPlayer.PlayerID.ToString();
-            if (server != null) {
-                currentGame = server.CurrentGame;
-                return;
-            } else if (client != null) {
-                currentGame = client.CurrentGame;
-                return;
-            }
         }
 
         private void BtnInitialUpdate_Click(object sender, RoutedEventArgs e) {
