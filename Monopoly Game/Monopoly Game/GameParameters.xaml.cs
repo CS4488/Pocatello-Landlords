@@ -22,7 +22,6 @@ namespace Monopoly_Game {
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Window for the user to select game and basic game parameters
-    * Added unused bool parameter to the Game object constructor to call the correct constructor - Rex 1APR19
     */
     public partial class GameParameters : Window {
         string selectedGame = "";
@@ -43,7 +42,8 @@ namespace Monopoly_Game {
                 //    addPlayersToGame(newGame);
                 //}
             } else {
-                newGame = new Game(true); // Added useless bool parameter for the call to the correct constructor
+                List<Space> spaces = new List<Space>();
+                newGame = new Game(spaces);
                 if (numberOfAIPlayers > 0) {
                     addPlayersToGame(newGame);
                 }

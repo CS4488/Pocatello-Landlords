@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,8 +66,8 @@ namespace Monopoly_Game {
             }
         }
 
-        public static string Status { 
-            get { return status; }  
+        public static string Status {
+            get { return status; }
             set {
                 status = value;
                 if (StatusChanged != null) {

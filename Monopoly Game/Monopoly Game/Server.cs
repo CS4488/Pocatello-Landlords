@@ -9,7 +9,6 @@ using System.Net.Sockets;
 using System.Xml.Serialization;
 using System.IO;
 using System.Windows;
-using System.Xml;
 
 namespace Monopoly_Game {
     /*
@@ -27,10 +26,12 @@ namespace Monopoly_Game {
         string data;
         List<TcpClient> clients;
         Game currentGame;
+        Player myPlayer;
         string gameString;
 
-        public Game CurrentGame { get{ return currentGame; } set { currentGame = value; } }
-        public List<TcpClient> Clients { get{ return clients; } }
+        public Game CurrentGame { get { return currentGame; } set { currentGame = value; } }
+        public Player MyPlayer { get { return myPlayer; } set { myPlayer = value; } }
+        public List<TcpClient> Clients { get { return clients; } }
 
         public Server() {
             server = null;
@@ -49,7 +50,7 @@ namespace Monopoly_Game {
 
         private void ConnectClient() {
             server.Start();
-            while(true) { 
+            while (true) {
                 TcpClient client = server.AcceptTcpClient();
                 clients.Add(client);
 
@@ -80,7 +81,7 @@ namespace Monopoly_Game {
 
                     int i;
 
-                    while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) { 
+                    while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) {
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
 
                         fullData += data;
@@ -119,7 +120,7 @@ namespace Monopoly_Game {
             }
         }
 
-        private void writeMessage(object obj, Game game) { 
+        private void writeMessage(object obj, Game game) {
             try {
                 TcpClient client = (TcpClient)obj;
 
