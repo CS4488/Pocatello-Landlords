@@ -25,5 +25,9 @@ namespace Monopoly_Game
         public Board() {
             spaces = new List<Space>();
         }
+        public Board(List<Space> boardSpaces)
+        {
+            spaces = boardSpaces;
+        }
     }
 }

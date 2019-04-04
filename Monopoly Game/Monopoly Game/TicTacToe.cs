@@ -18,17 +18,23 @@ namespace Monopoly_Game
     {
         public TicTacToe()
         {
+            base.maxNumPlayers = 2;
             for (int i = 0; i < 9; i++)
             {
-                base.GameBoard.Spaces.Add(new Property(i));// For tictactoe, owner is a needed variable, so type property is used
+                base.GameBoard.Spaces.Add(new Property("", null, null, null, i));// For tictactoe, owner is a needed variable, so type property is used
             }
-            Player playerOne = new Player();
-            playerOne.Token = "X";
-            CompPlayer compPlayer = new CompPlayer();
+            Player playerOne = new Player(0);
+            playerOne.Token = "Y";
+            CompPlayer compPlayer = new CompPlayer(1);
             compPlayer.Token = "O";
             Players.Add(playerOne);
             Players.Add(compPlayer);
             CurrentPlayer = Players[0];
+
+            for(int i = 0; i < Players.Count; i++)
+            {
+                Console.WriteLine(Players[i].PlayerID);
+            }
         }
 
         public override void handleTurn(int spaceIndex)
@@ -42,13 +48,14 @@ namespace Monopoly_Game
                 bool validTurn = base.CurrentPlayer.takeTurn(spaceIndex, this);
                 if (validTurn)
                 {
+                    Console.WriteLine("WAS A VALID TURN");
                     if (checkForTicTacToeWin() || checkForDraw())
                     {
                         base.GameState = GameStates.GameOver;
                         return;
                     }
                     base.makeNextPlayersTurn();
-                    if (base.CurrentPlayer is CompPlayer) 
+                    if (base.CurrentPlayer is CompPlayer)
                     {
                         base.CurrentPlayer.takeTurn(spaceIndex, this);
                         if (checkForTicTacToeWin() || checkForDraw())
@@ -71,43 +78,53 @@ namespace Monopoly_Game
          * Description: Checks the gameBoard spaces for a 3-in-a-row match. Returns true if win condition found. 
          *              Will also end program. We might want to change this. :P
          */
-        public bool checkForTicTacToeWin() {
+        public bool checkForTicTacToeWin()
+        {
 
             // Temporary cast while the list is changed to an array
             Property[] temp = GameBoard.Spaces.Cast<Property>().ToArray();
 
             // Horizontal checks
-            for (int i = 0; i < 8; i += 3) {
-                if (temp[i].owner == temp[i + 1].owner && temp[i].owner == temp[i + 2].owner && temp[i].owner != -1) {
+            for (int i = 0; i < 8; i += 3)
+            {
+                if (temp[i].OwnerPlayerID == temp[i + 1].OwnerPlayerID && temp[i].OwnerPlayerID == temp[i + 2].OwnerPlayerID && temp[i].OwnerPlayerID != -1)
+                {
                     return true;
                 }
             }
 
             // Vertical checks
-            for (int i = 0; i < 3; i++) {
-                if (temp[i].owner == temp[i + 3].owner && temp[i].owner == temp[i + 6].owner && temp[i].owner != -1) {
+            for (int i = 0; i < 3; i++)
+            {
+                if (temp[i].OwnerPlayerID == temp[i + 3].OwnerPlayerID && temp[i].OwnerPlayerID == temp[i + 6].OwnerPlayerID && temp[i].OwnerPlayerID != -1)
+                {
                     return true;
                 }
             }
 
             // Diagonal checks
-            if (temp[0].owner == temp[4].owner && temp[0].owner == temp[8].owner && temp[0].owner != -1) {
+            if (temp[0].OwnerPlayerID == temp[4].OwnerPlayerID && temp[0].OwnerPlayerID == temp[8].OwnerPlayerID && temp[0].OwnerPlayerID != -1)
+            {
                 return true;
             }
 
-            if (temp[2].owner == temp[4].owner && temp[2].owner == temp[6].owner && temp[2].owner != -1) {
+            if (temp[2].OwnerPlayerID == temp[4].OwnerPlayerID && temp[2].OwnerPlayerID == temp[6].OwnerPlayerID && temp[2].OwnerPlayerID != -1)
+            {
                 return true;
             }
 
             return false;
         }
-        
-        public bool checkForDraw() {
+
+        public bool checkForDraw()
+        {
             bool allSpacesTaken = true;
 
             Property[] temp = GameBoard.Spaces.Cast<Property>().ToArray();
-            foreach (Property p in temp) {
-                if (p.Owner == -1) {
+            foreach (Property p in temp)
+            {
+                if (p.OwnerPlayerID == -1)
+                {
                     allSpacesTaken = false;
                 }
             }

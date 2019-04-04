@@ -14,13 +14,20 @@ namespace Monopoly_Game
         private bool eliminated = false;
         private string playerName;
         private string token;
+        private int _Position;
 
-        public string PlayerName { get{ return playerName; } set{ playerName = value; } }
-        public int PlayerID { get{ return playerID; } set{ playerID = value; } }
-        public bool Eliminated { get{return eliminated; } set{ eliminated = value; } }
-        public string Token { get { return token; } set { token = value;  } }
-        public static int LastAssignedID { get{ return lastAssignedId; } set{ lastAssignedId = value; } }
-        
+        public string PlayerName { get { return playerName; } set { playerName = value; } }
+        public int PlayerID { get { return playerID; } set { playerID = value; } }
+        public bool Eliminated { get { return eliminated; } set { eliminated = value; } }
+        public string Token { get { return token; } set { token = value; } }
+        public static int LastAssignedID { get { return lastAssignedId; } set { lastAssignedId = value; } }
+
+        public int Position
+        {
+            get { return _Position; }
+            set { _Position = value; }
+        }
+
         public Player()
         {
             this.playerID = Player.lastAssignedId;
@@ -31,17 +38,17 @@ namespace Monopoly_Game
         {
             playerID = inputID;
         }
-    
+
         public virtual bool takeTurn(int spaceIndex, Game game)
         {
             bool validTurn = false;
             Space spaceClicked = game.GameBoard.Spaces[spaceIndex];
-            if(spaceClicked is Property)
+            if (spaceClicked is Property)
             {
                 Property propertyClicked = (Property)spaceClicked;
-                if(propertyClicked.Owner == -1)
+                if (propertyClicked.OwnerPlayerID == -1)
                 {
-                    propertyClicked.Owner = game.CurrentPlayer.PlayerID;
+                    propertyClicked.OwnerPlayerID = game.CurrentPlayer.PlayerID;
                     validTurn = true;
                 }
             }

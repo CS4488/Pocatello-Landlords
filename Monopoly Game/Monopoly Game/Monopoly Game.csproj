@@ -55,14 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameStates.cs" />
     <Compile Include="LandlordsBoard.xaml.cs">
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Observer.cs" />
     <Compile Include="Property.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="TicTacToe.cs" />
     <Page Include="LandlordsBoard.xaml">

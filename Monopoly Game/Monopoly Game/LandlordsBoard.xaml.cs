@@ -13,16 +13,174 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Monopoly_Game
 {
+
     /// <summary>
-    /// Interaction logic for LandlordsBoard.xaml
+    /// Purpose: Creates and gets all the interactive UI elements
+    /// Made by Fernando Munoz
+    /// March 3rd, 2019
+    /// 
+    /// 
+    /// XAML Naming Conventions:
+    ///     Button (Space): btnSpace[number(0 indexed)]
+    ///     Space Name: tbSpace[number(0 indexed)]Name
+    ///     Space Cost: tbSpace[numbe(0 indexed)]Cost
+    ///     Building StackPanel: stkPnlBldg[number(0 indexed)]
+    ///     Player Space StackPanel: stkPnlPlyrs[number(0 indexed)]
     /// </summary>
     public partial class LandlordsBoard : Page
     {
+        #region Private variables
+        public const int SpaceCount = 41;
+        private Button[] _SpaceButtons = new Button[SpaceCount];
+        private TextBlock[] _SpaceCosts = new TextBlock[SpaceCount];
+        private TextBlock[] _SpaceNames = new TextBlock[SpaceCount];
+        private StackPanel[] _SpaceBuildings = new StackPanel[SpaceCount];
+        private StackPanel[] _SpacePlayerAreas = new StackPanel[SpaceCount];
+
+        private readonly int[] _PropertyNdxs = {1, 3, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17,
+                                    19, 20, 22, 24, 25, 26, 27, 28, 29, 30, 32,
+                                    33, 35, 36, 38, 40};
+        private readonly int[] _BuildableNdxs = {1, 3, 6, 8, 9, 12, 14, 15, 17,
+                                    19, 20, 22, 24, 25, 27, 28, 30, 32, 33, 35, 38, 40};
+        private readonly int[] _LootCrateNdxs = { 4, 18, 34 };
+        private readonly int[] _OpportunityNdxs = { 7, 23, 37 };
+        private readonly int[] _EventNdxs = { 0, 2, 31, 39, 21 };
+        private List<Space> _AggregatedSpaceObjects = new List<Space>();
+        #endregion
+
+        public List<Space> AggregatedSpaceObjects
+        {
+            get
+            {
+                return _AggregatedSpaceObjects;
+            }
+        }
+
+        #region Constructors
         public LandlordsBoard()
         {
             InitializeComponent();
+            InitializeGameBoard();
+            BuildSpaceObjects();
         }
+
+        private void BuildSpaceObjects()
+        {
+            for (int i = 0; i < SpaceCount; i++)
+            {
+                Space temp;
+                if (_SpaceCosts[i] != null)
+                {
+                    temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
+                }
+                else if (Array.Exists(_EventNdxs, x => x == i))
+                {
+                    temp = new Event(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i]);
+                }
+                else
+                {
+                    temp = new Space(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i]);
+                }
+                _AggregatedSpaceObjects.Add(temp);
+            }
+        }
+        #endregion
+
+        #region Properties
+        //public List<Button> SpaceButtons
+        //{
+        //    get
+        //    {
+        //        return _SpaceButtons;
+        //    }
+        //}
+
+        //public List<TextBlock> SpaceCosts
+        //{
+        //    get
+        //    {
+        //        return _SpaceCosts;
+        //    }
+        //}
+
+        //public List<TextBlock> SpaceNames
+        //{
+        //    get
+        //    {
+        //        return _SpaceNames;
+        //    }
+        //}
+
+        //public int[] PropertyNdxs
+        //{
+        //    get
+        //    {
+        //        return _PropertyNdxs;
+        //    }
+        //}
+
+        //public int[] LootCrateNdxs
+        //{
+        //    get
+        //    {
+        //        return _LootCrateNdxs;
+        //    }
+        //}
+
+        //public int[] OpportunityNdxs
+        //{
+        //    get
+        //    {
+        //        return _OpportunityNdxs;
+        //    }
+        //}
+        #endregion
+
+        #region Playable Space Methods
+
+        /// <summary>
+        /// Fernando Munoz 
+        /// March 5th, 2019
+        /// Updated March 12th to use generics and work for getting all types of UI elements
+        ///
+        /// Description: Sets the local field _Spaces to contain a list of all the playable spaces(which are of type Button)
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list">List to add the UI element to</param>
+        /// <param name="part1">First part of name to search</param>
+        /// <param name="part2">Second part, which follows the number, of a UI element to search</param>
+        private void GetUIElements<T>(T[] array, string part1, string part2)
+        {
+            for (int i = 0; i < SpaceCount; i++)
+            {
+                T temp = (T)this.FindName(part1 + i.ToString() + part2);
+
+                if (temp != null)
+                {
+                    array[i] = (temp);
+                }
+            }
+        }
+        #endregion
+
+        #region Internal Methods
+
+        /// <summary>
+        /// Sets each respective list to contain the UI elements found on the gameboard
+        /// </summary>
+        private void InitializeGameBoard()
+        {
+            GetUIElements(_SpaceButtons, "btnSpace", String.Empty);
+            GetUIElements(_SpaceCosts, "tbSpace", "Cost");
+            GetUIElements(_SpaceNames, "tbSpace", "Name");
+            GetUIElements(_SpaceBuildings, "stkPnlBldg", String.Empty);
+            GetUIElements(_SpacePlayerAreas, "stkPnlPlyrs", String.Empty);
+        }
+        #endregion
     }
+
 }
