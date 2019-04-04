@@ -77,22 +77,17 @@ namespace Monopoly_Game
 
         public void makeNextPlayersTurn()
         {
-            Console.WriteLine("Making next player turn");
             lastPlayerID = currentPlayer.PlayerID;
-            Console.WriteLine("las player id: " + lastPlayerID);
             if (currentPlayer.PlayerID >= Players.Count - 1)
             {
-                Console.WriteLine("SETTING BACK TO FIRST PLAYER");
                 currentPlayer = Players[0];
             }
             else
             {
-                Console.WriteLine("SETTING TO NET PLAYER");
                 currentPlayer = Players[currentPlayer.PlayerID + 1]; // note that the playerID's are stored counting from 0
             }
             if (currentPlayer.Eliminated)
             {
-                Console.WriteLine("Player was eliminated");
                 makeNextPlayersTurn();
             }
         }

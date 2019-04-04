@@ -31,10 +31,6 @@ namespace Monopoly_Game
             Players.Add(compPlayer);
             CurrentPlayer = Players[0];
 
-            for(int i = 0; i < Players.Count; i++)
-            {
-                Console.WriteLine(Players[i].PlayerID);
-            }
         }
 
         public override void handleTurn(int spaceIndex)
@@ -48,7 +44,6 @@ namespace Monopoly_Game
                 bool validTurn = base.CurrentPlayer.takeTurn(spaceIndex, this);
                 if (validTurn)
                 {
-                    Console.WriteLine("WAS A VALID TURN");
                     if (checkForTicTacToeWin() || checkForDraw())
                     {
                         base.GameState = GameStates.GameOver;
