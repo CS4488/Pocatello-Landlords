@@ -10,13 +10,16 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Windows;
 
-namespace Monopoly_Game {
+namespace Monopoly_Game
+{
     /*
     * Rex Christesnsen: Server.cs version 1.0 3/12/2019
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Methods for connecting to and communicating with multiple clients.
     * Corrections made for threading, network communication, and serialization/deserialization - Rex 1APR2019
+    * Removed creating and sending a Player object to the Clients - R.C. 5Apr19
+    * Changed the IPAddress to find the local IP address of the machine - R.C. 5Apr19
     */
     class Server {
         TcpListener server;
@@ -28,18 +31,38 @@ namespace Monopoly_Game {
         Game currentGame;
         Player myPlayer;
         string gameString;
+        string ipAddress;
 
         public Game CurrentGame { get { return currentGame; } set { currentGame = value; } }
         public Player MyPlayer { get { return myPlayer; } set { myPlayer = value; } }
         public List<TcpClient> Clients { get { return clients; } }
+        public System.Net.EndPoint LocalEndPoint { get; }
+        public string IpAddress { get { return ipAddress; } }
 
         public Server() {
             server = null;
             port = 14242;
-            localHost = IPAddress.Parse("127.0.0.1");
+            //localHost = IPAddress.Parse("127.0.0.1");
+            //localHost = IPAddress.Parse(((IPEndPoint)server.LocalEndpoint).Address.ToString()); // null XQ server doesn't exist yet
+            localHost = IPAddress.Parse(getIPAddress());
+            ipAddress = localHost.ToString();
             bytes = new byte[256];
             server = new TcpListener(localHost, port);
             clients = new List<TcpClient>();
+        }
+
+        // Shamelessly stolen by R.C. 5APR19 from 
+        // https://stackoverflow.com/questions/1029230/getting-the-ip-address
+        private string getIPAddress() {
+            IPAddress[] hostAddresses = Dns.GetHostAddresses("");
+
+            foreach (IPAddress hostAddress in hostAddresses) {
+                if (hostAddress.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(hostAddress) &&
+                !hostAddress.ToString().StartsWith("169.254.")) {
+                    return hostAddress.ToString(); ;
+                }
+            }
+            return null;
         }
 
         public void Connect() {
@@ -62,10 +85,10 @@ namespace Monopoly_Game {
                 SendGameToClients(currentGame);
 
                 // Create and send Player object back to client. 
-                Player play = new Player();
-                sendPlayerObject(client, play);
+                //Player play = new Player();
+                //sendPlayerObject(client, play);
 
-                TestHarnessViewModel.Status += "Client Connected!\n";
+                //TestHarnessViewModel.Status += "Client Connected!\n";
             }
         }
 

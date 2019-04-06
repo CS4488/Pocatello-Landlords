@@ -36,26 +36,19 @@ namespace Monopoly_Game
         public Board GameBoard { get { return gameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
         public List<Player> Players { get { return players; } set { players = value; } }
-        public GameStates GameState {get; set;}
+        public GameStates GameState { get; set; }
         public Player MyPlayer { get { return myPlayer; } set { myPlayer = value; } }
 
-        /// <summary>
-        /// Default constructor for use by the deserialization methods in the Client and Server classes.
-        /// Removed the default creation of a new Player object - R.C. 2APR19
-        /// </summary>
-        public Game() {
+        public Game()
+        {
             gameState = GameStates.Running;
             gameBoard = new Board();
             Players = new List<Player>();
             Player.LastAssignedID = 0;
+            // Creat a new player for the host
+            //myPlayer = new Player();
         }
 
-        /// <summary>
-        /// Fernando Munoz
-        /// Modified by R.C. on 2APR19 to add myPlayer and add that to Players
-        /// This should be the constructor that we use.
-        /// </summary>
-        /// <param name="spaces"></param>
         public Game(List<Space> spaces)
         {
             gameState = GameStates.Running;
@@ -69,9 +62,9 @@ namespace Monopoly_Game
 
         public Player getPlayerById(int id)
         {
-            for(int i = 0; i < players.Count; i++)
+            for (int i = 0; i < players.Count; i++)
             {
-                if(players[i].PlayerID == id)
+                if (players[i].PlayerID == id)
                 {
                     return players[i];
                 }
@@ -87,16 +80,19 @@ namespace Monopoly_Game
 
         public void makeNextPlayersTurn()
         {
-           lastPlayerID = currentPlayer.PlayerID;
-           if (currentPlayer.PlayerID >= Players.Count - 1) {
+            lastPlayerID = currentPlayer.PlayerID;
+            if (currentPlayer.PlayerID >= Players.Count - 1)
+            {
                 currentPlayer = Players[0];
-           }
-           else {
+            }
+            else
+            {
                 currentPlayer = Players[currentPlayer.PlayerID + 1]; // note that the playerID's are stored counting from 0
-           }
-           if (currentPlayer.Eliminated) {
+            }
+            if (currentPlayer.Eliminated)
+            {
                 makeNextPlayersTurn();
-           }
+            }
         }
 
         #region Display Manager Calls
@@ -130,9 +126,10 @@ namespace Monopoly_Game
         }
 
 
-        
+
         #endregion
 
 
     }
 }
+

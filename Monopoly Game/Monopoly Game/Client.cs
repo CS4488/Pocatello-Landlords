@@ -10,13 +10,16 @@ using System.Windows;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace Monopoly_Game {
+namespace Monopoly_Game
+{
     /*
     * Rex Christesnsen: Client.cs version 1.0 3/12/2019
     * 
     * Please describe changes made here; along with your name, date, and version:
     * Methods for connecting to and communicating with a host server.
     * Corrections made for threading, network communication, and serialization/deserialization - Rex 1APR2019
+    * Added creation of the Player object to this class, rather than being read from the server - Rex 5Apr19
+    * Changed the server IP address to an IP address provided by the user - Rex 5Apr19
     */
     class Client {
         Int32 port = 14242;
@@ -26,10 +29,11 @@ namespace Monopoly_Game {
         Player myPlayer;
         bool inGame;
 
-        public Game CurrentGame { get { return currentGame; } }
+        public Game CurrentGame { get { return currentGame; } set { currentGame = value; } }
 
         public Client() {
-            server = "127.0.0.1";
+            //server = "127.0.0.1";
+            server = GameEngine.IpAddress;
             inGame = false;
         }
 
@@ -57,7 +61,7 @@ namespace Monopoly_Game {
 
                     int i;
 
-                    while ((i = stream.Read(bytes, 0, bytes.Length)) > 0) {
+                    while ((i = stream.Read(bytes, 0, bytes.Length)) > 0) { // This is sending both the player and the game at the same time
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                         int x = data.Length;
                         fullData += data;
@@ -68,14 +72,20 @@ namespace Monopoly_Game {
 
                     if (receivedObject is Game) {
                         currentGame = (Game)receivedObject;
-                    } else if (receivedObject is Player) {
-                        myPlayer = (Player)receivedObject;
-                        if (!inGame) {
-                            currentGame.Players.Add(myPlayer);
-                            inGame = true;
-                            SendMessage(currentGame); // Send back game object with new player added
-                        }
+                        // What if I add a player creation here
+                        myPlayer = new Player();
+                        currentGame.Players.Add(myPlayer);
+                        inGame = true;
+                        SendMessage(currentGame);
                     }
+                    //} else if (receivedObject is Player) {
+                    //    myPlayer = (Player)receivedObject;
+                    //    if (!inGame) {
+                    //        currentGame.Players.Add(myPlayer);
+                    //        inGame = true;
+                    //        SendMessage(currentGame); // Send back game object with new player added
+                    //    }
+                    //}
 
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);

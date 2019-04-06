@@ -1,0 +1,21 @@
+﻿<Window x:Class="Monopoly_Game.IPAddressEntry"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Monopoly_Game"
+        mc:Ignorable="d"
+        Title="Enter IP Address" Height="300" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Please enter the IP Address of the game host." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"
+        FontWeight="DemiBold"/>
+        <TextBox Name="txtIPAddressEntry" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+        <Button Name="btnSubmit" Content="Submit" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"
+        Click="BtnSubmit_Click"/>
+    </Grid>
+</Window>

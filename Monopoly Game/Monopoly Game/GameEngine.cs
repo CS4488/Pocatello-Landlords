@@ -24,6 +24,7 @@ namespace Monopoly_Game
 
         private static int _LocalPlayerID;
         private static int _NumberOfPlayers;
+        private static string _IpAddress; // Added by R.C. - 5APR19
 
 
         public static void InitializeFromGame()
@@ -42,7 +43,7 @@ namespace Monopoly_Game
             { // *******************************************************************
                 // This is just here to delay until the count is right
             }
-           // NewGame(sender, e);
+            // NewGame(sender, e);
 
         }
 
@@ -51,8 +52,10 @@ namespace Monopoly_Game
             _Game = new Game(boardSpaces);
         }
 
-
-
+        public static string IpAddress {
+            get { return _IpAddress; }
+            set { _IpAddress = value; }
+        }
 
         public static int NumberOfPlayers
         {
@@ -118,9 +121,7 @@ namespace Monopoly_Game
 
         private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
         {
-            //_Game = new Game();
-            List<Space> spaces = new List<Space>();
-            _Game = new Game(spaces); // Changed to Nando's alternate constructor - Rex 2APR19
+            _Game = new Game();
             //_DM = new DisplayManager(_Game, playArea);
             _DM.updateDisplay();
         }
