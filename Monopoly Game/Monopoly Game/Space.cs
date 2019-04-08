@@ -18,10 +18,10 @@ namespace Monopoly_Game
         private TextBlock _TBName;
         private string _Description;
         private Button _Button;
-        private StackPanel _PlayerAreaStackPanel;
+        private WrapPanel _PlayerAreaStackPanel;
         private Image _Image;
 
-        public Space(string id, TextBlock tbName, Button btn, StackPanel moveArea)
+        public Space(string id, TextBlock tbName, Button btn, WrapPanel moveArea)
         {
             _XAMLID = id;
             _TBName = tbName;
@@ -34,7 +34,7 @@ namespace Monopoly_Game
         public TextBlock NameTB { get { return _TBName; } }
         public string Description { get { return _Description; } set { _Description = value; } }
         public Button Button { get { return _Button; } }
-        public StackPanel PlayerAreaStackPanel { get { return _PlayerAreaStackPanel; } }
+        public WrapPanel PlayerAreaStackPanel { get { return _PlayerAreaStackPanel; } }
         public Image Image { get { return _Image; } set { _Image = value; } }
 
 

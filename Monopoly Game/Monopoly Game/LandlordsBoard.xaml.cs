@@ -38,7 +38,7 @@ namespace Monopoly_Game
         private TextBlock[] _SpaceCosts = new TextBlock[SpaceCount];
         private TextBlock[] _SpaceNames = new TextBlock[SpaceCount];
         private StackPanel[] _SpaceBuildings = new StackPanel[SpaceCount];
-        private StackPanel[] _SpacePlayerAreas = new StackPanel[SpaceCount];
+        private WrapPanel[] _SpacePlayerAreas = new WrapPanel[SpaceCount];
 
         private readonly int[] _PropertyNdxs = {1, 3, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17,
                                     19, 20, 22, 24, 25, 26, 27, 28, 29, 30, 32,
@@ -65,6 +65,7 @@ namespace Monopoly_Game
             InitializeComponent();
             InitializeGameBoard();
             BuildSpaceObjects();
+            FixMouseOverEffect();
         }
 
         private void BuildSpaceObjects()
@@ -179,6 +180,18 @@ namespace Monopoly_Game
             GetUIElements(_SpaceNames, "tbSpace", "Name");
             GetUIElements(_SpaceBuildings, "stkPnlBldg", String.Empty);
             GetUIElements(_SpacePlayerAreas, "stkPnlPlyrs", String.Empty);
+        }
+
+        // We need the opacity to be 0, but simply setting it from the XAML Design editor messes up the responsiveness 
+        // Here we ensure the Z index is highest on the space button and that we have 0 aplha value for our background color
+        // Setting it in this way fixes the responsiveness problem.
+        private void FixMouseOverEffect()
+        {
+            foreach (Button b in _SpaceButtons)
+            {
+                Grid.SetZIndex(b, 10);
+                b.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+            }
         }
         #endregion
     }

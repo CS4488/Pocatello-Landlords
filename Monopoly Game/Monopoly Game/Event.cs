@@ -17,7 +17,7 @@ namespace Monopoly_Game
 
         public string Type { get { return _Type; } set { _Type = value; } }
 
-        public Event(string id, TextBlock name, Button btn, StackPanel moveArea) : base(id, name, btn, moveArea)
+        public Event(string id, TextBlock name, Button btn, WrapPanel moveArea) : base(id, name, btn, moveArea)
         {
 
         }

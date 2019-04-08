@@ -45,7 +45,7 @@ namespace Monopoly_Game
 
 
 
-        public Property(string id, TextBlock name, Button btn, StackPanel moveArea, StackPanel bldgArea, TextBlock valueTB) : base(id, name, btn, moveArea)
+        public Property(string id, TextBlock name, Button btn, WrapPanel moveArea, StackPanel bldgArea, TextBlock valueTB) : base(id, name, btn, moveArea)
         {
             _OwnerPlayerID = -1;
             _Value = 0;
@@ -58,13 +58,13 @@ namespace Monopoly_Game
         ///// Rex Christensen - 27JAN2019 - v1
         ///// </summary>
         ///// <param name="inputValue"></param>
-        public Property(string id, TextBlock name, Button btn, StackPanel moveArea, int inputValue) : base(id, name, btn, moveArea)
+        public Property(string id, TextBlock name, Button btn, WrapPanel moveArea, int inputValue) : base(id, name, btn, moveArea)
         {
             _OwnerPlayerID = -1;
             _Value = inputValue;
         }
 
-        public Property(string id, TextBlock name, Button btn, StackPanel moveArea, int inputOwner, int inputValue) : base(id, name, btn, moveArea)
+        public Property(string id, TextBlock name, Button btn, WrapPanel moveArea, int inputOwner, int inputValue) : base(id, name, btn, moveArea)
         {
             _OwnerPlayerID = inputOwner;
             _Value = inputValue;
