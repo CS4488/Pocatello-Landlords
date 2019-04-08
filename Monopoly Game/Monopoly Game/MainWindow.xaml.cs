@@ -85,13 +85,17 @@ namespace Monopoly_Game
         // Changed to host a Monopoly game, and not a TicTacToe game - R.C. 5APR19
         private void MiHostGame_Click(object sender, RoutedEventArgs e)
         {
+            // Enter the hosting IP Address
+            IPAddressEntry address = new IPAddressEntry();
+            address.ShowDialog();
+
             List<Space> spaces = new List<Space>();
             game = new Game(spaces);
             Server gameServer = new Server();
             gameServer.Connect();
             gameServer.CurrentGame = game;
 
-            MessageBox.Show("Have players connect to IP address " + gameServer.IpAddress);
+            // MessageBox.Show("Have players connect to IP address " + gameServer.IpAddress);
             // For testing and debugging only
             GameEngine.NumberOfPlayers = 2;
             numPlayers = 2;

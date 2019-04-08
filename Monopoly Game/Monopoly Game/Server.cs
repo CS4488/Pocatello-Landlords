@@ -44,7 +44,9 @@ namespace Monopoly_Game
             port = 14242;
             //localHost = IPAddress.Parse("127.0.0.1");
             //localHost = IPAddress.Parse(((IPEndPoint)server.LocalEndpoint).Address.ToString()); // null XQ server doesn't exist yet
-            localHost = IPAddress.Parse(getIPAddress());
+            //localHost = IPAddress.Parse(getIPAddress()); // **************** This is giving the IP address for the wrong network adapter ****
+            //localHost = IPAddress.Parse("192.168.0.20");
+            localHost = IPAddress.Parse(GameEngine.IpAddress);
             ipAddress = localHost.ToString();
             bytes = new byte[256];
             server = new TcpListener(localHost, port);
