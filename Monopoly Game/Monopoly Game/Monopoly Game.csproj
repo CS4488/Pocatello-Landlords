@@ -58,24 +58,21 @@
     <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="GameEngine.cs" />
-    <Compile Include="GameParameters.xaml.cs">
-      <DependentUpon>GameParameters.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GameStates.cs" />
+    <Compile Include="IPAddressEntry.xaml.cs">
+      <DependentUpon>IPAddressEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LandlordsBoard.xaml.cs">
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NetworkTestHarness.xaml.cs">
-      <DependentUpon>NetworkTestHarness.xaml</DependentUpon>
     </Compile>
     <Compile Include="Observer.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
-    <Compile Include="TestHarnessViewModel.cs" />
     <Compile Include="TicTacToe.cs" />
-    <Page Include="GameParameters.xaml">
+    <Page Include="IPAddressEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,10 +94,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NetworkTestHarness.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Player.cs" />

@@ -363,9 +363,8 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <Label Content=" Pocatello &#xA;Landlords" HorizontalAlignment="Left" Margin="112.333,467,0,0" VerticalAlignment="Top" Height="173" Width="688" FontFamily="Modern No. 20" FontSize="72" Background="{x:Null}" BorderBrush="#FF150000" HorizontalContentAlignment="Center" Foreground="Black" Grid.Column="1"/>
-
             <Image Margin="27.333,920,1327,101" Source="images/prison.png" Stretch="Fill" Grid.Column="1"/>
+            <Label Content=" Pocatello &#xA;Landlords" HorizontalAlignment="Left" Margin="112.333,467,0,0" VerticalAlignment="Top" Height="173" Width="688" FontFamily="Modern No. 20" FontSize="72" Background="{x:Null}" BorderBrush="#FF150000" HorizontalContentAlignment="Center" Foreground="Black" Grid.Column="1"/>
             <Image Margin="502.333,951,861,79" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" Grid.Column="1"/>
             <Image Margin="862.333,365,501,665" Source="images/chest.jpg" Stretch="Fill" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Image.RenderTransform>
@@ -965,30 +964,10 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace0" HorizontalAlignment="Left" Margin="803.333,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Image Margin="7.333,113,1313,915" Source="car.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-35.036"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Button x:Name="btnSpace21" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="485,64,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2">
-                <Image Source="images/car.png" Stretch="Fill" RenderTransformOrigin="0.591,0.595" Height="59" Width="100" Grid.Column="1">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <RotateTransform Angle="-37.942"/>
-                            <TranslateTransform X="2.339" Y="-7.061"/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Button>
+            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace0" HorizontalAlignment="Left" Margin="804.333,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace31" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="803.333,64,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace23" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="185.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace34" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="674.333,476,0,0" VerticalAlignment="Top" Width="76" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace23" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="183.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace34" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="674.333,478,0,0" VerticalAlignment="Top" Width="76" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -998,7 +977,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace36" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="829.333,477,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace36" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="830.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1008,7 +987,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace37" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="902.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace37" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="902.333,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1018,8 +997,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace10" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="485,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnSpace18" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="358,479,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btnSpace18" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="356,479,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1029,13 +1007,10 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace1" HorizontalAlignment="Left" Margin="725.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace4" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="491.333,888,0,0" Grid.Column="1"/>
             <Button x:Name="btnSpace7" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="262.333,888,0,0" Grid.Column="1"/>
-
-            <Button x:Name="btnSpace2" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="126"  Background="{x:Null}" Margin="646.333,888,0,0" Grid.Column="1"/>
             <TextBlock x:Name="tbSpace2Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="649.333,998,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
-            <Button x:Name="btnSpace8" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="185.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace8" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="183.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace9" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="106.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <TextBlock x:Name="tbSpace1Cost" Grid.Column="1" FontFamily="Modern No. 20" FontWeight="Bold" HorizontalAlignment="Left" Margin="728.333,998,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
             <TextBlock x:Name="tbSpace3Cost" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="571.333,997,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.304" Height="15" Width="70" TextAlignment="Center"/>
@@ -1200,11 +1175,10 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <Button x:Name="btnSpace3" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="568.333,888,0,0" Grid.Column="1"/>
-            <Button x:Name="btnSpace5" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="126"  Background="{x:Null}" Margin="419.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace3" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Margin="569.333,888,0,0" Grid.Column="1"/>
+            <Button x:Name="btnSpace5" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="126"  Background="{x:Null}" Margin="418.333,888,0,0" Grid.Column="1"/>
             <Button x:Name="btnSpace6" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="126"  Background="{x:Null}" Margin="340.333,888,0,0" Grid.Column="1"/>
-            <Button x:Name="btnSpace11" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="13.333,888,0,0" VerticalAlignment="Top" Width="90" Height="91"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace12" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="313.333,476,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace12" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="312.333,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1214,7 +1188,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace13" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="234.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace13" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="233.333,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1224,7 +1198,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace14" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="157.333,475,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace14" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="158.333,476,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1234,7 +1208,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace15" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="78.333,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace15" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="77.333,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1244,7 +1218,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace16" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="6.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace16" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="5.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1254,7 +1228,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace17" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="435,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Button x:Name="btnSpace17" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="434,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1277,13 +1251,13 @@
             <Button x:Name="btnSpace28" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="568.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <TextBlock x:Name="tbSpace26Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="418.333,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.444" Height="15" Width="70" TextAlignment="Center" Grid.Column="1"/>
             <Button x:Name="btnSpace26" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="418.333,64,0,0" VerticalAlignment="Top" Width="69" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace29" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="646.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace30" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="725.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace29" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="648.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace30" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="726.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace27" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="491.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace25" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="340.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace24" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="262.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace22" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="106.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
-            <Button x:Name="btnSpace20" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="201,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btnSpace25" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="340.333,63,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace24" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="261.333,63,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace22" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="107.333,63,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace20" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="201,479,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1303,7 +1277,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace32" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="520.333,477,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace32" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="521.333,478,0,0" VerticalAlignment="Top" Width="74" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1323,7 +1297,7 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <Button x:Name="btnSpace38" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="980.333,476,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace38" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="981.333,475,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1343,7 +1317,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace40" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="1136.333,477,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace40" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="1137.333,478,0,0" VerticalAlignment="Top" Width="75" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1382,6 +1356,367 @@
                         <TranslateTransform X="-230.027" Y="230.333"/>
                     </TransformGroup>
                 </Button.RenderTransform>
+            </Button>
+            <StackPanel x:Name="stkPnlBldg1" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="726.333,892,0,0" VerticalAlignment="Top" Width="72"/>
+            <Button x:Name="btnSpace2" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="126"  Background="{x:Null}" Margin="647.333,888,0,0" Grid.Column="1"/>
+            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace1" HorizontalAlignment="Left" Margin="725.333,888,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+
+
+            <StackPanel x:Name="stkPnlBldg3" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="570.333,892,0,0" VerticalAlignment="Top" Width="72"/>
+            <StackPanel x:Name="stkPnlBldg6" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="342.333,892,0,0" VerticalAlignment="Top" Width="72"/>
+            <StackPanel x:Name="stkPnlBldg8" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="186.333,892,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg9" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="108.333,892,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg12" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="54.333,838,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg14" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="54.333,682,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg15" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="55.333,603,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg17" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="55.333,453,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg19" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="54.333,298,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg20" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="54.333,220,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg22" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="108.333,165,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg24" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="263.333,165,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg25" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="342.333,165,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg27" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="492.333,167,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg28" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="570.333,167,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg30" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="726.333,167,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlBldg32" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="780.333,220,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg33" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="780.333,298,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg35" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="780.333,454,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg38" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="779.333,682,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlBldg40" Orientation="Horizontal" HorizontalAlignment="Left" Height="22" Margin="780.333,838,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs0" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="824.333,916,0,0" VerticalAlignment="Top" Width="86"/>
+            <StackPanel x:Name="stkPnlPlyrs1" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="725.333,966,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs3" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="569.333,952,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs2" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="647.333,945,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs4" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="490.333,935,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs5" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="416.333,935,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs6" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="342.333,951,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs7" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="263.333,935,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs8" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="183.333,957,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs9" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="107.333,953,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs10" HorizontalAlignment="Left" Height="30" Margin="485,984,0,0" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2"/>
+            <StackPanel x:Name="stkPnlPlyrs11" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="21.333,918,0,0" VerticalAlignment="Top" Width="74"/>
+            <StackPanel x:Name="stkPnlPlyrs12" HorizontalAlignment="Left" Height="48" Margin="475,827,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90
+"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs13" HorizontalAlignment="Left" Height="48" Margin="475,748,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs14" HorizontalAlignment="Left" Height="48" Margin="489,670,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs15" HorizontalAlignment="Left" Height="48" Margin="478,592,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs16" HorizontalAlignment="Left" Height="48" Margin="500,516,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs17" HorizontalAlignment="Left" Height="48" Margin="486,440,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs18" HorizontalAlignment="Left" Height="48" Margin="16.333,363,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs19" HorizontalAlignment="Left" Height="48" Margin="480,285,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs20" HorizontalAlignment="Left" Height="48" Margin="491,208,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90 "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs21" HorizontalAlignment="Left" Height="48" Margin="16.333,116,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs22" HorizontalAlignment="Left" Height="48" Margin="108.333,94,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs23" HorizontalAlignment="Left" Height="48" Margin="188.333,142,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs24" HorizontalAlignment="Left" Height="48" Margin="265.333,68,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs25" HorizontalAlignment="Left" Height="48" Margin="342.333,87,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs26" HorizontalAlignment="Left" Height="48" Margin="418.333,130,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs27" HorizontalAlignment="Left" Height="48" Margin="493.333,82,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs28" HorizontalAlignment="Left" Height="48" Margin="571.333,82,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs29" HorizontalAlignment="Left" Height="48" Margin="650.333,132,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs30" HorizontalAlignment="Left" Height="48" Margin="726.333,84,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs31" HorizontalAlignment="Left" Height="48" Margin="805.333,116,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <StackPanel x:Name="stkPnlPlyrs32" HorizontalAlignment="Left" Height="48" Margin="848.333,207,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs33" HorizontalAlignment="Left" Height="48" Margin="853.333,284,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs34" HorizontalAlignment="Left" Height="48" Margin="820.333,364,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs35" HorizontalAlignment="Left" Height="48" Margin="850.333,441,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs36" HorizontalAlignment="Left" Height="48" Margin="853.333,516,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs37" HorizontalAlignment="Left" Height="48" Margin="824.333,592,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs38" HorizontalAlignment="Left" Height="48" Margin="853.333,671,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs39" HorizontalAlignment="Left" Height="48" Margin="849.333,748,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <StackPanel x:Name="stkPnlPlyrs40" HorizontalAlignment="Left" Height="48" Margin="852.333,825,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+            </StackPanel>
+            <Image Grid.Column="1" Margin="21.333,119,1291,906" Source="images/car.png" Stretch="Fill" RenderTransformOrigin="0.664,-0.14">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-36.823"/>
+                        <TranslateTransform X="-35.303" Y="-2.405"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock x:Name="tbSpace10Name" Text="Visiting Area"  Visibility="Hidden"  HorizontalAlignment="Center" Margin="475,978,1381,0" VerticalAlignment="Top" Width="64"  Height="13" FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="10" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="57.63"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="btnSpace10" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="485,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnSpace11" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="13.333,892,0,0" VerticalAlignment="Top" Width="90" Height="91"  Background="{x:Null}" Grid.Column="1"/>
+            <Button x:Name="btnSpace21" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="484,67,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.ColumnSpan="2">
+                <Image Source="images/car.png" Stretch="Fill" RenderTransformOrigin="0.591,0.595" Height="59" Width="100" Grid.Column="1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-37.942"/>
+                            <TranslateTransform X="2.339" Y="-7.061"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
             </Button>
         </Grid>
     </Viewbox>
