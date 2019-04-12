@@ -133,10 +133,10 @@
     <Resource Include="car.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="circle.jpg" />
+    <Resource Include="images\circle.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\circle.jpg" />
+    <Resource Include="images\Token.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

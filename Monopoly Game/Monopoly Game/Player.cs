@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Monopoly_Game
 {
@@ -15,12 +16,17 @@ namespace Monopoly_Game
         private string playerName;
         private string token;
         private int _Position;
+        private Space _CurrentSpace;
+        private Image _TokenImage;
 
         public string PlayerName { get { return playerName; } set { playerName = value; } }
         public int PlayerID { get { return playerID; } set { playerID = value; } }
         public bool Eliminated { get { return eliminated; } set { eliminated = value; } }
         public string Token { get { return token; } set { token = value; } }
         public static int LastAssignedID { get { return lastAssignedId; } set { lastAssignedId = value; } }
+        public Space CurrentSpace { get { return _CurrentSpace; } set { _CurrentSpace = value; } }
+
+        public Image TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
 
         public int Position
         {

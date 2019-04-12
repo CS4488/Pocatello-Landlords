@@ -48,7 +48,12 @@ namespace Monopoly_Game
         private readonly int[] _LootCrateNdxs = { 4, 18, 34 };
         private readonly int[] _OpportunityNdxs = { 7, 23, 37 };
         private readonly int[] _EventNdxs = { 0, 2, 31, 39, 21 };
+
+
         private List<Space> _AggregatedSpaceObjects = new List<Space>();
+
+
+        private Player testPlayer;
         #endregion
 
         public List<Space> AggregatedSpaceObjects
@@ -64,8 +69,8 @@ namespace Monopoly_Game
         {
             InitializeComponent();
             InitializeGameBoard();
-            BuildSpaceObjects();
             FixMouseOverEffect();
+            BuildSpaceObjects();
         }
 
         private void BuildSpaceObjects()
@@ -194,6 +199,30 @@ namespace Monopoly_Game
             }
         }
         #endregion
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WrapPanel wp = _SpacePlayerAreas.ElementAt(0);
+            if(wp.Children.Count == 0 && testPlayer == null)
+            {
+                GameEngine.Game.GameBoard.Spaces = _AggregatedSpaceObjects;
+                testPlayer = new Player();
+                testPlayer.CurrentSpace = _AggregatedSpaceObjects.ElementAt(0);
+                Image image = new Image();
+                image.Source = new BitmapImage(new Uri("/images/Token.png", UriKind.Relative));
+                testPlayer.TokenImage = image;
+                image.Height = image.Width = wp.Height / 2;
+                wp.Children.Add(image);
+            }
+            else
+            {
+                GameEngine.Game.MovePlayer(testPlayer, 1);
+            }
+            
+            
+        }
     }
 
 }

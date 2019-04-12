@@ -24,7 +24,7 @@ namespace Monopoly_Game
      */
     class Game
     {
-        Board gameBoard;
+        Board _GameBoard;
         List<Player> players;
         int lastPlayerID = -1;
         Player currentPlayer;
@@ -33,7 +33,7 @@ namespace Monopoly_Game
         protected int numberOfPlayers;
         protected int maxNumPlayers;
 
-        public Board GameBoard { get { return gameBoard; } }
+        public Board GameBoard { get { return _GameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
         public List<Player> Players { get { return players; } set { players = value; } }
         public GameStates GameState { get; set; }
@@ -42,7 +42,7 @@ namespace Monopoly_Game
         public Game()
         {
             gameState = GameStates.Running;
-            gameBoard = new Board();
+            _GameBoard = new Board();
             Players = new List<Player>();
             Player.LastAssignedID = 0;
             // Creat a new player for the host
@@ -52,7 +52,7 @@ namespace Monopoly_Game
         public Game(List<Space> spaces)
         {
             gameState = GameStates.Running;
-            gameBoard = new Board(spaces);
+            _GameBoard = new Board(spaces);
             Players = new List<Player>();
             Player.LastAssignedID = 0;
         }
@@ -91,6 +91,34 @@ namespace Monopoly_Game
                 makeNextPlayersTurn();
             }
         }
+
+
+
+        public void MovePlayer(Player plyr, int moveCount)
+        {
+            Space initial = plyr.CurrentSpace;
+            while (moveCount != 0)
+            {
+                int temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
+                
+                if(temp < _GameBoard.Spaces.Count-1)
+                {
+                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp+1);
+                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Clear();
+                    _GameBoard.Spaces.ElementAt(temp+1).PlayerAreaStackPanel.Children.Add(plyr.TokenImage);
+                }
+                else
+                {
+                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(0);
+                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.TokenImage);
+                    _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.TokenImage);
+                }
+                
+                moveCount--;
+            }
+        }
+
+
 
         #region Display Manager Calls
         /// <summary>

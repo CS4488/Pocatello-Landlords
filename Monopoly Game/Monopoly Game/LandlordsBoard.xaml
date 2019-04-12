@@ -233,7 +233,7 @@
                 </TextBlock.RenderTransform>
             </TextBlock>
             <TextBlock x:Name="tbSpace30Name" Text="Fort Hall Casino" HorizontalAlignment="Center" Margin="726.333,132,616,0" VerticalAlignment="Top" Width="71"  FontFamily="Modern No. 20" FontWeight="Bold" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="26" Grid.Column="1"/>
-            <TextBlock x:Name="tbSpace0Name" HorizontalAlignment="Center" Margin="810.333,896,488,0" VerticalAlignment="Top" Width="115"  Height="112" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14" Grid.Column="1"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
+            <TextBlock x:Name="tbSpace0Name" HorizontalAlignment="Center" Margin="802.333,896,496,0" VerticalAlignment="Top" Width="115"  Height="112" FontFamily="OCR A Extended" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="14" Grid.Column="1"><Run Text="PASS AS YOU "/><Run FontSize="24" Text="WENT"/><Run Text=","/><LineBreak/><Run Text="COLLECT SOME MONEY"/><LineBreak/><Run/><LineBreak/><Run Text="LIKE $200 TO BE EXACT"/></TextBlock>
             <Image Margin="429.333,90,938,916" Source="images/train.jpg" Stretch="Fill" Grid.Column="1"/>
             <Image Margin="844.333,498,517,492" Source="images/train.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Image.RenderTransform>
@@ -964,7 +964,7 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace0" HorizontalAlignment="Left" Margin="803.333,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
+            <Button Style="{StaticResource stylePlayable}" x:Name="btnSpace0" HorizontalAlignment="Left" Margin="805.333,888,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace31" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="803.333,64,0,0" VerticalAlignment="Top" Width="125" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace23" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="183.333,64,0,0" VerticalAlignment="Top" Width="75" Height="126"  Background="{x:Null}" Grid.Column="1"/>
             <Button x:Name="btnSpace34" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="674.333,478,0,0" VerticalAlignment="Top" Width="76" Height="126"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
@@ -1718,7 +1718,7 @@
                     </Image.RenderTransform>
                 </Image>
             </Button>
-            <WrapPanel Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="901.333,1097,0,-117" VerticalAlignment="Top" Width="100"/>
+            <Button Content="TestPlayerMove" HorizontalAlignment="Left" Margin="328,725,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
         </Grid>
     </Viewbox>
 </Page>
