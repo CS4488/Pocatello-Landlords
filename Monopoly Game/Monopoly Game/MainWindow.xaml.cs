@@ -29,36 +29,14 @@ namespace Monopoly_Game
     * M.S. Made the makeMove function more generic, so as to accept moves that are not dependent on player clicks... This was
     * done to make it possible for the computer player to input a move. M.S. - 30JAN2019
     * Rex - Added a Host Game menu option that creates and starts a Server object - 12MAR2019
+    * Kalen - Make monopoly main game - 15APR19
     */
     public partial class MainWindow : Window
     {
 
-
-
-        TicTacToe game;
-        DisplayManager dm;
-        int numPlayers;
-        Dictionary<Tuple<int, int>, int> gridToIndexMap = new Dictionary<Tuple<int, int>, int>();
-
-        public int NumPlayers { get { return numPlayers; } set { numPlayers = value; } }
-
         public MainWindow()
         {
             InitializeComponent();
-            ticTacToeArea.Visibility = Visibility.Hidden;
-        }
-
-        //handle all button clicks
-        private void BtnClick(object sender, RoutedEventArgs e)
-        {
-            Button btn = sender as Button;
-            int x = (int)btn.GetValue(Grid.RowProperty);
-            int y = (int)btn.GetValue(Grid.ColumnProperty);
-
-            Tuple<int, int> coords = Tuple.Create(x, y);
-
-            int index = gridToIndexMap[coords];
-            handleGame(index);
         }
 
         private void MiMonopoly_Click(object sender, RoutedEventArgs e)
@@ -71,86 +49,25 @@ namespace Monopoly_Game
         // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e)
         {
-            this.fillMap();
-            game = new TicTacToe();
-            this.dm = new DisplayManager(game, ticTacToeArea);
-            dm.updateDisplay();
+            LandlordsBoard lb = new LandlordsBoard();
+            frm_Main.Content = lb;
+            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
         }
 
-        private void MiHostGame_Click(object sender, RoutedEventArgs e)
+        private void MiSaveGame_Click(object sender, RoutedEventArgs e)
         {
-            Server gameServer = new Server();
-            gameServer.Connect();
-            // This should be delayed until at least one person is connected
-            while (gameServer.Clients.Count != numPlayers)
-            { // *******************************************************************
-                // This is just here to delay until the count is right
-            }
-            MiNewGame_Click(sender, e);
+            MessageBox.Show("Since we're not networking eventualy we can use the serialized objects to save and load games");
         }
 
-        private void MiJoinGame_Click(object sender, RoutedEventArgs e)
+        private void MiLoadGame_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Functionality coming soon!");
-        }
-
-        private void MiObserveGame_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Functionality coming soon!");
+            MessageBox.Show("Since we're not networking eventualy we can use the serialized objects to save and load games");
         }
 
         private void MiExit_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
             return;
-        }
-
-        //Dispatches game logic and display logic to proper classes
-        private void handleGame(int indexClicked)
-        {
-            game.handleTurn(indexClicked);
-            dm.updateDisplay();
-        }
-
-        private void fillMap()
-        {
-            //set up mapping
-            //definitely a way to do this mathematically
-            //but I wasn't sure how and this works
-            // formula is:
-            // x = index % col
-            // y = index / col
-            // if someone wants to reverse that
-            if (gridToIndexMap.Count > 0)
-            {
-                return;
-            }
-            Tuple<int, int> coords = Tuple.Create(0, 0);
-            gridToIndexMap.Add(coords, 0);
-
-            coords = Tuple.Create(0, 1);
-            gridToIndexMap.Add(coords, 1);
-
-            coords = Tuple.Create(0, 2);
-            gridToIndexMap.Add(coords, 2);
-
-            coords = Tuple.Create(1, 0);
-            gridToIndexMap.Add(coords, 3);
-
-            coords = Tuple.Create(1, 1);
-            gridToIndexMap.Add(coords, 4);
-
-            coords = Tuple.Create(1, 2);
-            gridToIndexMap.Add(coords, 5);
-
-            coords = Tuple.Create(2, 0);
-            gridToIndexMap.Add(coords, 6);
-
-            coords = Tuple.Create(2, 1);
-            gridToIndexMap.Add(coords, 7);
-
-            coords = Tuple.Create(2, 2);
-            gridToIndexMap.Add(coords, 8);
         }
 
     }
