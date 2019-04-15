@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Monopoly_Game
 {
@@ -11,20 +12,44 @@ namespace Monopoly_Game
     {
         protected static int lastAssignedId = 0;
 
-        private int playerID;
-        private bool eliminated = false;
-        private string playerName;
-        private string token;
+        private int _ID;
+        private bool _Eliminated = false;
+        private string _Name;
         private int _Position;
         private Space _CurrentSpace;
         private Image _TokenImage;
+        private Color _TokenColor;
+        private Token _Token;
 
-        public string PlayerName { get { return playerName; } set { playerName = value; } }
-        public int PlayerID { get { return playerID; } set { playerID = value; } }
-        public bool Eliminated { get { return eliminated; } set { eliminated = value; } }
-        public string Token { get { return token; } set { token = value; } }
-        public static int LastAssignedID { get { return lastAssignedId; } set { lastAssignedId = value; } }
-        public Space CurrentSpace { get { return _CurrentSpace; } set { _CurrentSpace = value; } }
+        public string PlayerName {
+            get { return _Name; }
+            set { _Name = value; }
+        }
+
+        public int PlayerID {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+
+        public bool Eliminated {
+            get { return _Eliminated; }
+            set { _Eliminated = value; }
+        }
+
+        public Token Token {
+            get { return _Token; }
+            set { _Token = value; }
+        }
+
+        public static int LastAssignedID {
+            get { return lastAssignedId; }
+            set { lastAssignedId = value; }
+        }
+
+        public Space CurrentSpace {
+            get { return _CurrentSpace; }
+            set { _CurrentSpace = value; }
+        }
 
         public Image TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
 
@@ -36,13 +61,13 @@ namespace Monopoly_Game
 
         public Player()
         {
-            this.playerID = Player.lastAssignedId;
+            this._ID = Player.lastAssignedId;
             Player.lastAssignedId++;
         }
 
         public Player(int inputID)
         {
-            playerID = inputID;
+            _ID = inputID;
         }
 
         public virtual bool takeTurn(int spaceIndex, Game game)

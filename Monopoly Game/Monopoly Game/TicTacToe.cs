@@ -24,9 +24,9 @@ namespace Monopoly_Game
                 base.GameBoard.Spaces.Add(new Property("", null, null, null, i));// For tictactoe, owner is a needed variable, so type property is used
             }
             Player playerOne = new Player(0);
-            playerOne.Token = "Y";
+            //playerOne.Token = "Y";
             CompPlayer compPlayer = new CompPlayer(1);
-            compPlayer.Token = "O";
+            //compPlayer.Token = "O";
             Players.Add(playerOne);
             Players.Add(compPlayer);
             CurrentPlayer = Players[0];

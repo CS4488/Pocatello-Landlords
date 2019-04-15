@@ -38,7 +38,7 @@ namespace Monopoly_Game
                     //our buttons are indexed same as grid
                     Button btn = (Button)grid.Children[i];
                     var btnLabel = btn.Content as TextBlock;
-                    btnLabel.Text = owner.Token;
+                    //btnLabel.Text = owner.Token;
                 }
                 else
                 {
