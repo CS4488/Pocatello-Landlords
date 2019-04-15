@@ -68,7 +68,6 @@
     <Compile Include="Property.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
-    <Compile Include="TicTacToe.cs" />
     <Compile Include="Token.cs" />
     <Page Include="LandlordsBoard.xaml">
       <SubType>Designer</SubType>
