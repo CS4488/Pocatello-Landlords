@@ -29,10 +29,10 @@ namespace Monopoly_Game
             grid.Visibility = Visibility.Visible;
             grid.IsEnabled = true;
 
-            for(int i = 0; i < game.GameBoard.Spaces.Count; i++)
+            for (int i = 0; i < game.GameBoard.Spaces.Count; i++)
             {
                 Property property = (Property)game.GameBoard.Spaces[i];
-                if(property.OwnerPlayerID != -1)
+                if (property.OwnerPlayerID != -1)
                 {
                     Player owner = game.getPlayerById(property.OwnerPlayerID);
                     //our buttons are indexed same as grid
@@ -46,8 +46,8 @@ namespace Monopoly_Game
                     var btnLabel = btn.Content as TextBlock;
                     btnLabel.Text = "";
                 }
-            } 
-            if(game.GameState == GameStates.GameOver)
+            }
+            if (game.GameState == GameStates.GameOver)
             {
                 MessageBox.Show("Game over!");
             }

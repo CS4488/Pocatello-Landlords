@@ -57,7 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
-    <Compile Include="DisplayManager.cs" />
+    <Compile Include="DisplayManger.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameStates.cs" />
@@ -68,7 +68,6 @@
     <Compile Include="Property.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
-    <Compile Include="TicTacToe.cs" />
     <Page Include="LandlordsBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
