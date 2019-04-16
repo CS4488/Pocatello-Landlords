@@ -104,7 +104,8 @@ namespace Monopoly_Game
                 if(temp < _GameBoard.Spaces.Count-1)
                 {
                     plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp+1);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Clear();
+                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.TokenImage);
+                    // M.S. PlayerAreaStackPanel.Clear() was switched to this so that other pieces wouldn't disappear.
                     _GameBoard.Spaces.ElementAt(temp+1).PlayerAreaStackPanel.Children.Add(plyr.TokenImage);
                 }
                 else

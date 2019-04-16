@@ -65,6 +65,7 @@
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Observer.cs" />
+    <Compile Include="PlayerColor.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />

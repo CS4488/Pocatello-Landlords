@@ -35,7 +35,10 @@ namespace Monopoly_Game
             get { return _Eliminated; }
             set { _Eliminated = value; }
         }
-
+        public Color TokenColor{ //M.S. Added 4/16/19
+            get { return _TokenColor; }
+            set { _TokenColor = value; }
+        }
         public Token Token {
             get { return _Token; }
             set { _Token = value; }
@@ -63,6 +66,8 @@ namespace Monopoly_Game
         {
             this._ID = Player.lastAssignedId;
             Player.lastAssignedId++;
+            this._TokenColor = PlayerColor.AssignColor(_ID);
+            // M.S. The player is assigned a new color using the player ID as an index to the enum in PlayerColor
         }
 
         public Player(int inputID)

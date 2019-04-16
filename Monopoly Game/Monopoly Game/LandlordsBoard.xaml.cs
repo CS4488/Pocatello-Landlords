@@ -29,6 +29,9 @@ namespace Monopoly_Game
     ///     Space Cost: tbSpace[numbe(0 indexed)]Cost
     ///     Building StackPanel: stkPnlBldg[number(0 indexed)]
     ///     Player Space StackPanel: stkPnlPlyrs[number(0 indexed)]
+    ///     
+    /// M.S. Get method for WrapPanel _SpacePlayerAreas was added 4/16/19
+    ///     Test method was changed to show players added to the GameEngine
     /// </summary>
     public partial class LandlordsBoard : Page
     {
@@ -53,9 +56,16 @@ namespace Monopoly_Game
         private List<Space> _AggregatedSpaceObjects = new List<Space>();
 
 
-        private Player testPlayer;
+        //private Player testPlayer; // M.S. Test obsolete
         #endregion
 
+        public WrapPanel[] SpacePlayerAreas // M.S. Added in order to access a UI "space" index from function Setup in GameEngine
+        {
+            get
+            {
+                return _SpacePlayerAreas;
+            }
+        }
         public List<Space> AggregatedSpaceObjects
         {
             get
@@ -204,24 +214,9 @@ namespace Monopoly_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            WrapPanel wp = _SpacePlayerAreas.ElementAt(0);
-            if(wp.Children.Count == 0 && testPlayer == null)
-            {
-                GameEngine.Game.GameBoard.Spaces = _AggregatedSpaceObjects;
-                testPlayer = new Player();
-                testPlayer.CurrentSpace = _AggregatedSpaceObjects.ElementAt(0);
-                Image image = new Image();
-                image.Source = new BitmapImage(new Uri("/images/Token.png", UriKind.Relative));
-                testPlayer.TokenImage = image;
-                image.Height = image.Width = wp.Height / 2;
-                wp.Children.Add(image);
-            }
-            else
-            {
-                GameEngine.Game.MovePlayer(testPlayer, 1);
-            }
-            
-            
+            Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
+            GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+            GameEngine.Game.makeNextPlayersTurn();
         }
     }
 

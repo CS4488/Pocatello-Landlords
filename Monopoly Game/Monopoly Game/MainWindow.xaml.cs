@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.VisualBasic;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -49,9 +50,7 @@ namespace Monopoly_Game
         // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e)
         {
-            LandlordsBoard lb = new LandlordsBoard();
-            frm_Main.Content = lb;
-            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
+            InputBox.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void MiSaveGame_Click(object sender, RoutedEventArgs e)
@@ -70,5 +69,23 @@ namespace Monopoly_Game
             return;
         }
 
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(Int32.TryParse(InputTextBox.Text, out int numOfPlayers)))
+            {// M.S. (if the input cannot be parsed as an integer)
+                MessageBox.Show("Please enter a valid number");
+                return;
+            }
+            LandlordsBoard lb = new LandlordsBoard();
+            frm_Main.Content = lb;
+            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
+            GameEngine.Setup(numOfPlayers, lb.SpacePlayerAreas, lb.AggregatedSpaceObjects); // M.S. Setup these many players on the LandlordsBoard UI
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }
