@@ -99,24 +99,21 @@ namespace Monopoly_Game
             Space initial = plyr.CurrentSpace;
             while (moveCount != 0)
             {
-                // Tyler Arnet: Added to skip the Prison space. 4/17/19
                 int temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
-                if (temp == 10)
-                {
-                    moveCount++;
-                }
+                
                 if(temp < _GameBoard.Spaces.Count-1)
+                // R.C. Chaged to add Ellipse object instead of .png image - 17 APR 2019
                 {
                     plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp+1);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.TokenImage);
+                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
                     // M.S. PlayerAreaStackPanel.Clear() was switched to this so that other pieces wouldn't disappear.
-                    _GameBoard.Spaces.ElementAt(temp+1).PlayerAreaStackPanel.Children.Add(plyr.TokenImage);
+                    _GameBoard.Spaces.ElementAt(temp + 1).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
                 }
                 else
                 {
                     plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(0);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.TokenImage);
-                    _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.TokenImage);
+                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
+                    _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
                 }
                 
                 moveCount--;
