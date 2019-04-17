@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Monopoly_Game
 {
@@ -20,6 +21,7 @@ namespace Monopoly_Game
         private Image _TokenImage;
         private Color _TokenColor;
         private Token _Token;
+        private Ellipse _PlayerCircle;
 
         public string PlayerName {
             get { return _Name; }
@@ -55,6 +57,7 @@ namespace Monopoly_Game
         }
 
         public Image TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
+        public Ellipse PlayerCircle { get { return _PlayerCircle; } set { _PlayerCircle = value; } } // R.C. Added 17 APR 2019
 
         public int Position
         {
@@ -66,8 +69,15 @@ namespace Monopoly_Game
         {
             this._ID = Player.lastAssignedId;
             Player.lastAssignedId++;
-            this._TokenColor = PlayerColor.AssignColor(_ID);
+
             // M.S. The player is assigned a new color using the player ID as an index to the enum in PlayerColor
+            this._TokenColor = PlayerColor.AssignColor(_ID);
+
+            // R.C. Replaced .png image as token for an Ellipse object - 17 APR 2019
+            _PlayerCircle = new Ellipse();
+            SolidColorBrush brush = new SolidColorBrush(_TokenColor);
+            _PlayerCircle.Fill = brush;
+            
         }
 
         public Player(int inputID)

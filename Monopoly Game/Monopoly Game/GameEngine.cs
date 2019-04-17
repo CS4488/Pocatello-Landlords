@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 /// Purpose: Handles and relays all logic between Game, Network and Display
 /// 
 /// M.S. The Setup function is now used to "put" player Tokens on the UI 4/16/19
+/// R.C. Setup changed to add Ellipse objects instead of images. 4/17/2019
 /// </summary>
 namespace Monopoly_Game
 {
@@ -108,12 +109,8 @@ namespace Monopoly_Game
             {
                 Game.GameBoard.Spaces = AggregatedSpaceObjects;
                 player.CurrentSpace = AggregatedSpaceObjects.ElementAt(0);
-                Image image = new Image();
-                image.Source = new BitmapImage(new Uri("/images/Token.png", UriKind.Relative));
-                image = PlayerColor.ChangeColor(image, player.TokenColor); // M.S. This won't work until it's fixed in PlayerColor
-                player.TokenImage = image;
-                image.Height = image.Width = wp.Height / 2;
-                wp.Children.Add(image);
+                player.PlayerCircle.Height = player.PlayerCircle.Width = wp.Height / 2;
+                wp.Children.Add(player.PlayerCircle);
             }
             Game.CurrentPlayer = Game.Players[0];
             // ----------- Psuedo code ----------------
