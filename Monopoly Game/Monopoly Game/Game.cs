@@ -99,7 +99,11 @@ namespace Monopoly_Game
             Space initial = plyr.CurrentSpace;
             while (moveCount != 0)
             {
+                /// Tyler Arnet: Added to skip the Prison Space. 4/17/2019
                 int temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
+                if (temp == 10) {
+                    moveCount++;
+                }
                 
                 if(temp < _GameBoard.Spaces.Count-1)
                 // R.C. Chaged to add Ellipse object instead of .png image - 17 APR 2019
