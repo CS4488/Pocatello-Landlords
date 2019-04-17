@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 /// <summary>
@@ -108,9 +109,8 @@ namespace Monopoly_Game
             {
                 Game.GameBoard.Spaces = AggregatedSpaceObjects;
                 player.CurrentSpace = AggregatedSpaceObjects.ElementAt(0);
-                Image image = new Image();
-                image.Source = new BitmapImage(new Uri("/images/Token.png", UriKind.Relative));
-                image = PlayerColor.ChangeColor(image, player.TokenColor); // M.S. This won't work until it's fixed in PlayerColor
+                Button image = new Button(); // T.A. As per Nando's suggestion, we changed the image to a button 4/17/19
+                image.Background = new SolidColorBrush(player.TokenColor);
                 player.TokenImage = image;
                 image.Height = image.Width = wp.Height / 2;
                 wp.Children.Add(image);

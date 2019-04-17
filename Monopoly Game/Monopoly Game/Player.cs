@@ -17,7 +17,7 @@ namespace Monopoly_Game
         private string _Name;
         private int _Position;
         private Space _CurrentSpace;
-        private Image _TokenImage;
+        private Button _TokenImage;
         private Color _TokenColor;
         private Token _Token;
 
@@ -54,7 +54,7 @@ namespace Monopoly_Game
             set { _CurrentSpace = value; }
         }
 
-        public Image TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
+        public Button TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
 
         public int Position
         {

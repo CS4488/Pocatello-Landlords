@@ -32,10 +32,5 @@ namespace Monopoly_Game
                 default:                    return Color.FromRgb(128, 128, 128); //gray
             }
         }
-        public static Image ChangeColor(Image inputImage, Color inputColor)
-        {
-            // M.S. Here is where I need help :)
-            return inputImage; // currently does nothing to the image.
-        }
     }
 }

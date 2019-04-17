@@ -215,7 +215,7 @@ namespace Monopoly_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
-            GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+            GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, 1);
             GameEngine.Game.makeNextPlayersTurn();
         }
     }
