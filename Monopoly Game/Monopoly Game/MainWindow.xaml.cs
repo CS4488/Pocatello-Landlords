@@ -78,7 +78,7 @@ namespace Monopoly_Game
             }
             LandlordsBoard lb = new LandlordsBoard();
             frm_Main.Content = lb;
-            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
+            GameEngine.SetupAsClient(lb.AggregatedSpaceObjects); // This required because this is where the game is created
             GameEngine.Setup(numOfPlayers, lb.SpacePlayerAreas, lb.AggregatedSpaceObjects); // M.S. Setup these many players on the LandlordsBoard UI
             InputBox.Visibility = System.Windows.Visibility.Collapsed;
         }

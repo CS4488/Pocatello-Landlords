@@ -22,6 +22,8 @@ namespace Monopoly_Game
         private Color _TokenColor;
         private Token _Token;
         private Ellipse _PlayerCircle;
+        private bool hasRolled;
+        private double currentFunds;
 
         public string PlayerName {
             get { return _Name; }
@@ -65,6 +67,9 @@ namespace Monopoly_Game
             set { _Position = value; }
         }
 
+        public bool HasRolled { get { return hasRolled; } set { hasRolled = value; } } // R.C. Added 17 APR 2019
+        public double CurrentFunds { get { return currentFunds; } set { currentFunds = value; } } // R.C. Added 17 APR 2019
+
         public Player()
         {
             this._ID = Player.lastAssignedId;
@@ -77,6 +82,9 @@ namespace Monopoly_Game
             _PlayerCircle = new Ellipse();
             SolidColorBrush brush = new SolidColorBrush(_TokenColor);
             _PlayerCircle.Fill = brush;
+
+            // Add starting money
+            currentFunds = 1500.00;
             
         }
 

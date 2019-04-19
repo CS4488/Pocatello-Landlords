@@ -461,7 +461,9 @@
             <Border Margin="976.333,67,239,979" Grid.Column="1">
                 <Grid>
                     <Label Content="Money" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" FontSize="24" Width="102" FontFamily="Modern No. 20"/>
-                    <TextBox HorizontalAlignment="Left" Height="34" Margin="107,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" FontSize="18" BorderBrush="{x:Null}" Text="$750.00" IsEnabled="False"/>
+                    <TextBox Name="txtMoney" HorizontalAlignment="Left" Height="34" Margin="107,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" 
+                    FontSize="18" BorderBrush="{x:Null}" IsEnabled="False" Text="$1500"/>
+                    <!--That last is more a cheat to get something to appear-->
                 </Grid>
             </Border>
 
@@ -472,7 +474,8 @@
                         <ColumnDefinition Width="383*"/>
                         <ColumnDefinition Width="8*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel HorizontalAlignment="Left" Height="211" Margin="0,28,0,0" VerticalAlignment="Top" Width="391" Grid.ColumnSpan="2"/>
+                    <StackPanel Name="stkPropertiesOwned" HorizontalAlignment="Left" Height="211" Margin="0,28,0,0" VerticalAlignment="Top" Width="391" 
+                    Grid.ColumnSpan="2"/>
                     <Label Content="Properties Owned" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
                     <Border Margin="0,443.267,-3.833,-227" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FF4CB0D6" Grid.ColumnSpan="2">
                         <Grid Margin="0,0,2.167,0">
@@ -1718,7 +1721,25 @@
                     </Image.RenderTransform>
                 </Image>
             </Button>
+
+            <!--
             <Button Content="TestPlayerMove" HorizontalAlignment="Left" Margin="328,725,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
+            -->
+            <Button Name="btnRollDice" Height="80" Width="100" Margin="336,928,71.2,72" Background="#FF8C8C8C" Click="BtnRollDice_Click">
+                <Image Source="images/dice.png" />
+            </Button>
+            <TextBox Name="txtDice1" HorizontalAlignment="Left" Height="38" Margin="279,928,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"
+            IsEnabled="False" FontSize="25" TextAlignment="Center"/>
+            <TextBox x:Name="txtDice2" HorizontalAlignment="Left" Height="38" Margin="279,967,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"
+                IsEnabled="False" FontSize="25" TextAlignment="Center"/>
+            <Button HorizontalAlignment="Left" Margin="40,935,0,0" VerticalAlignment="Top" Width="204" Height="75" Background="#FF8C8C8C"
+            Name="btnEndTurn" Click="BtnEndTurn_Click">
+                <Image Source="images/EndTurn2.png"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="130,797,0,0" VerticalAlignment="Top" Width="204" Height="73" Background="#FF8C8C8C"
+            Name="btnAction" Click="BtnAction_Click">
+                <Image Name="imgActionImage"/>
+            </Button>
         </Grid>
     </Viewbox>
 </Page>

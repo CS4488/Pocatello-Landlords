@@ -51,6 +51,7 @@ namespace Monopoly_Game
         private readonly int[] _LootCrateNdxs = { 4, 18, 34 };
         private readonly int[] _OpportunityNdxs = { 7, 23, 37 };
         private readonly int[] _EventNdxs = { 0, 2, 31, 39, 21 };
+        //private readonly int[] _EventNdxs = { 0, 31 };
 
 
         private List<Space> _AggregatedSpaceObjects = new List<Space>();
@@ -210,13 +211,67 @@ namespace Monopoly_Game
         }
         #endregion
 
+        // This is no longer used
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
+        //    GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+        //    GameEngine.Game.makeNextPlayersTurn();
+        //}
 
+        /// <summary>
+        /// R.C. 4/17/2019
+        /// Gets the Dice roll and moves the player by that amount
+        /// Based of of code written by Nando
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnRollDice_Click(object sender, RoutedEventArgs e) { // ** Add a check for doubles **
+            if (!GameEngine.Game.CurrentPlayer.HasRolled) {
+                Tuple<int, int> dice = GameEngine.Game.InitateDiceRoll();
+                txtDice1.Text = dice.Item1.ToString();
+                txtDice2.Text = dice.Item2.ToString();
+                GameEngine.Game.CurrentPlayer.HasRolled = true;
+                GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+                updateGUIElements();
+            }
+        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
-            GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, 1);
+        /// <summary>
+        /// R.C. 4/17/2019
+        /// Ends the current players turn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnEndTurn_Click(object sender, RoutedEventArgs e) {
+            GameEngine.Game.CurrentPlayer.HasRolled = false;
             GameEngine.Game.makeNextPlayersTurn();
+            updateGUIElements();
+        }
+
+        private void updateGUIElements() {
+            // *** This is what I'm planning on using to update things like the $$ and properties boxes. This could already be done somewhere else though 
+            // Get the player's $$
+            txtMoney.Text = "$"+GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
+            // Get the player's properties
+
+            // update the action button
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Property)) {
+                Property p = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                if (p.OwnerPlayerID == -1) {
+                    imgActionImage.Source = new BitmapImage(new Uri("images/Buy.png", UriKind.RelativeOrAbsolute));
+                } else {
+                    imgActionImage.Source = new BitmapImage(new Uri("images/PayRent.png", UriKind.RelativeOrAbsolute));
+                }
+            } else if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Event)) {
+                imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
+            } else {
+                imgActionImage.Source = new BitmapImage(new Uri("images/PayTax.png", UriKind.RelativeOrAbsolute));
+            }
+        }
+
+        private void BtnAction_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 

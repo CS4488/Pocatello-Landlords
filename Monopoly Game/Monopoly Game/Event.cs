@@ -10,6 +10,7 @@ namespace Monopoly_Game
     /// <summary>
     /// A type of space object
     /// The type property for this object refers to either the Loot Crate or the Opportunity
+    /// R.C. Type changed to be the Go to Jail or Pass Go spaces - 4/17/2019
     /// </summary>
     class Event : Space
     {
