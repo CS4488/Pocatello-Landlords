@@ -1051,7 +1051,7 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="tbSpace156Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="487,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+            <TextBlock x:Name="tbSpace15Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="487,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1061,7 +1061,7 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="tbSpace15Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="482,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
+            <TextBlock x:Name="tbSpace16Cost" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontWeight="Bold" Margin="482,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.502" Height="15" Width="70" TextAlignment="Center" Grid.ColumnSpan="2">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1221,7 +1221,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnSpace16" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="5.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button x:Name="btnSpace16" Style="{StaticResource stylePlayable}" HorizontalAlignment="Left" Margin="6.333,478,0,0" VerticalAlignment="Top" Width="69" Height="124"  Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

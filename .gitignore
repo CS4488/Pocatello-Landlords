@@ -345,3 +345,5 @@ healthchecksdb
 /Monopoly Game/.vs/Monopoly Game/v15/Server/sqlite3/storage.ide-shm
 /Monopoly Game/.vs/Monopoly Game/v15/Server/sqlite3/storage.ide
 /Monopoly Game/.vs/Monopoly Game/v15/Server/sqlite3/db.lock
+/.vs/ProjectSettings.json
+/Monopoly Game/.vs/config/applicationhost.config
