@@ -24,7 +24,6 @@ namespace Monopoly_Game
         private Ellipse _PlayerCircle;
         private bool hasRolled;
         private double currentFunds;
-
         public string PlayerName {
             get { return _Name; }
             set { _Name = value; }
@@ -57,7 +56,6 @@ namespace Monopoly_Game
             get { return _CurrentSpace; }
             set { _CurrentSpace = value; }
         }
-
         public Image TokenImage { get { return _TokenImage; } set { _TokenImage = value; } }
         public Ellipse PlayerCircle { get { return _PlayerCircle; } set { _PlayerCircle = value; } } // R.C. Added 17 APR 2019
 
@@ -85,7 +83,8 @@ namespace Monopoly_Game
 
             // Add starting money
             currentFunds = 1500.00;
-            
+
+            this.hasRolled = false;
         }
 
         public Player(int inputID)

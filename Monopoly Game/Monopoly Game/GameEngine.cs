@@ -130,7 +130,14 @@ namespace Monopoly_Game
 
 
         }
-
+        public static void RollDiceMovePlayer()
+        {
+            Tuple<int, int> dice = Game.InitateDiceRoll();
+            Game.MovePlayer(Game.CurrentPlayer, dice.Item1 + dice.Item2);
+            if (dice.Item1 != dice.Item2) Game.CurrentPlayer.HasRolled = true;
+            else Game.makeNextPlayersTurn();
+            Game.CurrentPlayer.HasRolled = false;
+        }
         private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
         {
             _Game = new Game();
