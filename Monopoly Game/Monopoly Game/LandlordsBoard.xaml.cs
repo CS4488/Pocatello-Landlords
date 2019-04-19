@@ -231,7 +231,8 @@ namespace Monopoly_Game
                 Tuple<int, int> dice = GameEngine.Game.InitateDiceRoll();
                 txtDice1.Text = dice.Item1.ToString();
                 txtDice2.Text = dice.Item2.ToString();
-                GameEngine.Game.CurrentPlayer.HasRolled = true;
+                if (dice.Item1 != dice.Item2) GameEngine.Game.CurrentPlayer.HasRolled = true;
+                else GameEngine.Game.makeNextPlayersTurn();
                 GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
                 updateGUIElements();
             }
@@ -244,8 +245,8 @@ namespace Monopoly_Game
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnEndTurn_Click(object sender, RoutedEventArgs e) {
-            GameEngine.Game.CurrentPlayer.HasRolled = false;
             GameEngine.Game.makeNextPlayersTurn();
+            GameEngine.Game.CurrentPlayer.HasRolled = false;
             updateGUIElements();
         }
 

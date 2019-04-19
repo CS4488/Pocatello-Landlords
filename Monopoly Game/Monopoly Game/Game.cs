@@ -77,6 +77,7 @@ namespace Monopoly_Game
 
         public void makeNextPlayersTurn()
         {
+            if (!this.CurrentPlayer.HasRolled) return;
             lastPlayerID = currentPlayer.PlayerID;
             if (currentPlayer.PlayerID >= Players.Count - 1)
             {
