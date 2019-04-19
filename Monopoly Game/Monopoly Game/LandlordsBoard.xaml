@@ -1726,7 +1726,7 @@
             <Button Content="TestPlayerMove" HorizontalAlignment="Left" Margin="328,725,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
             -->
             <Button Name="btnRollDice" Height="80" Width="100" Margin="336,928,71.2,72" Background="#FF8C8C8C" Click="BtnRollDice_Click">
-                <Image Source="images/dice.png" />
+                <Image x:Name="image" Height="70" Width="100" Source="images/dice.png"/>
             </Button>
             <TextBox Name="txtDice1" HorizontalAlignment="Left" Height="38" Margin="279,928,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"
             IsEnabled="False" FontSize="25" TextAlignment="Center"/>
