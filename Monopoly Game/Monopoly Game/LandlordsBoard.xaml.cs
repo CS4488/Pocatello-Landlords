@@ -264,15 +264,34 @@ namespace Monopoly_Game
                 } else {
                     imgActionImage.Source = new BitmapImage(new Uri("images/PayRent.png", UriKind.RelativeOrAbsolute));
                 }
+            } else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0" || GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "21") {
+                imgActionImage.Source = null;
             } else if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Event)) {
-                imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
-            } else {
                 imgActionImage.Source = new BitmapImage(new Uri("images/PayTax.png", UriKind.RelativeOrAbsolute));
+            } else {
+                imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
             }
         }
 
         private void BtnAction_Click(object sender, RoutedEventArgs e) {
+            
+        }
 
+        private void MiSave_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Coming Soon!");
+        }
+
+        private void MiLoad_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Coming Soon!");
+        }
+
+        private void MiExit_Click(object sender, RoutedEventArgs e) {
+            System.Windows.Application.Current.Shutdown();
+            return;
+        }
+
+        private void MiUseCard_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show("Coming Soon!");
         }
     }
 
