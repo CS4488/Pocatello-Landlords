@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.VisualBasic;
+using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -60,7 +62,7 @@ namespace Monopoly_Game
 
         private void MiLoadGame_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Since we're not networking eventualy we can use the serialized objects to save and load games");
+            BeginStoryboard((Storyboard)this.FindResource("Storyboard1"));
         }
 
         private void MiExit_Click(object sender, RoutedEventArgs e)
@@ -85,7 +87,7 @@ namespace Monopoly_Game
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+            BeginStoryboard((Storyboard)this.FindResource("Storyboard1"));
         }
     }
 }
