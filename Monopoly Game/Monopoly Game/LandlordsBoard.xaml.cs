@@ -216,12 +216,14 @@ namespace Monopoly_Game
         {
             Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
             GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+            EventName.Text = GameEngine.Game.CurrentPlayer.CurrentSpace.Name;
+            EventDisplay.Visibility = System.Windows.Visibility.Visible;
             GameEngine.Game.makeNextPlayersTurn();
         }
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
-
+            EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
