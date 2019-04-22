@@ -309,7 +309,6 @@ namespace Monopoly_Game
         /// <summary>
         /// Updates the Opponent Properties display
         /// </summary>
-        /// <param name="property">The property to display</param>
         public void DisplayPropertyOwnerships()
         {
             stkPropertiesOwned.Children.Clear();
@@ -319,8 +318,8 @@ namespace Monopoly_Game
                 Property property = (Property)GameEngine.Game.CurrentPlayer.getOwnedSpaces()[i];
                 Player owner = GameEngine.Game.getPlayerById(property.OwnerPlayerID);
                 TextBlock tb = new TextBlock();
-                tb.Text = property.OwnerPlayerID + ": " + property.Name;
                 SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
+                tb.Text = property.OwnerPlayerID + ": " + property.Name;
                 tb.Foreground = fontColor;
                 stkPropertiesOwned.Children.Add(tb);                  
             }
@@ -335,8 +334,8 @@ namespace Monopoly_Game
                         Property property = (Property)properties[j];
                         Player owner = players[i];
                         TextBlock tb = new TextBlock();
-                        tb.Text = property.OwnerPlayerID + ": " + property.Name;
                         SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
+                        tb.Text = property.OwnerPlayerID + ": " + property.Name;
                         tb.Foreground = fontColor;
                         spOponentProperties.Children.Add(tb);                  
                     }
