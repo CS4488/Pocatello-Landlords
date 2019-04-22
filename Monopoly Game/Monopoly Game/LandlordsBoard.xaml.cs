@@ -283,6 +283,7 @@ namespace Monopoly_Game
             {
                 imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
             }
+            this.DisplayPropertyOwnerships();
         }
        
         /// <summary>
@@ -308,15 +309,38 @@ namespace Monopoly_Game
         /// <summary>
         /// Updates the Opponent Properties display
         /// </summary>
-        /// <param name="property">The property to display</param>
-        public void DisplayPropertyOwnerships(Property property)
+        public void DisplayPropertyOwnerships()
         {
-            TextBlock tb = new TextBlock();
-            Player owner = GameEngine.Game.getPlayerById(property.OwnerPlayerID);
-            tb.Text = property.OwnerPlayerID + ": " + property.Name;
-            SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
-            tb.Foreground = fontColor;
-            spOponentProperties.Children.Add(tb);
+            stkPropertiesOwned.Children.Clear();
+            spOponentProperties.Children.Clear();
+            for(int i = 0; i < GameEngine.Game.CurrentPlayer.getOwnedSpaces().Count; i++)
+            {
+                Property property = (Property)GameEngine.Game.CurrentPlayer.getOwnedSpaces()[i];
+                Player owner = GameEngine.Game.getPlayerById(property.OwnerPlayerID);
+                TextBlock tb = new TextBlock();
+                SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
+                tb.Text = property.OwnerPlayerID + ": " + property.Name;
+                tb.Foreground = fontColor;
+                stkPropertiesOwned.Children.Add(tb);                  
+            }
+            List<Player> players = GameEngine.Game.Players;
+            for(int i = 0; i < players.Count; i++)
+            {
+                if(players[i].PlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
+                {
+                    List<Space> properties = players[i].getOwnedSpaces();
+                    for(int j = 0; j < properties.Count; j++)
+                    {
+                        Property property = (Property)properties[j];
+                        Player owner = players[i];
+                        TextBlock tb = new TextBlock();
+                        SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
+                        tb.Text = property.OwnerPlayerID + ": " + property.Name;
+                        tb.Foreground = fontColor;
+                        spOponentProperties.Children.Add(tb);                  
+                    }
+                }
+            }
         }
 
         private void MiSave_Click(object sender, RoutedEventArgs e)
