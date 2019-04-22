@@ -1299,6 +1299,13 @@
             Name="btnAction" Click="BtnAction_Click">
                 <Image Name="imgActionImage"/>
             </Button>
+            <Grid Name="ShowPlayersTurn"  Grid.Column="1" HorizontalAlignment="Left" Height="160" Margin="502.333,261,0,0" VerticalAlignment="Top" Width="198">
+                <Ellipse Name="PlayerTurnBackground" Fill="#FFFC0000" HorizontalAlignment="Left" Height="169" Stroke="Black" VerticalAlignment="Top" Width="187" Margin="7,-11,0,0"/>
+                <Label Content="Player" HorizontalAlignment="Left" Margin="13,33,0,0" VerticalAlignment="Top" Height="51" Width="117" FontSize="36" FontFamily="Modern No. 20" FontWeight="Bold"/>
+                <Label Content="Turn" HorizontalAlignment="Left" Margin="56,89,0,0" VerticalAlignment="Top" Height="51" Width="86" FontSize="36" FontFamily="Modern No. 20" FontWeight="Bold"/>
+                <Label Name="PlayerNumber" Content="1's" HorizontalAlignment="Left" Margin="123,33,0,0" VerticalAlignment="Top" Height="51" Width="65" FontSize="36" FontFamily="Modern No. 20" FontWeight="Bold"/>
+            </Grid>
+            <Border Name="PlayerColorBoard" BorderBrush="Red" BorderThickness="5" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="965" Margin="478,58,0,0" VerticalAlignment="Top" Width="964"/>
         </Grid>
     </Viewbox>
 </Page>

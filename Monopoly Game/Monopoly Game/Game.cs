@@ -69,6 +69,26 @@ namespace Monopoly_Game
             return null;
         }
 
+        public Player GetNextPlayer(Player current)
+        {
+            if(Players.IndexOf(current) == Players.Count-1)
+            {
+                if (Players[0].Eliminated)
+                {
+                    return GetNextPlayer(Players[0]);
+                }
+                return Players[0];
+            }
+            else
+            {
+                if(Players[Players.IndexOf(current) + 1].Eliminated)
+                {
+                    return GetNextPlayer(Players[Players.IndexOf(current) + 1]);
+                }
+                return Players[Players.IndexOf(current) + 1];
+            }
+        }
+
         public virtual void handleTurn(int spaceIndex)
         {
             //default implemntation

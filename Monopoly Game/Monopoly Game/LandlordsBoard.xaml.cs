@@ -241,7 +241,12 @@ namespace Monopoly_Game
         /// <param name="e"></param>
         private void BtnEndTurn_Click(object sender, RoutedEventArgs e)
         {
-            GameEngine.Game.makeNextPlayersTurn();
+            if (GameEngine.Game.CurrentPlayer.HasRolled)
+            {
+                Player nextPlayer = GameEngine.Game.GetNextPlayer(GameEngine.Game.CurrentPlayer);
+                SetPlayerInfoOnTurnNotification(nextPlayer.PlayerID + 1, nextPlayer.TokenColor);
+                GameEngine.Game.makeNextPlayersTurn();
+            }
             GameEngine.Game.CurrentPlayer.HasRolled = false;
             updateGUIElements();
         }
@@ -333,6 +338,13 @@ namespace Monopoly_Game
         private void MiUseCard_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Coming Soon!");
+        }
+
+        private void SetPlayerInfoOnTurnNotification(int playerNumber, Color background)
+        {
+            PlayerNumber.Content = playerNumber.ToString() + "'s";
+            PlayerTurnBackground.Fill = new SolidColorBrush(background);
+            PlayerColorBoard.BorderBrush = new SolidColorBrush(background);
         }
     }
 }
