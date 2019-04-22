@@ -512,7 +512,7 @@
                         <ColumnDefinition Width="383*"/>
                         <ColumnDefinition Width="8*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Height="427.798" Margin="10,29.98,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <StackPanel x:Name="spOponentProperties" Height="427.798" Margin="10,29.98,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Opponent Properties" HorizontalAlignment="Left" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14" Background="{x:Null}" Grid.ColumnSpan="2"/>
                 </Grid>
             </Border>

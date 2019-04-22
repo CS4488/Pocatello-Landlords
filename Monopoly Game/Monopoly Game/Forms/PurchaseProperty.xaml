@@ -1,0 +1,15 @@
+﻿<Window x:Class="Monopoly_Game.Forms.PurchaseProperty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Monopoly_Game.Forms"
+        mc:Ignorable="d"
+        Title="PurchaseProperty" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="tbPropertyCost" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="377"/>
+        <Button x:Name="btnConfirmBuy" Content="Yes" HorizontalAlignment="Left" Margin="86,307,0,0" VerticalAlignment="Top" Width="75" Click="BtnConfirmBuy_Click"/>
+        <Button x:Name="btnDenyBuy" Content="No" HorizontalAlignment="Left" Margin="210,307,0,0" VerticalAlignment="Top" Width="75" Click="BtnDenyBuy_Click"/>
+
+    </Grid>
+</Window>

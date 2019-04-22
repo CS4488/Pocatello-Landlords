@@ -20,7 +20,7 @@ namespace Monopoly_Game
      * Added a "Value" to each created property in the board to reflect what space it is on a tic tac toe board - Rex Christensen - 27JAN2019 - v1
      * Moved player list construction to the inheriting class, commented out a couple of unused lines. - M.S. 30JAN2019 - v1.2
      * Added variables for the host player, number of players, and maximum number of players. Added creation of host player in constructor - Rex 27MAR19
-     * 
+     * Pay rent check - KW 
      */
     class Game
     {
@@ -85,7 +85,7 @@ namespace Monopoly_Game
             }
             else
             {
-                currentPlayer = Players[currentPlayer.PlayerID + 1]; // note that the playerID's are stored counting from 0
+                currentPlayer = Players[currentPlayer.PlayerID + 1];
             }
             if (currentPlayer.Eliminated)
             {
@@ -123,6 +123,16 @@ namespace Monopoly_Game
                 
                 moveCount--;
             }
+    
+            //TODO handle paying rent
+            if(GameEngine.Game.CurrentPlayer.CurrentSpace is Property)
+            {
+                Property landedOn = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
+                {
+                    System.Windows.MessageBox.Show("Need to pay rent");
+                }
+            }
         }
 
 
@@ -156,12 +166,7 @@ namespace Monopoly_Game
 
             return dice;
         }
-
-
-
         #endregion
-
-
     }
 }
 

@@ -24,9 +24,6 @@ namespace Monopoly_Game
 
         private static DisplayManager _DM;
         private static Game _Game;
-        private static Server _Server;
-        private static Client _Client;
-
         private static int _LocalPlayerID;
         private static int _NumberOfPlayers;
 
@@ -35,29 +32,11 @@ namespace Monopoly_Game
         {
 
         }
-        /// <summary>
-        /// The network will either be of type Server or Client.
-        /// </summary>
-        public static void SetupAsServer(List<Space> boardSpaces)
-        {
-            _Game = new Game(boardSpaces);
-            _Server = new Server();
-            _Server.Connect();
-            while (_Server.Clients.Count != _NumberOfPlayers)
-            { // *******************************************************************
-                // This is just here to delay until the count is right
-            }
-            // NewGame(sender, e);
-
-        }
 
         public static void SetupAsClient(List<Space> boardSpaces)
         {
             _Game = new Game(boardSpaces);
         }
-
-
-
 
         public static int NumberOfPlayers
         {
@@ -76,12 +55,6 @@ namespace Monopoly_Game
             get { return _Game; }
             set { _Game = value; }
         }
-
-        //public static Network Network
-        //{
-        //    get { return _DM; }
-        //    set { _DM = value; }
-        //}
 
         public static int LocalPlayerID
         {
@@ -113,23 +86,8 @@ namespace Monopoly_Game
                 wp.Children.Add(player.PlayerCircle);
             }
             Game.CurrentPlayer = Game.Players[0];
-            // ----------- Psuedo code ----------------
-            //  First, setup the local player's ID
-            /*
-             * while(network.currentplayerid == null)
-             * {
-             *      thread.sleep(500);
-             *      this.currentPlayerID = network.currentPlayerID
-             * }
-             * 
-             * Now, lets do some stuff. If the player ID is assigned, the game object should be set
-             * 
-             * _Game = _Network
-             * 
-             */
-
-
         }
+
         public static void RollDiceMovePlayer()
         {
             Tuple<int, int> dice = Game.InitateDiceRoll();
@@ -138,6 +96,7 @@ namespace Monopoly_Game
             else Game.makeNextPlayersTurn();
             Game.CurrentPlayer.HasRolled = false;
         }
+
         private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
         {
             _Game = new Game();

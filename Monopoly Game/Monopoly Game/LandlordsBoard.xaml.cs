@@ -32,6 +32,8 @@ namespace Monopoly_Game
     ///     
     /// M.S. Get method for WrapPanel _SpacePlayerAreas was added 4/16/19
     ///     Test method was changed to show players added to the GameEngine
+    ///     
+    /// KW Purchase properties
     /// </summary>
     public partial class LandlordsBoard : Page
     {
@@ -56,8 +58,6 @@ namespace Monopoly_Game
 
         private List<Space> _AggregatedSpaceObjects = new List<Space>();
 
-
-        //private Player testPlayer; // M.S. Test obsolete
         #endregion
 
         public WrapPanel[] SpacePlayerAreas // M.S. Added in order to access a UI "space" index from function Setup in GameEngine
@@ -211,23 +211,18 @@ namespace Monopoly_Game
         }
         #endregion
 
-        // This is no longer used
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
-        //    GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
-        //    GameEngine.Game.makeNextPlayersTurn();
-        //}
 
         /// <summary>
         /// R.C. 4/17/2019
         /// Gets the Dice roll and moves the player by that amount
-        /// Based of of code written by Nando
+        /// Based off of code written by Nando
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnRollDice_Click(object sender, RoutedEventArgs e) { // ** Add a check for doubles **
-            if (!GameEngine.Game.CurrentPlayer.HasRolled) {
+        private void BtnRollDice_Click(object sender, RoutedEventArgs e)
+        { // ** Add a check for doubles **
+            if (!GameEngine.Game.CurrentPlayer.HasRolled)
+            {
                 Tuple<int, int> dice = GameEngine.Game.InitateDiceRoll();
                 txtDice1.Text = dice.Item1.ToString();
                 txtDice2.Text = dice.Item2.ToString();
@@ -244,55 +239,100 @@ namespace Monopoly_Game
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnEndTurn_Click(object sender, RoutedEventArgs e) {
+        private void BtnEndTurn_Click(object sender, RoutedEventArgs e)
+        {
             GameEngine.Game.makeNextPlayersTurn();
             GameEngine.Game.CurrentPlayer.HasRolled = false;
             updateGUIElements();
         }
 
-        private void updateGUIElements() {
+        private void updateGUIElements()
+        {
             // *** This is what I'm planning on using to update things like the $$ and properties boxes. This could already be done somewhere else though 
             // Get the player's $$
-            txtMoney.Text = "$"+GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
+            txtMoney.Text = "$" + GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
             // Get the player's properties
 
             // update the action button
-            if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Property)) {
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Property))
+            {
                 Property p = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                if (p.OwnerPlayerID == -1) {
+                if (p.OwnerPlayerID == -1)
+                {
                     imgActionImage.Source = new BitmapImage(new Uri("images/Buy.png", UriKind.RelativeOrAbsolute));
-                } else {
+                }
+                else
+                {
                     imgActionImage.Source = new BitmapImage(new Uri("images/PayRent.png", UriKind.RelativeOrAbsolute));
                 }
-            } else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0" || GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "21") {
+            }
+            else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0" || GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "21")
+            {
                 imgActionImage.Source = null;
-            } else if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Event)) {
+            }
+            else if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Event))
+            {
                 imgActionImage.Source = new BitmapImage(new Uri("images/PayTax.png", UriKind.RelativeOrAbsolute));
-            } else {
+            }
+            else
+            {
                 imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
             }
         }
+       
+        /// <summary>
+        /// Handle action button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAction_Click(object sender, RoutedEventArgs e)
+        {
+            Player currentPlayer = GameEngine.Game.CurrentPlayer;
 
-        private void BtnAction_Click(object sender, RoutedEventArgs e) {
-            
+            if (currentPlayer.CurrentSpace is Property)
+            {
+                Property property = (Property)currentPlayer.CurrentSpace;
+                if (property.OwnerPlayerID == -1)
+                {
+                    Forms.PurchaseProperty purchaseProperty = new Forms.PurchaseProperty(this);
+                    purchaseProperty.Show();
+                }
+            }
         }
 
-        private void MiSave_Click(object sender, RoutedEventArgs e) {
+        /// <summary>
+        /// Updates the Opponent Properties display
+        /// </summary>
+        /// <param name="property">The property to display</param>
+        public void DisplayPropertyOwnerships(Property property)
+        {
+            TextBlock tb = new TextBlock();
+            Player owner = GameEngine.Game.getPlayerById(property.OwnerPlayerID);
+            tb.Text = property.OwnerPlayerID + ": " + property.Name;
+            SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
+            tb.Foreground = fontColor;
+            spOponentProperties.Children.Add(tb);
+        }
+
+        private void MiSave_Click(object sender, RoutedEventArgs e)
+        {
             MessageBox.Show("Coming Soon!");
         }
 
-        private void MiLoad_Click(object sender, RoutedEventArgs e) {
+        private void MiLoad_Click(object sender, RoutedEventArgs e)
+        {
             MessageBox.Show("Coming Soon!");
         }
 
-        private void MiExit_Click(object sender, RoutedEventArgs e) {
+        private void MiExit_Click(object sender, RoutedEventArgs e)
+        {
             System.Windows.Application.Current.Shutdown();
             return;
         }
 
-        private void MiUseCard_Click(object sender, RoutedEventArgs e) {
+        private void MiUseCard_Click(object sender, RoutedEventArgs e)
+        {
             MessageBox.Show("Coming Soon!");
         }
     }
-
 }

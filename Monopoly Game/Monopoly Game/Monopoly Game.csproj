@@ -59,6 +59,9 @@
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Forms\PurchaseProperty.xaml.cs">
+      <DependentUpon>PurchaseProperty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameStates.cs" />
     <Compile Include="LandlordsBoard.xaml.cs">
@@ -70,6 +73,10 @@
     <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="Token.cs" />
+    <Page Include="Forms\PurchaseProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LandlordsBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

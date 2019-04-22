@@ -107,5 +107,17 @@ namespace Monopoly_Game
             }
             return validTurn;
         }
+
+        /// <summary>
+        /// If player can afford property, purchase it
+        /// </summary>
+        /// <param name="toPurchase"></param>
+        public void purchaseProperty(ref Property toPurchase)
+        {
+            if(this.CurrentFunds > toPurchase.Value)
+            {
+                toPurchase.OwnerPlayerID = this.PlayerID;
+            }
+        }
     }
 }

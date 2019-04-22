@@ -15,7 +15,7 @@ namespace Monopoly_Game
          * 
          */
 
-    class Property : Space
+    public class Property : Space
     {
         private int _Value;
         private TextBlock _ValueTB;
