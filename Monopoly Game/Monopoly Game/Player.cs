@@ -24,35 +24,42 @@ namespace Monopoly_Game
         private Ellipse _PlayerCircle;
         private bool hasRolled;
         private double currentFunds;
-        public string PlayerName {
+        public string PlayerName
+        {
             get { return _Name; }
             set { _Name = value; }
         }
 
-        public int PlayerID {
+        public int PlayerID
+        {
             get { return _ID; }
             set { _ID = value; }
         }
 
-        public bool Eliminated {
+        public bool Eliminated
+        {
             get { return _Eliminated; }
             set { _Eliminated = value; }
         }
-        public Color TokenColor{ //M.S. Added 4/16/19
+        public Color TokenColor
+        { //M.S. Added 4/16/19
             get { return _TokenColor; }
             set { _TokenColor = value; }
         }
-        public Token Token {
+        public Token Token
+        {
             get { return _Token; }
             set { _Token = value; }
         }
 
-        public static int LastAssignedID {
+        public static int LastAssignedID
+        {
             get { return lastAssignedId; }
             set { lastAssignedId = value; }
         }
 
-        public Space CurrentSpace {
+        public Space CurrentSpace
+        {
             get { return _CurrentSpace; }
             set { _CurrentSpace = value; }
         }
@@ -114,10 +121,29 @@ namespace Monopoly_Game
         /// <param name="toPurchase"></param>
         public void purchaseProperty(ref Property toPurchase)
         {
-            if(this.CurrentFunds > toPurchase.Value)
+            if (this.CurrentFunds > toPurchase.Value)
             {
                 toPurchase.OwnerPlayerID = this.PlayerID;
             }
+        }
+
+        public List<Space> getOwnedSpaces()
+        {
+            List<Space> allSpaces = GameEngine.Game.GameBoard.Spaces;
+            List<Space> ownedSpaces = new List<Space>();
+            
+            for(int i = 0; i < allSpaces.Count; i++)
+            {
+                if(allSpaces[i] is Property)
+                {
+                    Property property = (Property)allSpaces[i];
+                    if(property.OwnerPlayerID == this.PlayerID)
+                    {
+                        ownedSpaces.Add(property);
+                    }
+                }
+            }
+            return ownedSpaces;
         }
     }
 }

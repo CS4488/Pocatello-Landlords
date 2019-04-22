@@ -42,7 +42,7 @@ namespace Monopoly_Game.Forms
             Property property = (Property) GameEngine.Game.CurrentPlayer.CurrentSpace;
 
             player.purchaseProperty(ref property);
-            _LandlordsBoard.DisplayPropertyOwnerships(property);
+            _LandlordsBoard.DisplayPropertyOwnerships();
                 
             this.Close();
         }
