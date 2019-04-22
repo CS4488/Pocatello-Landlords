@@ -218,6 +218,16 @@ namespace Monopoly_Game
             GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
             GameEngine.Game.makeNextPlayersTurn();
         }
+
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
