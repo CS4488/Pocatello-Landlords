@@ -140,7 +140,6 @@ namespace Monopoly_Game
                     _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
                     _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
                 }
-                
                 moveCount--;
             }
     
@@ -155,7 +154,13 @@ namespace Monopoly_Game
             }
         }
 
-
+        public void MovePlayer(Player plyr, Space toSpace)
+        {
+            Space initial = plyr.CurrentSpace;
+            initial.PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
+            toSpace.PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
+            plyr.CurrentSpace = toSpace;
+        }
 
         #region Display Manager Calls
         /// <summary>
@@ -186,6 +191,7 @@ namespace Monopoly_Game
 
             return dice;
         }
+
         #endregion
     }
 }
