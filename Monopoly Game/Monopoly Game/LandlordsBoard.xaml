@@ -34,7 +34,7 @@
     </Page.Resources>
 
     <Viewbox Stretch="Fill">
-        <Grid Background="#FF8C8C8C" Height="1080" Width="1920">
+        <Grid x:Name="windowBackground" Background="#FF8C8C8C" Height="1080" Width="1920">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="169*"/>

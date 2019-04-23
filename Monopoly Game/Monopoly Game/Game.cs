@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace Monopoly_Game
 {
@@ -32,6 +38,7 @@ namespace Monopoly_Game
         Player myPlayer;
         protected int numberOfPlayers;
         protected int maxNumPlayers;
+        private MatrixTransform movementAnimation;
 
         public Board GameBoard { get { return _GameBoard; } }
         public Player CurrentPlayer { get { return currentPlayer; } set { currentPlayer = value; } }
@@ -94,34 +101,66 @@ namespace Monopoly_Game
 
 
 
-        public void MovePlayer(Player plyr, int moveCount)
+        public void MovePlayer(Player plyr, int moveCount, LandlordsBoard lb)// M.S. This is a monstrocity, I know, but I haven't yet thought of a way to comparmentalize it yet.
+            // This effectively provides a straight point to point line from one space to another, (I would like to add little bouncing curves between each point.)
+            // There needs to be a method to slow the game thread down to wait for the animation to finish in order for this to work with the popup window!!!
+            // NOT TO MENTION: pressing the button too quickly can cause a break that can't be caught from within the compiler.
+            // Currently Spaces; Idaho State University and Scout Mountain, have a malfunctioning animation when they are landed on. 
         {
-            Space initial = plyr.CurrentSpace;
-            while (moveCount != 0)
+            try//M.S. If anything funky happens with the animation... It's not important! Bail!
             {
-                /// Tyler Arnet: Added to skip the Prison Space. 4/17/2019
+                Space initial = plyr.CurrentSpace;
                 int temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
-                if (temp == 10) {
-                    moveCount++;
-                }
-                
-                if(temp < _GameBoard.Spaces.Count-1)
-                // R.C. Chaged to add Ellipse object instead of .png image - 17 APR 2019
+                // M.S. Animation method from https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/path-animations-overview
+
+                PathGeometry animationPath = new PathGeometry();
+                PathFigure pFigure = new PathFigure();
+                int x = moveCount;
+                int y = temp;
+                pFigure.StartPoint = plyr.PlayerCircle.TranslatePoint(new Point(0, 0), _GameBoard.Spaces.ElementAt((x + y < _GameBoard.Spaces.Count - 1) ? x + y : x + y - (_GameBoard.Spaces.Count - 1)).PlayerAreaStackPanel);
+                PolyBezierSegment pBezierSegment = new PolyBezierSegment();
+                int timespanInSeconds = 1;
+                while (moveCount != 0)
                 {
-                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp+1);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
-                    // M.S. PlayerAreaStackPanel.Clear() was switched to this so that other pieces wouldn't disappear.
-                    _GameBoard.Spaces.ElementAt(temp + 1).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
+                    /// Tyler Arnet: Added to skip the Prison Space. 4/17/2019
+                    temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
+
+                    if (temp == 10)
+                    {
+                        moveCount++;
+                    }
+
+                    if (temp < _GameBoard.Spaces.Count - 1)
+                    // R.C. Chaged to add Ellipse object instead of .png image - 17 APR 2019
+                    {
+                        plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp + 1);
+                        _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
+                        // M.S. PlayerAreaStackPanel.Clear() was switched to this so that other pieces wouldn't disappear.
+                        _GameBoard.Spaces.ElementAt(temp + 1).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
+                        pBezierSegment.Points.Add(plyr.PlayerCircle.TransformToAncestor(_GameBoard.Spaces.ElementAt(temp + 1).PlayerAreaStackPanel).Transform(new Point(0, 0)));
+                    }
+                    else
+                    {
+                        plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(0);
+                        _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
+                        _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
+                        pBezierSegment.Points.Add(plyr.PlayerCircle.TransformToAncestor(_GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel).Transform(new Point(0, 0)));
+                    }
+                    moveCount--;
                 }
-                else
-                {
-                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(0);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
-                    _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
-                }
-                
-                moveCount--;
+                pFigure.Segments.Add(pBezierSegment);
+                animationPath.Figures.Add(pFigure);             
+                animationPath.Freeze();
+                MatrixAnimationUsingPath matrixAnimation = new MatrixAnimationUsingPath();
+                matrixAnimation.PathGeometry = animationPath;
+                matrixAnimation.Duration = TimeSpan.FromSeconds(timespanInSeconds);
+                Storyboard.SetTargetName(matrixAnimation, "movementAnimation");
+                Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
+                Storyboard outputStoryboard = new Storyboard();
+                outputStoryboard.Children.Add(matrixAnimation);
+                if (outputStoryboard != null) outputStoryboard.Begin(lb);
             }
+            catch {; } //M.S. effectively doing nothing will cancel this roll. The catch should essentially reset the has rolled boolean that would allow the player to roll again.
         }
 
 

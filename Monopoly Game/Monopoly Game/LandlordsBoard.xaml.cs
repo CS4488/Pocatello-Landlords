@@ -55,10 +55,11 @@ namespace Monopoly_Game
 
         private List<Space> _AggregatedSpaceObjects = new List<Space>();
 
-
+        private MatrixTransform _movementAnimation;
         //private Player testPlayer; // M.S. Test obsolete
         #endregion
 
+        public MatrixTransform movementAnimation { get { return _movementAnimation; } set { _movementAnimation = value; } }
         public WrapPanel[] SpacePlayerAreas // M.S. Added in order to access a UI "space" index from function Setup in GameEngine
         {
             get
@@ -81,6 +82,13 @@ namespace Monopoly_Game
             InitializeGameBoard();
             FixMouseOverEffect();
             BuildSpaceObjects();
+            createMovementAnimation();
+        }
+
+        private void createMovementAnimation()
+        {
+            movementAnimation = new MatrixTransform();
+            this.RegisterName("movementAnimation", movementAnimation);
         }
 
         private void BuildSpaceObjects()
@@ -214,11 +222,17 @@ namespace Monopoly_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Tuple <int,int> dice = GameEngine.Game.InitateDiceRoll();
-            GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+            //M.S. This must happen! If not the previous animation for players will continue to render.
+            foreach (Player player in GameEngine.Game.Players)// Maybe a different method though? Heavier than it needs to be.
+                player.PlayerCircle.RenderTransform = null;
+            GameEngine.Game.CurrentPlayer.PlayerCircle.RenderTransform = movementAnimation;
+
+            Tuple<int,int> dice = GameEngine.Game.InitateDiceRoll();
+            try { GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2, this); }
+            catch {; } //M.S. This somehow still seems to prevent some breaks... I don't know what's going on with that...
             EventName.Text = GameEngine.Game.CurrentPlayer.CurrentSpace.Name;
-            EventDisplay.Visibility = System.Windows.Visibility.Visible;
             GameEngine.Game.makeNextPlayersTurn();
+
         }
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
