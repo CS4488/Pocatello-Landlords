@@ -20,6 +20,7 @@ namespace Monopoly_Game
         private Button _Button;
         private WrapPanel _PlayerAreaStackPanel;
         private Image _Image;
+        private bool _Playable = true;
 
         public Space(string id, TextBlock tbName, Button btn, WrapPanel moveArea)
         {
@@ -36,7 +37,7 @@ namespace Monopoly_Game
         public Button Button { get { return _Button; } }
         public WrapPanel PlayerAreaStackPanel { get { return _PlayerAreaStackPanel; } }
         public Image Image { get { return _Image; } set { _Image = value; } }
-
+        public bool Playable { get { return _Playable; } set { _Playable = value; } }
 
         public string Name
         {

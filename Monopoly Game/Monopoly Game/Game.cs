@@ -117,34 +117,25 @@ namespace Monopoly_Game
 
         public void MovePlayer(Player plyr, int moveCount)
         {
-            Space initial = plyr.CurrentSpace;
+            // Sorry to delete stuff, but refactored for better code
             while (moveCount != 0)
             {
-                /// Tyler Arnet: Added to skip the Prison Space. 4/17/2019
-                int temp = _GameBoard.Spaces.IndexOf(plyr.CurrentSpace);
-                if (temp == 10) {
-                    moveCount++;
-                }
-                
-                if(temp < _GameBoard.Spaces.Count-1)
-                // R.C. Chaged to add Ellipse object instead of .png image - 17 APR 2019
-                {
-                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(temp+1);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
-                    // M.S. PlayerAreaStackPanel.Clear() was switched to this so that other pieces wouldn't disappear.
-                    _GameBoard.Spaces.ElementAt(temp + 1).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
-                }
-                else
-                {
-                    plyr.CurrentSpace = _GameBoard.Spaces.ElementAt(0);
-                    _GameBoard.Spaces.ElementAt(temp).PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
-                    _GameBoard.Spaces.ElementAt(0).PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
-                }
+                MovePlayerToSpace(plyr, GameBoard.GetNextPlayableSpace(plyr.CurrentSpace));
                 moveCount--;
             }
-    
-            //TODO handle paying rent
-            if(GameEngine.Game.CurrentPlayer.CurrentSpace is Property)
+            CheckSpaceForActions();
+        }
+        public void MovePlayerToSpace(Player plyr, Space toSpace)
+        {
+            Space initial = plyr.CurrentSpace;
+            initial.PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
+            toSpace.PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
+            plyr.CurrentSpace = toSpace;
+        }
+
+        public void CheckSpaceForActions()
+        {
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace is Property)
             {
                 Property landedOn = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
                 if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
@@ -153,16 +144,7 @@ namespace Monopoly_Game
                 }
             }
         }
-
-        public void MovePlayer(Player plyr, Space toSpace)
-        {
-            Space initial = plyr.CurrentSpace;
-            initial.PlayerAreaStackPanel.Children.Remove(plyr.PlayerCircle);
-            toSpace.PlayerAreaStackPanel.Children.Add(plyr.PlayerCircle);
-            plyr.CurrentSpace = toSpace;
-        }
-
-        #region Display Manager Calls
+        
         /// <summary>
         /// Call from Display Manager when player is to toll the dice
         /// </summary>
@@ -188,11 +170,8 @@ namespace Monopoly_Game
             Tuple<int, int> dice;
 
             dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
-
             return dice;
         }
-
-        #endregion
     }
 }
 

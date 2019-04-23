@@ -44,7 +44,6 @@ namespace Monopoly_Game
         }
 
 
-
         public Property(string id, TextBlock name, Button btn, WrapPanel moveArea, StackPanel bldgArea, TextBlock valueTB) : base(id, name, btn, moveArea)
         {
             _OwnerPlayerID = -1;

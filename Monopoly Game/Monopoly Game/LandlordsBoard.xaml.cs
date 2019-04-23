@@ -89,7 +89,11 @@ namespace Monopoly_Game
             for (int i = 0; i < SpaceCount; i++)
             {
                 Space temp;
-                if (_SpaceCosts[i] != null)
+                if (Array.Exists(_BuildableNdxs, x => x == i))
+                {
+                    temp = new BuildableProperty(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
+                }
+                else if (_SpaceCosts[i] != null)
                 {
                     temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
                 }
@@ -100,6 +104,10 @@ namespace Monopoly_Game
                 else
                 {
                     temp = new Space(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i]);
+                    if(i == 11)
+                    {
+                        temp.Playable = false;
+                    }
                 }
                 _AggregatedSpaceObjects.Add(temp);
             }

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BuildableProperty.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />

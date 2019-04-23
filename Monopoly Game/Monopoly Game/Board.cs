@@ -18,16 +18,62 @@ namespace Monopoly_Game
      */
     class Board
     {
-        List<Space> spaces;
+        List<Space> _Spaces;
+        private int _PlayableSpaceCount;
 
-        public List<Space> Spaces { get { return spaces; } set { spaces = value; } }
+        public List<Space> Spaces { get { return _Spaces; } set { _Spaces = value; } }
 
         public Board() {
-            spaces = new List<Space>();
+            _Spaces = new List<Space>();
         }
         public Board(List<Space> boardSpaces)
         {
-            spaces = boardSpaces;
+            _Spaces = boardSpaces;
+        }
+        public int PlayableSpaceCount
+        {
+            get
+            {
+                if(_PlayableSpaceCount == 0)
+                {
+                    _PlayableSpaceCount = SetPlayableSpaces();
+                }
+                return _PlayableSpaceCount;
+            }
+        }
+        
+        private int SetPlayableSpaces()
+        {
+            int count = 0;
+            foreach(Space s in _Spaces)
+            {
+                if (s.Playable)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        // Why arent we using a linked list again?
+        public Space GetNextSpace(Space current)
+        {
+            int currNdx = _Spaces.IndexOf(current);
+
+            if ( currNdx == _Spaces.Count - 1)
+            {
+                return _Spaces[0];
+            }
+            return _Spaces.ElementAt(currNdx + 1);
+        }
+
+        public Space GetNextPlayableSpace(Space current)
+        {
+            if(GetNextSpace(current).Playable == false)
+            {
+                return GetNextSpace(GetNextSpace(current));
+            }
+            return GetNextSpace(current);
         }
     }
 }
