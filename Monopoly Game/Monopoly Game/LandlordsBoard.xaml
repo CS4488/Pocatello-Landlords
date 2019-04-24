@@ -42,8 +42,10 @@
 
             <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="2" Background="#FF8C8C8C" Name="mbLandLordBoard">
                 <MenuItem Header="Game">
+                    <!--
                     <MenuItem Name="miSave" Header="Save Game" Background="#FF8C8C8C" BorderThickness="0" Click="MiSave_Click"/>
                     <MenuItem Name="miLoad" Header="Load Game" Background="#FF8C8C8C" BorderThickness="0" Click="MiLoad_Click"/>
+                    -->
                     <MenuItem Name="miExit" Header="Exit" Background="#FF8C8C8C" BorderThickness="0" Click="MiExit_Click"/>
                 </MenuItem>
                 <MenuItem Header="Cards">
@@ -501,7 +503,7 @@
             <Border Margin="973.333,838,45,62" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFE08423" Grid.Column="1">
                 <Grid Margin="0,0,2.167,0">
                     <StackPanel HorizontalAlignment="Left" Height="78.909" Margin="0,24.98,0,0" VerticalAlignment="Top" Width="391"/>
-                    <Label Content="Opportunity Cards" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
+                    <Label Content="Loot Crate" HorizontalAlignment="Left" Margin="0,0,-0.333,0" VerticalAlignment="Top" Width="391" FontWeight="Bold" FontFamily="Modern No. 20" FontSize="14"/>
                 </Grid>
             </Border>
             <!-- Opponents Properties Stack Panel Area -->
