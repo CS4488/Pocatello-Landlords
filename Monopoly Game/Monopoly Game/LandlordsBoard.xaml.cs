@@ -351,16 +351,6 @@ namespace Monopoly_Game
             }
         }
 
-        private void MiSave_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Coming Soon!");
-        }
-
-        private void MiLoad_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Coming Soon!");
-        }
-
         private void MiExit_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();

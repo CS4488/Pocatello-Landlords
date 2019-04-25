@@ -10,8 +10,6 @@
         <Menu Name="mnMainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="2">
             <MenuItem Name="miGame" Header="Game">
                 <MenuItem Name="miNewGame" Header="New Game" Click="MiNewGame_Click"/>
-                <MenuItem Name="miSaveGame" Header="Save game" Click="MiSaveGame_Click"/>
-                <MenuItem Name="miLoadGame" Header="Load Game" Click="MiLoadGame_Click"/>
                 <MenuItem Name="miExit" Header="Exit" Click="MiExit_Click"/>
             </MenuItem>
         </Menu>
