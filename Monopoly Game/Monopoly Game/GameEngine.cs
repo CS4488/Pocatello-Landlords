@@ -62,21 +62,15 @@ namespace Monopoly_Game
             set { _LocalPlayerID = value; }
         }
 
-        public static void CheckIfLocalTurn()
-        {
-            if (_Game.CurrentPlayer.PlayerID == _LocalPlayerID)
-            {
-                // It is currently the local player's turn, do stuff
-            }
-        }
-
-
         /// <summary>
         /// This will grab an assigned ID from the network
         /// </summary>
         public static void Setup(int numOfPlayers, WrapPanel[] lb, List<Space> AggregatedSpaceObjects)
         {
-            for (; numOfPlayers > 0; numOfPlayers--) GameEngine.Game.Players.Add(new Player());
+            for(int i = 0; i < numOfPlayers; i++)
+            {
+                GameEngine.Game.Players.Add(new Player());
+            }
             WrapPanel wp = lb.ElementAt(0); //M.S. Indicates that the players will be set to the first space on the display.
             foreach (Player player in Game.Players)// The following code was derived from Nando's test methods 4/16/19
             {
@@ -100,10 +94,7 @@ namespace Monopoly_Game
         private static void NewGame(object sender, System.Windows.RoutedEventArgs e)
         {
             _Game = new Game();
-            //_DM = new DisplayManager(_Game, playArea);
             _DM.updateDisplay();
         }
-
-
     }
 }

@@ -45,7 +45,6 @@ namespace Monopoly_Game
             _GameBoard = new Board();
             Players = new List<Player>();
             Player.LastAssignedID = 0;
-            // Creat a new player for the host
             myPlayer = new Player();
         }
 
@@ -89,11 +88,6 @@ namespace Monopoly_Game
             }
         }
 
-        public virtual void handleTurn(int spaceIndex)
-        {
-            //default implemntation
-            //if not needed we can make this abstract
-        }
 
         public void makeNextPlayersTurn()
         {
@@ -113,11 +107,8 @@ namespace Monopoly_Game
             }
         }
 
-
-
         public void MovePlayer(Player plyr, int moveCount)
         {
-            // Sorry to delete stuff, but refactored for better code
             while (moveCount != 0)
             {
                 MovePlayerToSpace(plyr, GameBoard.GetNextPlayableSpace(plyr.CurrentSpace));
@@ -125,6 +116,7 @@ namespace Monopoly_Game
             }
             CheckSpaceForActions();
         }
+
         public void MovePlayerToSpace(Player plyr, Space toSpace)
         {
             Space initial = plyr.CurrentSpace;

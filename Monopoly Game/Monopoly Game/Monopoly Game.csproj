@@ -56,8 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BuildableProperty.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="CompPlayer.cs" />
     <Compile Include="DisplayManager.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Forms\PurchaseProperty.xaml.cs">
@@ -68,10 +66,8 @@
     <Compile Include="LandlordsBoard.xaml.cs">
       <DependentUpon>LandlordsBoard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Observer.cs" />
     <Compile Include="PlayerColor.cs" />
     <Compile Include="Property.cs" />
-    <Compile Include="Server.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="Token.cs" />
     <Page Include="Forms\PurchaseProperty.xaml">
@@ -139,7 +135,7 @@
     <Resource Include="images\water.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="car.jpg" />
+    <Resource Include="images\car.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\circle.jpg" />

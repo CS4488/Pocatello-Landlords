@@ -10,9 +10,6 @@ namespace Monopoly_Game
 {
     /* M.S. PlayerColors Class and enum 4/16/19
      * Methods for Color Handling should be stored here
-     * 
-     * M.S. I am unfamiliar with a method for changing the color of a png... It should be set up to work, if someone knows better.
-     * 
     */ 
     public enum PlayerColors { Red, Blue, Pink, Green, Yellow, Purple, Orange, Gray };
 

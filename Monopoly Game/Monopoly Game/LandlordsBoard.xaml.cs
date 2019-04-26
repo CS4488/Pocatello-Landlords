@@ -114,55 +114,6 @@ namespace Monopoly_Game
         }
         #endregion
 
-        #region Properties
-        //public List<Button> SpaceButtons
-        //{
-        //    get
-        //    {
-        //        return _SpaceButtons;
-        //    }
-        //}
-
-        //public List<TextBlock> SpaceCosts
-        //{
-        //    get
-        //    {
-        //        return _SpaceCosts;
-        //    }
-        //}
-
-        //public List<TextBlock> SpaceNames
-        //{
-        //    get
-        //    {
-        //        return _SpaceNames;
-        //    }
-        //}
-
-        //public int[] PropertyNdxs
-        //{
-        //    get
-        //    {
-        //        return _PropertyNdxs;
-        //    }
-        //}
-
-        //public int[] LootCrateNdxs
-        //{
-        //    get
-        //    {
-        //        return _LootCrateNdxs;
-        //    }
-        //}
-
-        //public int[] OpportunityNdxs
-        //{
-        //    get
-        //    {
-        //        return _OpportunityNdxs;
-        //    }
-        //}
-        #endregion
 
         #region Playable Space Methods
 
@@ -265,7 +216,7 @@ namespace Monopoly_Game
             // Get the player's $$
             txtMoney.Text = "$" + GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
             // Get the player's properties
-
+            this.DisplayPropertyOwnerships();
             // update the action button
             if (GameEngine.Game.CurrentPlayer.CurrentSpace.GetType() == typeof(Property))
             {
@@ -291,7 +242,6 @@ namespace Monopoly_Game
             {
                 imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
             }
-            this.DisplayPropertyOwnerships();
         }
        
         /// <summary>

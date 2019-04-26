@@ -47,20 +47,9 @@ namespace Monopoly_Game
             GameEngine.SetupAsClient(lb.AggregatedSpaceObjects);
         }
 
-        // begin a new game
         private void MiNewGame_Click(object sender, RoutedEventArgs e)
         {
             InputBox.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void MiSaveGame_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Since we're not networking eventualy we can use the serialized objects to save and load games");
-        }
-
-        private void MiLoadGame_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Since we're not networking eventualy we can use the serialized objects to save and load games");
         }
 
         private void MiExit_Click(object sender, RoutedEventArgs e)
