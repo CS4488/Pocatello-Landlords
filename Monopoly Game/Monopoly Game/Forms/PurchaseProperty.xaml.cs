@@ -43,6 +43,7 @@ namespace Monopoly_Game.Forms
 
             player.purchaseProperty(ref property);
             _LandlordsBoard.DisplayPropertyOwnerships();
+            _LandlordsBoard.DisplayPlayerMoney();
                 
             this.Close();
         }
