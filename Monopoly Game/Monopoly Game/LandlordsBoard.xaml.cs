@@ -421,7 +421,7 @@ namespace Monopoly_Game
                     }
                     else
                     {
-                        EventDescription.Text = "This property is yours, would you like to build on it for " + buildCost.ToString() + " ?";
+                        EventDescription.Text = "This property is yours, would you like to build on it for $" + buildCost.ToString() + " ?";
                     }
                     
                     ContinueButton.Content = "Build";
