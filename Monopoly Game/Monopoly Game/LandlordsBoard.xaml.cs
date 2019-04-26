@@ -373,7 +373,7 @@ namespace Monopoly_Game
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnAction_Click(object sender, RoutedEventArgs e)
-        {
+        {//M.S. Modified to display a border within a grid instead of a window.
             Player currentPlayer = GameEngine.Game.CurrentPlayer;
             EventDisplay.Visibility = EventDisplay.Visibility = System.Windows.Visibility.Visible;
             if (currentPlayer.CurrentSpace is Property)
@@ -400,6 +400,7 @@ namespace Monopoly_Game
                 CancelButton.Visibility = System.Windows.Visibility.Collapsed; // Make sure to make it reappear after a click
             }
         }
+        //M.S. 4/25/19 This is the button within the Eventdisplay that will allow the player to interact with the space.
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
             Player currentPlayer = GameEngine.Game.CurrentPlayer;
@@ -407,10 +408,11 @@ namespace Monopoly_Game
             if (currentPlayer.CurrentSpace is Property)
             {
                 Property property = (Property)currentPlayer.CurrentSpace;
-                if (property.OwnerPlayerID != -1)
+                if (property.OwnerPlayerID == -1)
                 {
                     GameEngine.Game.CurrentPlayer.purchaseProperty(ref property);
                     DisplayPropertyOwnerships();
+                    EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
                 }
                 else
                 {
@@ -420,9 +422,12 @@ namespace Monopoly_Game
             else if (currentPlayer.CurrentSpace is Event)
             {
                 //M.S. Event stuff happens... is there a method for this?
+                CancelButton.Visibility = System.Windows.Visibility.Visible;// Otherwise the button stays invisible.
+                EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
             }
+            EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
         }
-
+        // M.S. This button will cancel the players interaction with the space.
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
