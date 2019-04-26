@@ -84,6 +84,8 @@ namespace Monopoly_Game
             BuildSpaceObjects();
         }
 
+        #region Playable Space Methods
+
         private void BuildSpaceObjects()
         {
             for (int i = 0; i < SpaceCount; i++)
@@ -95,6 +97,10 @@ namespace Monopoly_Game
                     BuildableProperty prop = (BuildableProperty)temp;
                     prop.Value = getPropertyValue(i);
 
+                }
+                else if(Array.Exists(_PropertyNdxs, x => x == i))
+                {
+                    temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], getPropertyValue(i));
                 }
                 else if (_SpaceCosts[i] != null)
                 {
@@ -118,7 +124,6 @@ namespace Monopoly_Game
         #endregion
 
 
-        #region Playable Space Methods
 
         private int getPropertyValue(int i)
         {
