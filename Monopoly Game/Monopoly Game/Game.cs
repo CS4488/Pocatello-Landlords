@@ -189,19 +189,27 @@ namespace Monopoly_Game
                     if (currentIndex <= 5 || currentIndex > 36) { 
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[5]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = (prop.Value / 10) * 2;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
                     } else if (currentIndex <= 16) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[16]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = (prop.Value / 10) * 2;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
                     } else if (currentIndex <= 26) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[26]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = (prop.Value / 10) * 2;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
                     } else {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[36]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = (prop.Value / 10) * 2;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
                     }
                 } else if (eventDetails.SpaceIndex == -3) { // Player moves back 3 spaces
                     int newIndex = currentIndex - 3;
@@ -211,11 +219,15 @@ namespace Monopoly_Game
                     if (currentIndex <= 13 || currentIndex > 29) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[13]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = prop.Value;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = prop.Value;
+                        }
                     } else {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[29]);
                         prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                        rent = prop.Value;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = prop.Value;
+                        }
                     }
                 } else {
                     // Set the player's current position to the indicated position
