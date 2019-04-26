@@ -173,6 +173,35 @@ namespace Monopoly_Game
             {
                 System.Windows.MessageBox.Show("Your total was changed by " + eventDetails.Cost);
                 GameEngine.Game.CurrentPlayer.CurrentFunds += eventDetails.Cost;
+            } else if (eventDetails.SpaceIndex != -1) {
+                int currentIndex = Convert.ToInt32(GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID);
+                // Check for special cases (-2,-3,-4)
+                if (eventDetails.SpaceIndex == -2) { // Needs to look for the nearest transportation space and double the rent
+                    // Transports are spaces 5, 16, 26, and 36
+                    if (currentIndex <= 5 || currentIndex > 36) { 
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[5]);
+                    } else if (currentIndex <= 16) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[16]);
+                    } else if (currentIndex <= 26) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[26]);
+                    } else {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[36]);
+                    }
+                } else if (eventDetails.SpaceIndex == -3) { // Player moves back 3 spaces
+                    int newIndex = currentIndex - 3;
+                    MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[newIndex]);
+                } else if (eventDetails.SpaceIndex == -4) { // Needs to look for nearest utility and pay 10 times rent
+                    // Utilities are at spaces 13 and 29
+                    if (currentIndex <= 13 || currentIndex > 29) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[13]);
+                    } else {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[29]);
+                    }
+                } else {
+                    // Set the player's current position to the indicated position
+                    MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[eventDetails.SpaceIndex]);
+                }
+
             }
         }
 
