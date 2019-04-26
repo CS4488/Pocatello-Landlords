@@ -52,7 +52,7 @@ namespace Monopoly_Game
                                     19, 20, 22, 24, 25, 27, 28, 30, 32, 33, 35, 38, 40};
         private readonly int[] _LootCrateNdxs = { 4, 18, 34 };
         private readonly int[] _OpportunityNdxs = { 7, 23, 37 };
-        private readonly int[] _EventNdxs = { 0, 2, 31, 39, 21 };
+        private readonly int[] _EventNdxs = { 0, 2, 4, 7, 18, 21, 23, 31, 34, 37, 39, 41 };
         //private readonly int[] _EventNdxs = { 0, 31 };
 
 
@@ -102,13 +102,13 @@ namespace Monopoly_Game
                 {
                     temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], getPropertyValue(i));
                 }
-                else if (_SpaceCosts[i] != null)
-                {
-                    temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
-                }
                 else if (Array.Exists(_EventNdxs, x => x == i))
                 {
                     temp = new Event(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i]);
+                }
+                else if (_SpaceCosts[i] != null)
+                {
+                    temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
                 }
                 else
                 {
