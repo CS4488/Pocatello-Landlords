@@ -124,6 +124,7 @@ namespace Monopoly_Game
             if (this.CurrentFunds > toPurchase.Value)
             {
                 toPurchase.OwnerPlayerID = this.PlayerID;
+                this.currentFunds = this.currentFunds - toPurchase.Value;
             }
         }
 

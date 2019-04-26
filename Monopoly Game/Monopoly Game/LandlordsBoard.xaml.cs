@@ -92,6 +92,9 @@ namespace Monopoly_Game
                 if (Array.Exists(_BuildableNdxs, x => x == i))
                 {
                     temp = new BuildableProperty(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], _SpaceBuildings[i], _SpaceCosts[i]);
+                    BuildableProperty prop = (BuildableProperty)temp;
+                    prop.Value = getPropertyValue(i);
+
                 }
                 else if (_SpaceCosts[i] != null)
                 {
@@ -116,6 +119,125 @@ namespace Monopoly_Game
 
 
         #region Playable Space Methods
+
+        private int getPropertyValue(int i)
+        {
+            if (i == 1)
+            {
+                return 60;
+            }
+            if (i == 3)
+            {
+                return 60;
+            }
+            if (i == 5)
+            {
+                return 200;
+            }
+            if (i == 6)
+            {
+                return 100;
+            }
+            if (i == 8)
+            {
+                return 100;
+            }
+            if (i == 9)
+            {
+                return 120;
+            }
+            if (i == 12)
+            {
+                return 140;
+            }
+            if (i == 13)
+            {
+                return 200;
+            }
+            if (i == 14)
+            {
+                return 140;
+            }
+            if (i == 15)
+            {
+                return 160;
+            }
+            if(i == 16)
+            {
+                return 200;
+            }
+            if(i == 17)
+            {
+                return 180;
+            }
+            if(i == 19)
+            {
+                return 180;
+            }
+            if(i == 20)
+            {
+                return 200;
+            }
+            if(i == 22)
+            {
+                return 200;
+            }
+            if(i == 24)
+            {
+                return 220;
+            }
+            if(i == 25)
+            {
+                return 220;
+            }
+            if(i == 26)
+            {
+                return 200;
+            }
+            if(i == 27)
+            {
+                return 260;
+            }
+            if(i == 28)
+            {
+                return 260;
+            }
+            if(i == 29)
+            {
+                return 200;
+            }
+            if(i == 30)
+            {
+                return 280;
+            }
+            if(i == 32)
+            {
+                return 300;
+            }
+            if( i == 33)
+            {
+                return 300;
+            }
+            if(i == 35)
+            {
+                return 320;
+            }
+            if(i == 36)
+            {
+                return 200;
+            }
+            if(i == 38)
+            {
+                return 350;
+            }
+            if(i == 40)
+            {
+                return 400;
+            }
+
+            return -1;
+        }
+
 
         /// <summary>
         /// Fernando Munoz 
@@ -214,7 +336,7 @@ namespace Monopoly_Game
         {
             // *** This is what I'm planning on using to update things like the $$ and properties boxes. This could already be done somewhere else though 
             // Get the player's $$
-            txtMoney.Text = "$" + GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
+            this.DisplayPlayerMoney();
             // Get the player's properties
             this.DisplayPropertyOwnerships();
             // update the action button
@@ -262,6 +384,11 @@ namespace Monopoly_Game
                     purchaseProperty.Show();
                 }
             }
+        }
+
+        public void DisplayPlayerMoney()
+        {
+            txtMoney.Text = "$" + GameEngine.Game.CurrentPlayer.CurrentFunds.ToString();
         }
 
         /// <summary>
