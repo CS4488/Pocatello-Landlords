@@ -387,7 +387,8 @@ namespace Monopoly_Game
                 }
                 else
                 {
-                    EventDescription.Text = "This property is not currently owned. You may buy it or leave it alone.";
+                    string propertyCost = "$" + property.Value.ToString();
+                    EventDescription.Text = "This property is not currently owned. You may buy it for " + propertyCost + " or leave it alone.";
                     ContinueButton.Content = "Buy";
                     CancelButton.Content = "Cancel";
                 }
@@ -412,6 +413,7 @@ namespace Monopoly_Game
                 {
                     GameEngine.Game.CurrentPlayer.purchaseProperty(ref property);
                     DisplayPropertyOwnerships();
+                    DisplayPlayerMoney();
                     EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
                 }
                 else
