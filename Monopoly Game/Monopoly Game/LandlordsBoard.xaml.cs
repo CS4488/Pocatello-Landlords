@@ -164,7 +164,7 @@ namespace Monopoly_Game
         {
             foreach (Button b in _SpaceButtons)
             {
-                Grid.SetZIndex(b, 10);
+                //Grid.SetZIndex(b, 10); M.S. Is this nessesary? It messes with the Border I put up.
                 b.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
             }
         }
@@ -188,6 +188,7 @@ namespace Monopoly_Game
                 if (dice.Item1 != dice.Item2) GameEngine.Game.CurrentPlayer.HasRolled = true;
                 else GameEngine.Game.makeNextPlayersTurn();
                 GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
+                EventName.Text = GameEngine.Game.CurrentPlayer.CurrentSpace.Name;
                 updateGUIElements();
             }
         }
@@ -252,18 +253,58 @@ namespace Monopoly_Game
         private void BtnAction_Click(object sender, RoutedEventArgs e)
         {
             Player currentPlayer = GameEngine.Game.CurrentPlayer;
-
+            EventDisplay.Visibility = EventDisplay.Visibility = System.Windows.Visibility.Visible;
             if (currentPlayer.CurrentSpace is Property)
             {
                 Property property = (Property)currentPlayer.CurrentSpace;
-                if (property.OwnerPlayerID == -1)
+                if (property.OwnerPlayerID != -1)
                 {
-                    Forms.PurchaseProperty purchaseProperty = new Forms.PurchaseProperty(this);
-                    purchaseProperty.Show();
+                    EventDescription.Text = "The property Currently Belongs to Player:" + property.OwnerPlayerID.ToString();
+                    ContinueButton.Content = "Pay";
+                    CancelButton.Content = "Haggle";
                 }
+                else
+                {
+                    EventDescription.Text = "This property is not currently owned. You may buy it or leave it alone.";
+                    ContinueButton.Content = "Buy";
+                    CancelButton.Content = "Cancel";
+                }
+            }
+            else if (currentPlayer.CurrentSpace is Event)
+            {
+                EventDescription.Text = "This is an event card!";
+                ContinueButton.Content = "Continue";
+                CancelButton.Content = "";
+                CancelButton.Visibility = System.Windows.Visibility.Collapsed; // Make sure to make it reappear after a click
+            }
+        }
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player currentPlayer = GameEngine.Game.CurrentPlayer;
+            EventDisplay.Visibility = EventDisplay.Visibility = System.Windows.Visibility.Visible;
+            if (currentPlayer.CurrentSpace is Property)
+            {
+                Property property = (Property)currentPlayer.CurrentSpace;
+                if (property.OwnerPlayerID != -1)
+                {
+                    GameEngine.Game.CurrentPlayer.purchaseProperty(ref property);
+                    DisplayPropertyOwnerships();
+                }
+                else
+                {
+                    //M.S. Current player pays the current owner of the property
+                }
+            }
+            else if (currentPlayer.CurrentSpace is Event)
+            {
+                //M.S. Event stuff happens... is there a method for this?
             }
         }
 
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            EventDisplay.Visibility = System.Windows.Visibility.Collapsed;
+        }
         /// <summary>
         /// Updates the Opponent Properties display
         /// </summary>
