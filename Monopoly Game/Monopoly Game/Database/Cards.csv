@@ -1,0 +1,30 @@
+id,message,cost,affectMultiple,spaceIndex,isLootCrate,staysInHand
+1,Cousin Vinny dies and leaves you $100,100,0,-1,1,0
+2,Birthday money from Grandma,20,0,-1,1,0
+3,Got stuck as the designated driver.,45,0,-1,1,0
+4,Finish software side job.,100,0,-1,1,0
+5,Roommate FINALLY pays rent!,200,0,-1,1,0
+6,Sold your PS2!,25,0,-1,1,0
+7,Good day at the Casino!,100,0,-1,1,0
+8,Class Action Lawsuit payout!,10,0,-1,1,0
+9,Won a bet with your friends!,50,1,-1,1,0
+10,Student Loan Payment!,150,0,-1,1,0
+11,Forgot Parking Pass! Pay ticket.,50,0,-1,1,0
+12,Flu! Pay your clinic bill.,100,0,-1,1,0
+13,GO! Go there.,0,0,0,1,0
+14,Walter White you ain't.,0,0,11,1,0
+15,Uncle's the Sheriff. Get out of jail free.,0,0,10,1,1
+16,Take a ride on the bus.,0,0,5,0,0
+17,Forgot your wallet. Go back three spaces.,0,0,-3,0,0
+18,GO! Go there.,0,0,0,0,0
+19,Head over to the 'rich' neighborhoods.,0,0,40,0,0
+20,Made it halfway. Find a rest stop.,0,0,25,0,0
+21,Make a stop before paying you light bill.,0,0,12,0,0
+22,You did WHAT!? Go to jail.,0,0,11,0,0
+23,Got famous on Youtube.,150,0,-1,0,0
+24,Won the potato bake off.,50,0,-1,0,0
+25,Slow weekend. Hit the Redbox,15,0,-1,0,0
+26,Lost a bet with friends.,50,1,-1,0,0
+27,Hired the Johnnie Cochran of Idaho. Get out of jail.,0,0,10,0,1
+28,You need a ride!,0,0,-2,0,0
+29,Hook up your utilities,0,0,-4,0,0
