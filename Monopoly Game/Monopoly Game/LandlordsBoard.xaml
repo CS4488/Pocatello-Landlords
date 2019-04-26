@@ -1329,9 +1329,9 @@
                         <TextBlock Margin="5" Text="You've Landed On:" FontWeight="Bold" FontFamily="Cambria" FontSize="72" TextAlignment="Center" />
                         <TextBlock x:Name="EventName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="EventName" VerticalAlignment="Top" Height="99.96" Width="854" FontSize="48" TextAlignment="Center"/>
                         <TextBlock x:Name="EventDescription" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="834" Height="687.96" Margin="10,0,0,0" TextAlignment="Center"><Run FontSize="36" Text="EventDescription"/></TextBlock>
-                        <StackPanel Orientation="Horizontal" Margin="297.933,0,278.433,0" RenderTransformOrigin="0.5,0.5">
-                            <Button x:Name="ContinueButton" Margin="5" Content="Continue" Background="{x:Null}" Click="ContinueButton_Click" FontSize="36"/>
-                            <Button x:Name="CancelButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="CancelButton_Click" FontSize="36" />
+                        <StackPanel Orientation="Horizontal" Margin="195,0,278,0" RenderTransformOrigin="0.5,0.5" Height="66">
+                            <Button x:Name="ContinueButton" Margin="5" Content="Continue" Background="{x:Null}" Click="ContinueButton_Click" FontSize="36" Width="198"/>
+                            <Button x:Name="CancelButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="CancelButton_Click" FontSize="36" Width="163" />
                         </StackPanel>
                     </StackPanel>
                 </Border>

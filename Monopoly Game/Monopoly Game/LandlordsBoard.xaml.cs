@@ -82,6 +82,7 @@ namespace Monopoly_Game
             InitializeGameBoard();
             FixMouseOverEffect();
             BuildSpaceObjects();
+            SetSpaceButtonClicks();
         }
 
         #region Playable Space Methods
@@ -268,6 +269,14 @@ namespace Monopoly_Game
                 }
             }
         }
+
+        private void SetSpaceButtonClicks()
+        {
+            foreach(Button b in _SpaceButtons)
+            {
+                b.Click += new RoutedEventHandler(ClickOnProperty);
+            }
+        }
         #endregion
 
         #region Internal Methods
@@ -380,11 +389,27 @@ namespace Monopoly_Game
         private void BtnAction_Click(object sender, RoutedEventArgs e)
         {//M.S. Modified to display a border within a grid instead of a window.
             Player currentPlayer = GameEngine.Game.CurrentPlayer;
-            EventDisplay.Visibility = EventDisplay.Visibility = System.Windows.Visibility.Visible;
+            EventDisplay.Visibility = ContinueButton.Visibility = CancelButton.Visibility = System.Windows.Visibility.Visible;
             if (currentPlayer.CurrentSpace is Property)
             {
                 Property property = (Property)currentPlayer.CurrentSpace;
-                if (property.OwnerPlayerID != -1)
+                if (property.OwnerPlayerID == currentPlayer.PlayerID)
+                {
+                    int buildCost = ((BuildableProperty)property).BuildCost();
+                    if(buildCost == -1)
+                    {
+                        ContinueButton.Visibility = System.Windows.Visibility.Collapsed;
+                        EventDescription.Text = "You already have a hotel and cannot build any further";
+                    }
+                    else
+                    {
+                        EventDescription.Text = "This property is yours, would you like to build on it for " + buildCost.ToString() + " ?";
+                    }
+                    
+                    ContinueButton.Content = "Build";
+                    CancelButton.Content = "Cancel";
+                }
+                else if (property.OwnerPlayerID != -1)
                 {
                     EventDescription.Text = "The property Currently Belongs to Player:" + property.OwnerPlayerID.ToString();
                     ContinueButton.Content = "Pay";
@@ -414,7 +439,21 @@ namespace Monopoly_Game
             if (currentPlayer.CurrentSpace is Property)
             {
                 Property property = (Property)currentPlayer.CurrentSpace;
-                if (property.OwnerPlayerID == -1)
+                if (property.OwnerPlayerID == currentPlayer.PlayerID)
+                {
+                    int buildCost = ((BuildableProperty)property).BuildCost();
+                    if (currentPlayer.CurrentFunds >= buildCost)
+                    {
+                        currentPlayer.CurrentFunds -= buildCost;
+                        ((BuildableProperty)property).Build();
+                        DisplayPlayerMoney();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insufficient funds!");
+                    }
+                }
+                else if (property.OwnerPlayerID == -1)
                 {
                     GameEngine.Game.CurrentPlayer.purchaseProperty(ref property);
                     DisplayPropertyOwnerships();
@@ -497,6 +536,18 @@ namespace Monopoly_Game
             PlayerNumber.Content = playerNumber.ToString() + "'s";
             PlayerTurnBackground.Fill = new SolidColorBrush(background);
             PlayerColorBoard.BorderBrush = new SolidColorBrush(background);
+        }
+
+        public void ClickOnProperty(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            int ID = 0;
+            Int32.TryParse(b.Name.Replace("btnSpace", ""), out ID);
+
+            if(GameEngine.Game.CurrentPlayer.getOwnedSpaces().Exists(x => x.XAMLID == ID.ToString()))
+            {
+                BtnAction_Click(sender, (RoutedEventArgs)e);
+            }
         }
     }
 }
