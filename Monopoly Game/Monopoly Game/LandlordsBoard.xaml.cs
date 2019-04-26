@@ -124,7 +124,6 @@ namespace Monopoly_Game
         #endregion
 
 
-
         private int getPropertyValue(int i)
         {
             if (i == 1)
@@ -243,7 +242,6 @@ namespace Monopoly_Game
             return -1;
         }
 
-
         /// <summary>
         /// Fernando Munoz 
         /// March 5th, 2019
@@ -306,14 +304,34 @@ namespace Monopoly_Game
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnRollDice_Click(object sender, RoutedEventArgs e)
-        { // ** Add a check for doubles **
+        {
+
             if (!GameEngine.Game.CurrentPlayer.HasRolled)
             {
                 Tuple<int, int> dice = GameEngine.Game.InitateDiceRoll();
                 txtDice1.Text = dice.Item1.ToString();
                 txtDice2.Text = dice.Item2.ToString();
-                if (dice.Item1 != dice.Item2) GameEngine.Game.CurrentPlayer.HasRolled = true;
-                else GameEngine.Game.makeNextPlayersTurn();
+                if (dice.Item1 != dice.Item2)
+                {
+                    GameEngine.Game.CurrentPlayer.HasRolled = true;
+                    if (GameEngine.Game.CurrentPlayer.isInJail())
+                    {
+                        MessageBox.Show("Failed to escape jail, pass turn!");
+                        GameEngine.Game.makeNextPlayersTurn();
+                        updateGUIElements();
+                        SetPlayerInfoOnTurnNotification(GameEngine.Game.CurrentPlayer.PlayerID, GameEngine.Game.CurrentPlayer.TokenColor);
+                        return;
+                    }
+                }
+                else
+                {
+                    GameEngine.Game.makeNextPlayersTurn();
+                    if (GameEngine.Game.CurrentPlayer.isInJail())
+                    {
+                        GameEngine.Game.CurrentPlayer.consecutiveJailTurns = 0;
+                        GameEngine.Game.CurrentPlayer.CurrentSpace = GameEngine.Game.GameBoard.Spaces[10];
+                    }
+                }
                 GameEngine.Game.MovePlayer(GameEngine.Game.CurrentPlayer, dice.Item1 + dice.Item2);
                 EventName.Text = GameEngine.Game.CurrentPlayer.CurrentSpace.Name;
                 updateGUIElements();
@@ -400,7 +418,6 @@ namespace Monopoly_Game
             }
             else if (currentPlayer.CurrentSpace is Event)
             {
-                MessageBox.Show(currentPlayer.CurrentSpace.Name);
                 if (currentPlayer.CurrentSpace.Name == "Opportunity" || currentPlayer.CurrentSpace.Name == "Loot Crate")
                 {
                     EventDetails eventDetails = GameEngine.Game.getEvent();

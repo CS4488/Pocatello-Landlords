@@ -136,3 +136,5 @@ C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\
 C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.csproj.CoreCompileInputs.cache
 C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.exe
 C:\Users\Mikie\Documents\GitHub\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Monopoly Game.pdb
+C:\Users\kalenpw\Desktop\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Forms\JailChoices.g.cs
+C:\Users\kalenpw\Desktop\Pocatello-Landlords\Monopoly Game\Monopoly Game\obj\Debug\Forms\JailChoices.baml

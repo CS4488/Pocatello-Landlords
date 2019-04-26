@@ -108,6 +108,12 @@ namespace Monopoly_Game
             {
                 makeNextPlayersTurn();
             }
+
+            if (currentPlayer.isInJail())
+            {
+                Forms.JailChoices jailChoices = new Forms.JailChoices();
+                jailChoices.ShowDialog();
+            }
         }
 
         public void MovePlayer(Player plyr, int moveCount)
@@ -143,6 +149,11 @@ namespace Monopoly_Game
             //} else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0") {
             //    GameEngine.Game.CurrentPlayer.CurrentFunds += 200;
             //}
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace.Name == "Meth Trafficking")
+            { 
+                System.Windows.MessageBox.Show("Go to jail!");
+                MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[11]);
+            }
         }
         
         /// <summary>
@@ -167,6 +178,7 @@ namespace Monopoly_Game
         private Tuple<int, int> GetDiceValues()
         {
             Tuple<int, int> dice;
+
             dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
             return dice;
         }
