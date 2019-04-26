@@ -9,8 +9,8 @@
 8,Class Action Lawsuit payout!,10,0,-1,1,0
 9,Won a bet with your friends!,50,1,-1,1,0
 10,Student Loan Payment!,150,0,-1,1,0
-11,Forgot Parking Pass! Pay ticket.,50,0,-1,1,0
-12,Flu! Pay your clinic bill.,100,0,-1,1,0
+11,Forgot Parking Pass! Pay ticket.,-50,0,-1,1,0
+12,Flu! Pay your clinic bill.,-100,0,-1,1,0
 13,GO! Go there.,0,0,0,1,0
 14,Walter White you ain't.,0,0,10,1,0
 15,Uncle's the Sheriff. Get out of jail free.,0,0,11,1,1
@@ -23,8 +23,8 @@
 22,You did WHAT!? Go to jail.,0,0,10,0,0
 23,Got famous on Youtube.,150,0,-1,0,0
 24,Won the potato bake off.,50,0,-1,0,0
-25,Slow weekend. Hit the Redbox,15,0,-1,0,0
-26,Lost a bet with friends.,50,1,-1,0,0
+25,Slow weekend. Hit the Redbox,-15,0,-1,0,0
+26,Lost a bet with friends.,-50,1,-1,0,0
 27,Hired the Johnnie Cochran of Idaho. Get out of jail.,0,0,11,0,1
 28,You need a ride!,0,0,-2,0,0
 29,Hook up your utilities,0,0,-4,0,0

@@ -192,8 +192,6 @@ namespace Monopoly_Game
             for(int i = 1; i < lines.Length; i++)
             {
                 string[] values = lines[i].Split(',');
-                Console.WriteLine(values);
-                Console.WriteLine(values[2]);
                 EventDetails eventDetails = new EventDetails(values[0], values[1], int.Parse(values[2]), values[3] == "1", int.Parse(values[4]), values[5] ==  "1", values[6] == "1");
                 events.Add(eventDetails);
             }
