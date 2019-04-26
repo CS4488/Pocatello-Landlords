@@ -116,6 +116,10 @@ namespace Monopoly_Game
             {
                 MovePlayerToSpace(plyr, GameBoard.GetNextPlayableSpace(plyr.CurrentSpace));
                 moveCount--;
+                // R.C. Added the $200 for passing Go
+                if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0") {
+                    GameEngine.Game.CurrentPlayer.CurrentFunds += 200;
+                }
             }
             CheckSpaceForActions();
         }
@@ -130,14 +134,15 @@ namespace Monopoly_Game
 
         public void CheckSpaceForActions()
         {
-            if (GameEngine.Game.CurrentPlayer.CurrentSpace is Property)
-            {
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace is Property) {
                 Property landedOn = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
-                {
+                if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
                     System.Windows.MessageBox.Show("Need to pay rent");
                 }
             }
+            //} else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0") {
+            //    GameEngine.Game.CurrentPlayer.CurrentFunds += 200;
+            //}
         }
         
         /// <summary>
@@ -175,17 +180,28 @@ namespace Monopoly_Game
                 GameEngine.Game.CurrentPlayer.CurrentFunds += eventDetails.Cost;
             } else if (eventDetails.SpaceIndex != -1) {
                 int currentIndex = Convert.ToInt32(GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID);
+                int rent;
+                Property prop;
                 // Check for special cases (-2,-3,-4)
                 if (eventDetails.SpaceIndex == -2) { // Needs to look for the nearest transportation space and double the rent
                     // Transports are spaces 5, 16, 26, and 36
+                    
                     if (currentIndex <= 5 || currentIndex > 36) { 
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[5]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = (prop.Value / 10) * 2;
                     } else if (currentIndex <= 16) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[16]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = (prop.Value / 10) * 2;
                     } else if (currentIndex <= 26) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[26]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = (prop.Value / 10) * 2;
                     } else {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[36]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = (prop.Value / 10) * 2;
                     }
                 } else if (eventDetails.SpaceIndex == -3) { // Player moves back 3 spaces
                     int newIndex = currentIndex - 3;
@@ -194,8 +210,12 @@ namespace Monopoly_Game
                     // Utilities are at spaces 13 and 29
                     if (currentIndex <= 13 || currentIndex > 29) {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[13]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = prop.Value;
                     } else {
                         MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[29]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        rent = prop.Value;
                     }
                 } else {
                     // Set the player's current position to the indicated position
