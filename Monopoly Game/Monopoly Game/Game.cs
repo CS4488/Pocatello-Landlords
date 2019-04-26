@@ -39,6 +39,8 @@ namespace Monopoly_Game
         public GameStates GameState { get; set; }
         public Player MyPlayer { get; set; }
 
+        Random r = new Random();
+
         public Game()
         {
             gameState = GameStates.Running;
@@ -158,7 +160,6 @@ namespace Monopoly_Game
         /// <returns>A pair of ints between 1 and 6 representing the dice roll</returns>
         private Tuple<int, int> GetDiceValues()
         {
-            Random r = new Random();
             Tuple<int, int> dice;
 
             dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
