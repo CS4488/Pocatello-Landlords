@@ -24,6 +24,9 @@ namespace Monopoly_Game
         private Ellipse _PlayerCircle;
         private bool hasRolled;
         private double currentFunds;
+        private bool _IsInJail = false;
+        public int consecutiveJailTurns = 0;
+
         public string PlayerName
         {
             get { return _Name; }
@@ -97,6 +100,17 @@ namespace Monopoly_Game
         public Player(int inputID)
         {
             _ID = inputID;
+        }
+
+        public bool isInJail()
+        {
+            if(this.consecutiveJailTurns == 3)
+            {
+                this.consecutiveJailTurns = 0;
+                return false;
+            }
+            Console.WriteLine("'" + CurrentSpace.Name + "'");
+            return this.CurrentSpace.Name == "Pocatello Women's Detention Center";
         }
 
         public virtual bool takeTurn(int spaceIndex, Game game)

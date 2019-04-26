@@ -58,6 +58,10 @@
     <Compile Include="BuildableProperty.cs" />
     <Compile Include="DisplayManager.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="EventDetails.cs" />
+    <Compile Include="Forms\JailChoices.xaml.cs">
+      <DependentUpon>JailChoices.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PurchaseProperty.xaml.cs">
       <DependentUpon>PurchaseProperty.xaml</DependentUpon>
     </Compile>
@@ -70,6 +74,10 @@
     <Compile Include="Property.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="Token.cs" />
+    <Page Include="Forms\JailChoices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\PurchaseProperty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +120,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Database\events.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

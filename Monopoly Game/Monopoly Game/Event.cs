@@ -32,5 +32,6 @@ namespace Monopoly_Game
         {
             _AssociatedSpace = assocSpace;
         }
+
     }
 }

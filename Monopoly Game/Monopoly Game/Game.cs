@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +108,12 @@ namespace Monopoly_Game
             {
                 makeNextPlayersTurn();
             }
+
+            if (currentPlayer.isInJail())
+            {
+                Forms.JailChoices jailChoices = new Forms.JailChoices();
+                jailChoices.ShowDialog();
+            }
         }
 
         public void MovePlayer(Player plyr, int moveCount)
@@ -115,6 +122,10 @@ namespace Monopoly_Game
             {
                 MovePlayerToSpace(plyr, GameBoard.GetNextPlayableSpace(plyr.CurrentSpace));
                 moveCount--;
+                // R.C. Added the $200 for passing Go
+                if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0") {
+                    GameEngine.Game.CurrentPlayer.CurrentFunds += 200;
+                }
             }
             CheckSpaceForActions();
         }
@@ -129,13 +140,19 @@ namespace Monopoly_Game
 
         public void CheckSpaceForActions()
         {
-            if (GameEngine.Game.CurrentPlayer.CurrentSpace is Property)
-            {
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace is Property) {
                 Property landedOn = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
-                if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
-                {
+                if (landedOn.OwnerPlayerID != -1 && landedOn.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
                     System.Windows.MessageBox.Show("Need to pay rent");
                 }
+            }
+            //} else if (GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID == "0") {
+            //    GameEngine.Game.CurrentPlayer.CurrentFunds += 200;
+            //}
+            if (GameEngine.Game.CurrentPlayer.CurrentSpace.Name == "Meth Trafficking")
+            { 
+                System.Windows.MessageBox.Show("Go to jail!");
+                MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[11]);
             }
         }
         
@@ -164,6 +181,94 @@ namespace Monopoly_Game
 
             dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
             return dice;
+        }
+
+
+        public void handleEvent(EventDetails eventDetails)
+        {
+            if(eventDetails.Cost != 0)
+            {
+                System.Windows.MessageBox.Show("Your total was changed by " + eventDetails.Cost);
+                GameEngine.Game.CurrentPlayer.CurrentFunds += eventDetails.Cost;
+            } else if (eventDetails.SpaceIndex != -1) {
+                int currentIndex = Convert.ToInt32(GameEngine.Game.CurrentPlayer.CurrentSpace.XAMLID);
+                int rent;
+                Property prop;
+                // Check for special cases (-2,-3,-4)
+                if (eventDetails.SpaceIndex == -2) { // Needs to look for the nearest transportation space and double the rent
+                    // Transports are spaces 5, 16, 26, and 36
+                    
+                    if (currentIndex <= 5 || currentIndex > 36) { 
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[5]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
+                    } else if (currentIndex <= 16) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[16]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
+                    } else if (currentIndex <= 26) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[26]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
+                    } else {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[36]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = (prop.Value / 10) * 2;
+                        }
+                    }
+                } else if (eventDetails.SpaceIndex == -3) { // Player moves back 3 spaces
+                    int newIndex = currentIndex - 3;
+                    MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[newIndex]);
+                } else if (eventDetails.SpaceIndex == -4) { // Needs to look for nearest utility and pay 10 times rent
+                    // Utilities are at spaces 13 and 29
+                    if (currentIndex <= 13 || currentIndex > 29) {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[13]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = prop.Value;
+                        }
+                    } else {
+                        MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[29]);
+                        prop = (Property)GameEngine.Game.CurrentPlayer.CurrentSpace;
+                        if (prop.OwnerPlayerID != -1 || prop.OwnerPlayerID != GameEngine.Game.CurrentPlayer.PlayerID) {
+                            rent = prop.Value;
+                        }
+                    }
+                } else {
+                    // Set the player's current position to the indicated position
+                    MovePlayerToSpace(GameEngine.Game.CurrentPlayer, GameEngine.Game.GameBoard.Spaces[eventDetails.SpaceIndex]);
+                }
+
+            }
+        }
+
+
+        public EventDetails getEvent()
+        {
+            List<EventDetails> eventDetails = this.getAllEvents();
+            return eventDetails[r.Next(1, eventDetails.Count)];
+        }
+
+        private List<EventDetails> getAllEvents()
+        {
+            string path = "../../Database/events.csv";
+            string[] lines = File.ReadAllLines(path);
+            List<EventDetails> events = new List<EventDetails>();
+            
+            for(int i = 1; i < lines.Length; i++)
+            {
+                string[] values = lines[i].Split(',');
+                EventDetails eventDetails = new EventDetails(values[0], values[1], int.Parse(values[2]), values[3] == "1", int.Parse(values[4]), values[5] ==  "1", values[6] == "1");
+                events.Add(eventDetails);
+            }
+            return events;
         }
     }
 }
