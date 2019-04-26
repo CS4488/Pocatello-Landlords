@@ -98,7 +98,7 @@ namespace Monopoly_Game
                     prop.Value = getPropertyValue(i);
 
                 }
-                else if(Array.Exists(_PropertyNdxs, x => x == i))
+                else if (Array.Exists(_PropertyNdxs, x => x == i))
                 {
                     temp = new Property(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i], getPropertyValue(i));
                 }
@@ -113,7 +113,7 @@ namespace Monopoly_Game
                 else
                 {
                     temp = new Space(i.ToString(), _SpaceNames[i], _SpaceButtons[i], _SpacePlayerAreas[i]);
-                    if(i == 11)
+                    if (i == 11)
                     {
                         temp.Playable = false;
                     }
@@ -167,75 +167,75 @@ namespace Monopoly_Game
             {
                 return 160;
             }
-            if(i == 16)
+            if (i == 16)
             {
                 return 200;
             }
-            if(i == 17)
+            if (i == 17)
             {
                 return 180;
             }
-            if(i == 19)
+            if (i == 19)
             {
                 return 180;
             }
-            if(i == 20)
+            if (i == 20)
             {
                 return 200;
             }
-            if(i == 22)
+            if (i == 22)
             {
                 return 200;
             }
-            if(i == 24)
+            if (i == 24)
             {
                 return 220;
             }
-            if(i == 25)
+            if (i == 25)
             {
                 return 220;
             }
-            if(i == 26)
+            if (i == 26)
             {
                 return 200;
             }
-            if(i == 27)
+            if (i == 27)
             {
                 return 260;
             }
-            if(i == 28)
+            if (i == 28)
             {
                 return 260;
             }
-            if(i == 29)
+            if (i == 29)
             {
                 return 200;
             }
-            if(i == 30)
+            if (i == 30)
             {
                 return 280;
             }
-            if(i == 32)
+            if (i == 32)
             {
                 return 300;
             }
-            if( i == 33)
+            if (i == 33)
             {
                 return 300;
             }
-            if(i == 35)
+            if (i == 35)
             {
                 return 320;
             }
-            if(i == 36)
+            if (i == 36)
             {
                 return 200;
             }
-            if(i == 38)
+            if (i == 38)
             {
                 return 350;
             }
-            if(i == 40)
+            if (i == 40)
             {
                 return 400;
             }
@@ -371,7 +371,7 @@ namespace Monopoly_Game
                 imgActionImage.Source = new BitmapImage(new Uri("images/DrawCard.png", UriKind.RelativeOrAbsolute));
             }
         }
-       
+
         /// <summary>
         /// Handle action button click
         /// </summary>
@@ -400,10 +400,24 @@ namespace Monopoly_Game
             }
             else if (currentPlayer.CurrentSpace is Event)
             {
-                EventDescription.Text = "This is an event card!";
-                ContinueButton.Content = "Continue";
-                CancelButton.Content = "";
-                CancelButton.Visibility = System.Windows.Visibility.Collapsed; // Make sure to make it reappear after a click
+                MessageBox.Show(currentPlayer.CurrentSpace.Name);
+                if (currentPlayer.CurrentSpace.Name == "Opportunity" || currentPlayer.CurrentSpace.Name == "Loot Crate")
+                {
+                    EventDetails eventDetails = GameEngine.Game.getEvent();
+                    EventDescription.Text = eventDetails.Message;
+                    GameEngine.Game.handleEvent(eventDetails);
+                    ContinueButton.Content = "Continue";
+                    CancelButton.Content = "";
+                    CancelButton.Visibility = System.Windows.Visibility.Collapsed; // Make sure to make it reappear after a click
+                }
+                else
+                {
+                    EventDescription.Text = "This is an unhandled event";
+                    ContinueButton.Content = "Continue";
+                    CancelButton.Content = "";
+                    CancelButton.Visibility = System.Windows.Visibility.Collapsed; // Make sure to make it reappear after a click
+                }
+
             }
         }
         //M.S. 4/25/19 This is the button within the Eventdisplay that will allow the player to interact with the space.
@@ -451,7 +465,7 @@ namespace Monopoly_Game
         {
             stkPropertiesOwned.Children.Clear();
             spOponentProperties.Children.Clear();
-            for(int i = 0; i < GameEngine.Game.CurrentPlayer.getOwnedSpaces().Count; i++)
+            for (int i = 0; i < GameEngine.Game.CurrentPlayer.getOwnedSpaces().Count; i++)
             {
                 Property property = (Property)GameEngine.Game.CurrentPlayer.getOwnedSpaces()[i];
                 Player owner = GameEngine.Game.getPlayerById(property.OwnerPlayerID);
@@ -459,15 +473,15 @@ namespace Monopoly_Game
                 SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
                 tb.Text = property.OwnerPlayerID + ": " + property.Name;
                 tb.Foreground = fontColor;
-                stkPropertiesOwned.Children.Add(tb);                  
+                stkPropertiesOwned.Children.Add(tb);
             }
             List<Player> players = GameEngine.Game.Players;
-            for(int i = 0; i < players.Count; i++)
+            for (int i = 0; i < players.Count; i++)
             {
-                if(players[i].PlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
+                if (players[i].PlayerID != GameEngine.Game.CurrentPlayer.PlayerID)
                 {
                     List<Space> properties = players[i].getOwnedSpaces();
-                    for(int j = 0; j < properties.Count; j++)
+                    for (int j = 0; j < properties.Count; j++)
                     {
                         Property property = (Property)properties[j];
                         Player owner = players[i];
@@ -475,7 +489,7 @@ namespace Monopoly_Game
                         SolidColorBrush fontColor = new SolidColorBrush(owner.TokenColor);
                         tb.Text = property.OwnerPlayerID + ": " + property.Name;
                         tb.Foreground = fontColor;
-                        spOponentProperties.Children.Add(tb);                  
+                        spOponentProperties.Children.Add(tb);
                     }
                 }
             }

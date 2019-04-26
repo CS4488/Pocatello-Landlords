@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -161,9 +162,42 @@ namespace Monopoly_Game
         private Tuple<int, int> GetDiceValues()
         {
             Tuple<int, int> dice;
-
             dice = new Tuple<int, int>(r.Next(1, 7), r.Next(1, 7));
             return dice;
+        }
+
+
+        public void handleEvent(EventDetails eventDetails)
+        {
+            if(eventDetails.Cost != 0)
+            {
+                System.Windows.MessageBox.Show("Your total was changed by " + eventDetails.Cost);
+                GameEngine.Game.CurrentPlayer.CurrentFunds += eventDetails.Cost;
+            }
+        }
+
+
+        public EventDetails getEvent()
+        {
+            List<EventDetails> eventDetails = this.getAllEvents();
+            return eventDetails[r.Next(1, eventDetails.Count)];
+        }
+
+        private List<EventDetails> getAllEvents()
+        {
+            string path = "../../Database/events.csv";
+            string[] lines = File.ReadAllLines(path);
+            List<EventDetails> events = new List<EventDetails>();
+            
+            for(int i = 1; i < lines.Length; i++)
+            {
+                string[] values = lines[i].Split(',');
+                Console.WriteLine(values);
+                Console.WriteLine(values[2]);
+                EventDetails eventDetails = new EventDetails(values[0], values[1], int.Parse(values[2]), values[3] == "1", int.Parse(values[4]), values[5] ==  "1", values[6] == "1");
+                events.Add(eventDetails);
+            }
+            return events;
         }
     }
 }
